@@ -9,19 +9,17 @@
       </label>
       <label>
         Type 1:
-        <select v-model="filter.type">
+        <select v-model="filter.type_1">
           <option value="">Any</option>
           <option v-for="type in types" v-bind:key="type" v-bind:value="type">
-            {{type}}
           </option>
         </select>
       </label>
       <label>
         Type 2:
-        <select v-model="filter.typeTwo">
+        <select v-model="filter.type_2">
           <option value="">Any</option>
           <option v-for="typeTwo in types" v-bind:key="typeTwo" v-bind:value="typeTwo">
-            {{type}}
           </option>
         </select>
       </label>
@@ -38,8 +36,11 @@
       Sort By:
       <select v-model="sort.field">
         <option value="name">Name</option>
-        <option value="type">Type</option>
-        <option value="weight">Weight</option>
+        <option value="typeOne">Type 1</option>
+        <option value="typeTwo">Type 2</option>
+        <option value="hp">Hit Points</option>
+        <option value="defense">Defense</option>
+
       </select>
       <select v-model="sort.direction">
         <option value="1">Asc</option>

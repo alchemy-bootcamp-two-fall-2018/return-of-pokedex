@@ -25,5 +25,6 @@ ul {
     grid-template-columns: repeat(6, 1fr);
     grid-row-gap: 20px;
     grid-column-gap: 10px;
+    list-style: none;
 }
 </style>
