@@ -1,76 +1,72 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Return of PokeDex"/>
-
-    <header>
-      <label>
-        Name:
-      <input type="text">
-      </label>
-      <label>
-        Type:
-      <input type="text">
-      </label>
-      <label>
-        Hit Points:
-      <input type="number">
-      </label>
-      <label>
-        Defense:
-      <input type="number">
-      </label>
-    </header>
-
-    <div class="pokemonList">
-        <div class="pokemon">
-        <img :src="Pokedex[1].url_image">
-        <p>{{Pokedex[1].pokemon}}</p>
-        </div>
-        <div class="pokemon">
-        <img :src="Pokedex[2].url_image">
-        <p>{{Pokedex[2].pokemon}}</p>
-        </div>
-        <div class="pokemon">
-        <img :src="Pokedex[3].url_image">
-        <p>{{Pokedex[3].pokemon}}</p>
-        </div>
-        <div class="pokemon">
-        <img :src="Pokedex[4].url_image">
-        <p>{{Pokedex[4].pokemon}}</p>
-        </div>
-        <div class="pokemon">
-        <img :src="Pokedex[5].url_image">
-        <p>{{Pokedex[5].pokemon}}</p>
-        </div>
-        <div class="pokemon">
-        <img :src="Pokedex[6].url_image">
-        <p>{{Pokedex[6].pokemon}}</p>
-        </div>
-        <div class="pokemon">
-        <img :src="Pokedex[7].url_image">
-        <p>{{Pokedex[7].pokemon}}</p>
-        </div>
-        <div class="pokemon">
-        <img :src="Pokedex[8].url_image">
-        <p>{{Pokedex[8].pokemon}}</p>
-        </div>
-    </div>
+    <Header msg="Return of PokeDex"
+            v-bind:sort="sort" 
+            v-bind:filter="filter" 
+            v-bind:types="pokemonTypes"/>
+    <Pokemons v-bind:pokemons="sortedPokemons"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import Header from './components/Header.vue';
 import Pokedex from '../pokedex.js';
+import Pokemons from './components/Pokemons.vue';
 
 export default {
     name: 'app',
     components: {
-        HelloWorld
+        Header,
+        Pokemons
     },
     data() {
         return {
-            Pokedex,
+            pokemons: Pokedex,
+            filter: {
+                name: '',
+                hp: 0,
+                defense: 0,
+                type: '',
+                typeTwo: '',
+            },
+            sort: {
+                field: 'name',
+                direction: 1
+            },
         };
+    },
+    computed: {
+        pokemonTypes() {
+            const types = [];
+            this.pokemons.forEach(pokemon => {
+                if(!types.includes(pokemon.type)) {
+                    types.push(pokemon.type);
+                }
+            });
+            return types;
+        },
+        filteredPokemons() {
+            return this.pokemons.filter(pokemon => {
+                const hasName = !this.filter.name || pokemon.name >= this.filter.name;
+                const hasType = !this.filter.type || pokemon.type === this.filter.type;
+                const hasHp = !this.filter.hasHp || pokemon.hasHp;
+                const hasDefense = !this.filter.hasDefense || pokemon.hasDefense;
+                return hasName && hasType && hasHp && hasDefense;
+            });
+        },
+        sortedPokemons() {
+            const field = this.sort.field;
+            const direction = this.sort.direction;
+            return this.filteredPokemons.slice().sort((a, b) => {
+                if(a[field] > b[field]) {
+                    return 1 * direction;
+                }
+                if(a[field] < b[field]) {
+                    return -1 * direction;
+                }
+                return 0;
+            });
+        }
     }
 };
 </script>
