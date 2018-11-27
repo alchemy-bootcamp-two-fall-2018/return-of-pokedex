@@ -3,6 +3,7 @@
     <li>
             <img v-bind:src="pokemon.url_image"/>
             <h3> {{ pokemon.pokemon }}</h3>
+            <p> type: {{pokemon.type_1}}
             <p> ability: {{ pokemon.ability_1}}</p>
             <p> attack: {{ pokemon.attack}}</p>
             <p> weight: {{ pokemon.weight}}</p>
