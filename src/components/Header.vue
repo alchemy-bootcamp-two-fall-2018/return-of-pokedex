@@ -2,22 +2,24 @@
 
   <header>
     <h1>{{ msg }}</h1>
-    
+    <h1>{{filter}}</h1>
+    <h1>{{types}}</h1>
       <label>
         Name:
-        <input type="text" v-model="filter.name">
+        <input type="text" v-model="filter.pokemon">
       </label>
       <label>
         Type 1:
-        <select v-model="filter.type_1">
+        <select v-model="filter.type">
           <option value="">Any</option>
           <option v-for="type in types" v-bind:key="type" v-bind:value="type">
+            {{type}}
           </option>
         </select>
       </label>
       <label>
         Type 2:
-        <select v-model="filter.type_2">
+        <select v-model="filter.types">
           <option value="">Any</option>
           <option v-for="typeTwo in types" v-bind:key="typeTwo" v-bind:value="typeTwo">
           </option>
@@ -35,9 +37,9 @@
       <label>
       Sort By:
       <select v-model="sort.field">
-        <option value="name">Name</option>
-        <option value="typeOne">Type 1</option>
-        <option value="typeTwo">Type 2</option>
+        <option value="pokemon">Name</option>
+        <option value="type_1">Type 1</option>
+        <option value="type_2">Type 2</option>
         <option value="hp">Hit Points</option>
         <option value="defense">Defense</option>
 

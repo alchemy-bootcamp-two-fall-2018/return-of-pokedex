@@ -4,6 +4,7 @@
             v-bind:sort="sort" 
             v-bind:filter="filter" 
             v-bind:types="pokemonTypes"/>
+            
     <Pokemons v-bind:pokemons="sortedPokemons"/>
   </div>
 </template>
@@ -23,14 +24,14 @@ export default {
         return {
             pokemons: Pokedex,
             filter: {
-                name: '',
+                pokemon: '',
                 hp: 0,
                 defense: 0,
                 type: '',
                 typeTwo: '',
             },
             sort: {
-                field: 'name',
+                field: 'pokemon',
                 direction: 1
             },
         };
@@ -47,11 +48,12 @@ export default {
         },
         filteredPokemons() {
             return this.pokemons.filter(pokemon => {
-                const hasName = !this.filter.name || pokemon.name >= this.filter.name;
-                const hasType = !this.filter.type || pokemon.type === this.filter.type;
+                const hasName = !this.filter.pokemon || pokemon.pokemon === this.filter.pokemon;
+                const hasTypeOne = !this.filter.type || pokemon.type === this.filter.type;
+                const hasTypeTwo = !this.filter.type || pokemon.type === this.filter.type;
                 const hasHp = !this.filter.hasHp || pokemon.hasHp;
                 const hasDefense = !this.filter.hasDefense || pokemon.hasDefense;
-                return hasName && hasType && hasHp && hasDefense;
+                return hasName && hasTypeOne && hasTypeTwo && hasHp && hasDefense;
             });
         },
         sortedPokemons() {
