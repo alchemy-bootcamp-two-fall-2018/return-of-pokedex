@@ -1,4 +1,5 @@
-export default [
+/* eslint-disable */
+const Pokemon = [
   {
     'pokemon': 'bulbasaur',
     'id': 1,
@@ -25632,3 +25633,4 @@ export default [
     'pokedex': 'http://www.pokemon.com/us/pokedex/volcanion'
   }
 ];
+export default Pokemon;
