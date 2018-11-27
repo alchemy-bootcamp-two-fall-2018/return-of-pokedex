@@ -1,19 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header/>
+    <Pokedex/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import pokemonApi from './pokemonApi.js';
+import Header from './components/Header.vue';
+import Pokedex from './components/Pokedex.vue';
 
 export default {
-  name: 'app',
+  data() {
+    return {
+      pokemon: pokemonApi.getAll(),
+    };
+  },
   components: {
-    HelloWorld
+    Header,
+    Pokedex
   }
-}
+};
 </script>
 
 <style>
@@ -21,8 +28,6 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
