@@ -5,6 +5,7 @@
           <h3>{{ pokemon.pokemon}}</h3>
           <p>type-1: {{ pokemon.type-1 }}</p>
           <p>attack: {{ pokemon.attack }}</p>
+          <p>defense: {{ pokemon.defense }}</p>
       </div>
   </li>
 </template> 
@@ -18,8 +19,26 @@ export default {
 </script>
 
 <style scoped>
+li {
+  position: relative;
+  height: 300px;
+}
 img {
+  position:absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 300px;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+.info {
+  position:absolute;
+  bottom:0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+}
+h3, p {
+  margin: 0;
 }
 </style>
