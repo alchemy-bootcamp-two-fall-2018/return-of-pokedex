@@ -2,4 +2,7 @@ import pokedex from './pokedex.js';
 
 const pokemons = pokedex.getAll;
 
-console.log(pokemons.name);
+export default pokedexApi;
+
+console.log(pokedexApi.name);
+
