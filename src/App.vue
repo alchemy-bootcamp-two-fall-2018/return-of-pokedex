@@ -1,7 +1,11 @@
 <template>
   <div id="app">
-    <Header/>
-    <Pokemons v-bind:pokemons="pokemons"/>
+
+    <Header
+    v-bind:filter="filter"/>
+
+
+    <Pokemons v-bind:pokemons="filtered"/>
 
   </div>
 </template>
@@ -15,21 +19,24 @@ export default {
  
     data() {
         return {
-            pokemons: PokemonApi.getPokemon()
+            pokemons: PokemonApi.getPokemon(), 
+            filter: {
+                name:''
+            }
         };
     },
     components: {
         Header,
         Pokemons
     },
-    // computed: {
-    //     filtered(){
-    //         return this.pokemon.filter(pokemon => {
-    //             const hasWeight = !this.filter.weightpokemon.weight > this.filter.weight;
-    //             // other filters also here
-    //         });
-    //     }
-    // }
+    computed: {
+        filtered(){
+            return this.pokemons.filter(pokemon => {
+                const hasName = !this.filter.name || pokemon.pokemon.includes(this.filter.name);
+                return hasName;
+            });
+        }
+    }
 };
 </script>
 
