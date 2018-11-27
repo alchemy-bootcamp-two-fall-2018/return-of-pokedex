@@ -1,19 +1,40 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <ul>
+      <Characters 
+      v-for="character in characters"
+      v-bind:"filter"
+      v-bind:"types"
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
-  name: 'app',
+  data() {
+    return {
+      characters:pokedex.getCharacters(),
+      filter:{
+        type: ''
+      }
+    };
+  },
   components: {
-    HelloWorld
+    Header,
+    characters
+  },
+  computed: {
+    filteredCharacters() {
+      return this.character.filter(character => {
+        const hasType = !this.filter.type || character.type >= this.filter.type;
+        
+        
+        return hasType;
+      });
+    }
   }
-}
+
+};
 </script>
 
 <style>

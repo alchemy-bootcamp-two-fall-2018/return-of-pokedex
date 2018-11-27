@@ -25632,3 +25632,22 @@ export default [
     'pokedex': 'http://www.pokemon.com/us/pokedex/volcanion'
   }
 ];
+const types = [];
+const seen = {};
+
+characters.forEach(characters => {
+  const type = characters.type;
+  if (types.inclues(type)) {
+    return;
+  }
+  types.push(type);
+});
+
+export default{
+  getCharacters() {
+    return characters;
+  },
+  getTypes(){
+    return;
+  }
+}
