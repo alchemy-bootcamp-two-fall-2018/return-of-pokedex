@@ -1,16 +1,19 @@
 <template>
     <ul>
-        <li>
-            <img src="http://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png"/>
-            {{pokemons}}
-        </li>
+        <Pokemon v-for="pokemon in pokemons"
+            v-bind:key="pokemon.name"
+            v-bind:pokemon="pokemon"/>
     </ul>
 </template>
 
 <script>
+import Pokemon from './PokemonDetail.vue';
 export default {
     props: {
         pokemons: Array
+    },
+    components: {
+        Pokemon
     }
 };
 </script>
