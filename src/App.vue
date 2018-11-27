@@ -1,7 +1,7 @@
 <template>
   <div id="app">
       <PokeFilter v-bind:onSearch="handleTextSearch"/>
-      <!-- <NumFilter v-bind:onSearch="handleTextSearch"/> -->
+      <NumFilter v-bind:onNum="handleNumSearch"/>
       <PokeSort v-bind:onSort="handleSort" />
       <Tile v-bind:pokemons="pokemons"/>
   </div>
@@ -10,9 +10,11 @@
 <script>
 import pokemons from './pokedex.js';
 import PokeFilter from './components/Filter.vue';
-// import NumFilter from './components/NumFilter.vue';
+import NumFilter from './components/NumFilter.vue';
 import PokeSort from './components/Sort.vue';
 import Tile from './components/Tile.vue';
+
+// allow for double filtering
 
 export default {
     data() {
@@ -22,7 +24,7 @@ export default {
     },
     components: {
         PokeFilter,
-        // NumFilter,
+        NumFilter,
         PokeSort,
         Tile
     },
@@ -30,6 +32,11 @@ export default {
         handleTextSearch(filterInput) {
             this.pokemons = pokemons.filter(poke => {
                 return poke[filterInput.chosen].includes(filterInput.txt);
+            });
+        },
+        handleNumSearch(filterInput) {
+            this.pokemons = pokemons.filter(poke => {
+                return poke[filterInput.chosen] >= filterInput.input;
             });
         },
         handleSort(sortFilter) {
