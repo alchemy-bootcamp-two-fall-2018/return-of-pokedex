@@ -1,18 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+    
+    <Pokedex v-bind:pokemons="pokemons" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import pokemonApi from './pokemonsApi.js';
+import Pokedex from './components/Pokedex';
 
 export default {
-    name: 'app',
+    data() {
+        return {
+            pokemons: pokemonApi.getPokemons(), 
+        };
+    },
+
     components: {
-        HelloWorld
-    }
+        Pokedex
+    },
+    
 };
 </script>
 
