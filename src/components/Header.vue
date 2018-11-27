@@ -10,7 +10,7 @@
       </label>
       <label>
         Type 1:
-        <select v-model="filter.type">
+        <select v-model="filter.types">
           <option value="">Any</option>
           <option v-for="type in types" v-bind:key="type" v-bind:value="type">
             {{type}}
@@ -22,6 +22,7 @@
         <select v-model="filter.types">
           <option value="">Any</option>
           <option v-for="typeTwo in types" v-bind:key="typeTwo" v-bind:value="typeTwo">
+            {{typeTwo}}
           </option>
         </select>
       </label>
@@ -59,6 +60,11 @@ export default {
         filter: Object,
         types: Array,
         sort: Object
+    },
+    data() {
+        return {
+            types: '',
+        };
     }
 };
 </script>

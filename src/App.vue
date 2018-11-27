@@ -27,8 +27,8 @@ export default {
                 pokemon: '',
                 hp: 0,
                 defense: 0,
-                type: '',
-                typeTwo: '',
+                type_1: '',
+                type_2: '',
             },
             sort: {
                 field: 'pokemon',
@@ -40,20 +40,20 @@ export default {
         pokemonTypes() {
             const types = [];
             this.pokemons.forEach(pokemon => {
-                if(!types.includes(pokemon.type)) {
-                    types.push(pokemon.type);
+                if(!types.includes(pokemon.type_1)) {
+                    types.push(pokemon.type_1);
                 }
             });
             return types;
         },
         filteredPokemons() {
             return this.pokemons.filter(pokemon => {
-                const hasName = !this.filter.pokemon || pokemon.pokemon === this.filter.pokemon;
-                const hasTypeOne = !this.filter.type || pokemon.type === this.filter.type;
-                const hasTypeTwo = !this.filter.type || pokemon.type === this.filter.type;
-                const hasHp = !this.filter.hasHp || pokemon.hasHp;
+                const hasName = !this.filter.pokemon || pokemon.pokemon >= this.filter.pokemon;
+                // const hasTypeOne = !this.filter.type || pokemon.type === this.filter.type;
+                // const hasTypeTwo = !this.filter.type || pokemon.type === this.filter.type;
+                const hasHp = !this.filter.hasHp || pokemon.hp === this.filter.hp;
                 const hasDefense = !this.filter.hasDefense || pokemon.hasDefense;
-                return hasName && hasTypeOne && hasTypeTwo && hasHp && hasDefense;
+                return hasName && hasHp && hasDefense;
             });
         },
         sortedPokemons() {
