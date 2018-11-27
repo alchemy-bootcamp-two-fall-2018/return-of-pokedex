@@ -1,14 +1,24 @@
 <template>
   <div id="app">
-    
+      <Tile v-bind:pokemons="pokemons"/>
   </div>
 </template>
 
 <script>
+import pokemons from './pokedex.js';
+import Tile from './components/Tile.vue';
 
 export default {
-  
+    data() {
+        return {
+            pokemons
+        };
+    },
+    components: {
+        Tile
+    }
 };
+
 </script>
 
 <style>
