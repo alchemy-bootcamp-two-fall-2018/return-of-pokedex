@@ -1,12 +1,11 @@
 <template>
   <div id="app">
-    {{pokemons}}
-    <Pokedex />
+    <Pokedex v-bind:pokemons="pokemons"/>
   </div>
 </template>
 
 <script>
-import Pokedex from './components/Pokedex.vue';
+import Pokedex from './components/Pokedex';
 import pokemonApi from './pokemonApi.js';
 
 export default {
