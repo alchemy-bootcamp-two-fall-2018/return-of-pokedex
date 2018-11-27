@@ -1,15 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h3>Test</h3>
+    <PokemonsList v-bind:pokemons="pokemons"/>
   </div>
 </template>
 
 <script>
-
+import PokemonsList from './components/PokemonsList.vue';
+import PokemonsArray from '../pokedex.js';
 
 export default {
+    data() {
+        return {
+            pokemons: PokemonsArray
+        };
+    },
+    components: {
+        PokemonsList
+    },
     
+
 };
 </script>
 
