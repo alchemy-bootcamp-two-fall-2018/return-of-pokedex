@@ -32,8 +32,4 @@ export default {
         border: 2px solid black;
         margin: auto;
     }
-    tr {
-        margin: 2%;
-        border: 2px solid black;
-    }
 </style>

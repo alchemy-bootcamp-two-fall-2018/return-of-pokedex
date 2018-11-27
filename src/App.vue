@@ -1,11 +1,13 @@
 <template>
   <div id="app">
+      <PokeFilter v-bind:onSearch="handleSearch"/>
       <Tile v-bind:pokemons="pokemons"/>
   </div>
 </template>
 
 <script>
 import pokemons from './pokedex.js';
+import PokeFilter from './components/Filter.vue';
 import Tile from './components/Tile.vue';
 
 export default {
@@ -15,7 +17,13 @@ export default {
         };
     },
     components: {
+        PokeFilter,
         Tile
+    },
+    methods: {
+        handleSearch(filter, input) {
+            console.log(filter, input);
+        }
     }
 };
 
