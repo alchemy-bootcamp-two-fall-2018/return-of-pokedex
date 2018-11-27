@@ -18,6 +18,11 @@ export default {
 };
 </script>
 
-<style>
-
+<style scoped>
+ul {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    list-style: none;
+    margin: 10px;
+}
 </style>

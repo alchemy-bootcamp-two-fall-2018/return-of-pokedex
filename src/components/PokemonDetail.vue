@@ -19,6 +19,25 @@ export default {
 };
 </script>
 
-<style>
-
+<style scoped>
+li {
+  position: relative;
+  height: 200px;
+}
+img {
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  /* z-index: -1; */
+  object-fit: cover;
+}
+.info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  text-align: center;
+}
 </style>
