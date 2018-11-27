@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header/>
-    <Pokedex/>
+    <Pokedex v-bind:pokemons="pokemons"/>
   </div>
 </template>
 
@@ -13,7 +13,7 @@ import Pokedex from './components/Pokedex.vue';
 export default {
   data() {
     return {
-      pokemon: pokemonApi.getAll(),
+      pokemons: pokemonApi.getAll(),
     };
   },
   components: {
