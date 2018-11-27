@@ -22,7 +22,13 @@ export default {
     },
     methods: {
         handleSearch(filter, input) {
-            console.log(filter, input);
+            this.pokemons = pokemons.filter(poke => {
+                return poke[filter].includes(input);
+                // if(poke[filter].includes(input)) {
+                //     return poke;
+                // }
+            });
+            console.log(this.pokemons);
         }
     }
 };

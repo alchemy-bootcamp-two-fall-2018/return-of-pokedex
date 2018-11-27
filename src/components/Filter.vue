@@ -2,9 +2,9 @@
     <section>
         <p>Filter:</p>
         <select v-model="filter">
-            <option>Name</option>
-            <option>Type</option>
-            <option>Egg Group</option>
+            <option>pokemon</option>
+            <option>type_1</option>
+            <option>egg_group_1</option>
         </select>
         <input v-model="input" v-on:keyup="onSearch(filter, input)">
     </section>
