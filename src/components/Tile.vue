@@ -5,6 +5,8 @@
             <th>Name</th>
             <th>Type</th>
             <th>Egg Group</th>
+            <th>Weight</th>
+            <th>Height</th>
         </tr>
         <tr v-for="poke in pokemons"
             v-bind:key="poke.name">
@@ -12,6 +14,8 @@
             <td>{{poke.pokemon}}</td>
             <td>{{poke.type_1}}</td>
             <td>{{poke.egg_group_1}}</td>
+            <td>{{poke.weight}}</td>
+            <td>{{poke.height}}</td>
         </tr>
     </table>
 </template>
