@@ -51,7 +51,7 @@ export default {
                 const hasName = !this.filter.pokemon || pokemon.pokemon >= this.filter.pokemon;
                 // const hasTypeOne = !this.filter.type || pokemon.type === this.filter.type;
                 // const hasTypeTwo = !this.filter.type || pokemon.type === this.filter.type;
-                const hasHp = !this.filter.hasHp || pokemon.hp === this.filter.hp;
+                const hasHp = !this.filter.hp || pokemon.hp >= this.filter.hp;
                 const hasDefense = !this.filter.hasDefense || pokemon.hasDefense;
                 return hasName && hasHp && hasDefense;
             });
