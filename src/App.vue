@@ -3,7 +3,7 @@
     <Header
       v-bind:filter="filter"
     />
-    <PokemonsList v-bind:pokemons="pokemons"/>
+    <PokemonsList v-bind:pokemons="filteredPokemon"/>
   </div>
 </template>
 
@@ -26,8 +26,14 @@ export default {
         PokemonsList,
         Header
     },
-    
-
+    computed: {
+        filteredPokemon() {
+            return this.pokemons.filter(pokemon => {
+                const hasLetters = !this.filter.name || pokemon.pokemon.includes(this.filter.name);
+                return hasLetters;
+            });
+        }
+    }  
 };
 </script>
 
