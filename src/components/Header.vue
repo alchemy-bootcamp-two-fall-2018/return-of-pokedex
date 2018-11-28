@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1>Search the Pokedex!</h1>
-        <label for="name"> Name:
+        <label for="name"> Name: 
             <input type="text" name="name" id="name"
             v-model.text:="filter.name"
             >
