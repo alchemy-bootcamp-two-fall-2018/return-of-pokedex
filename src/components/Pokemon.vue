@@ -1,7 +1,7 @@
 <template>
     <li>
         <img v-bind:src="pokemon.url_image" />
-        <div class="info" v-bind:style="{ color: pokemon.color_1 }">
+        <div class="info" v-bind:style="{ 'border-color': pokemon.color_1 }">
             <h3>{{ pokemon.pokemon }}</h3>
             <p>Type 1: {{pokemon.type_1}}</p>
             <p>Type 2: {{pokemon.type_2}}</p> 
@@ -22,16 +22,17 @@ export default {
 <style>
     li {
         position: relative;
-        height: 400px;
+        height: 420px;
         border: 2px solid black;
+        background: black;
     }
     img {
         position: absolute;
         top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
+        left: 30px;
+        width: 80%;
+        height: 70%;
+        z-index: 1;
         object-fit: cover;
     }
     .info {
@@ -39,8 +40,10 @@ export default {
         bottom: 0;
         width: 100%;
         height: 130px;
-        background: rgba(255, 255, 255, 0.8);
+        background: rgba(255, 255, 255);
         line-height: 0.4em;
+        font-size: 1em;
+
     }
 
     

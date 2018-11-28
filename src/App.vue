@@ -51,18 +51,18 @@ export default {
                 const hasDefense = !this.filter.defense || pokemon.defense >= this.filter.defense;
                 const hasType = !this.filter.type || pokemon.type_1 === this.filter.type || pokemon.type_2 === this.filter.type;
                 return hasAttack && hasDefense && hasType;
-            })
+            });
         },
         sortedPokemons() {
             const field = this.sort.field;
             
             return this.filteredPokemons.slice().sort((a, b) => {
                 if(a[field] > b[field]) {
-                    return 1
+                    return 1;
                 }
 
                 if(a[field] < b[field]) {
-                    return -1
+                    return -1;
                 }
 
                 return 0;
