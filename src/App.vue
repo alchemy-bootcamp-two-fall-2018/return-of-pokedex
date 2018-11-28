@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import pokemons from './pokedex2.js';
+import pokemons from './pokedex.js';
 import PokeFilter from './components/Filter.vue';
 import NumFilter from './components/NumFilter.vue';
 import PokeSort from './components/Sort.vue';
