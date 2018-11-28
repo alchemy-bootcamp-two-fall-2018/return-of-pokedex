@@ -49,11 +49,11 @@ export default {
         filteredPokemons() {
             return this.pokemons.filter(pokemon => {
                 const hasName = !this.filter.pokemon || pokemon.pokemon >= this.filter.pokemon;
-                // const hasTypeOne = !this.filter.type || pokemon.type === this.filter.type;
+                const hasTypeOne = !this.filter.type_1 || pokemon.type_1 === this.filter.type_1;
                 // const hasTypeTwo = !this.filter.type || pokemon.type === this.filter.type;
                 const hasHp = !this.filter.hp || pokemon.hp >= this.filter.hp;
                 const hasDefense = !this.filter.defense || pokemon.defense >= this.filter.defense;
-                return hasName && hasHp && hasDefense;
+                return hasName && hasTypeOne && hasHp && hasDefense;
             });
         },
         sortedPokemons() {
