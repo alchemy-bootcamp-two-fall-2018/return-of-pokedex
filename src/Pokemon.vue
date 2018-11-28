@@ -1,7 +1,11 @@
 <template>
      <li>
          <img v-bind:src='pokemon.url_image'>
-         <div class="image-grid"></div>
+         <div class="descriptions">
+            <h3 class="name">{{ pokemon.pokemon}}</h3>
+            <p>Weight: {{pokemon.weight}}</p>
+
+         </div>
      </li>
 </template>
 

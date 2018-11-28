@@ -1,7 +1,11 @@
 <template>
   <div id="app">
-    <Header/>
-    <Pokemons v-bind:pokemons="pokemons"/>
+    <Header
+        v-bind:filter="filter"
+    />
+
+    <Pokemons v-bind:pokemons="filteredPokemons"/>
+    
   </div>
 </template>
 
@@ -16,7 +20,13 @@ export default {
     
     data() {
         return {
-            pokemons: pokemons.getPokemons()
+            pokemons: pokemons.getPokemons(),
+
+            filter: {
+                weight: 0,
+                pokemon:'',
+
+            }
         };
     },
     
@@ -24,6 +34,21 @@ export default {
         Header,
         Pokemons
     },
+
+    computed: {
+        filteredPokemons() {
+            return this.pokemons.filter(pokemon => {
+                const hasWeight = !this.filter.weight || pokemon.weight >= this.filter.weight;
+                return hasWeight;
+            });
+        },
+
+
+
+
+
+
+    }
 };
 
 
