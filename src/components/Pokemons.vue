@@ -8,12 +8,12 @@
 
 <script>
 import Pokemon from './Pokemon.vue';
-import pokedex from '../services/pokedex.js';
+//import pokemons from '../services/pokedex.js';
 
 
 export default {
     props: {
-        pokedex: Array,
+        pokemons: Array,
     },
     components: {
         Pokemon
