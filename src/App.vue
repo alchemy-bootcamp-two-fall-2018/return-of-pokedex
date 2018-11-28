@@ -3,10 +3,11 @@
 <!-- creates place for the header component to be render and gives aka "binds" the filter method to the component -->
     <Header
     v-bind:filter="filter"
+    v-bind:sort="sort"
     />
 
 
-    <Pokemons v-bind:pokemons="filtered"/>
+    <Pokemons v-bind:pokemons="sorted"/>
 
   </div>
 </template>
@@ -26,6 +27,10 @@ export default {
                 type_1:'',
                 attack:'',
                 defense:''
+            },
+            sort: {
+                field: 'name',
+                direction: 1,
             }
         };
     },
@@ -44,9 +49,24 @@ export default {
 
                 return hasName && hasType && hasAttack && hasDefense;
             });
+        },
+        sorted() {
+            const field = this.sort.field;
+            const direction = this.sort.direction;
+            return this.filtered.slice().sort((a, b)=> {
+                if(a[field] > b[field]) {
+                    return 1 * direction;
+                }
+
+                if(a[field] < b[field]) {
+                    return -1 * direction;
+                }
+                return 0;
+            });
         }
     }
 };
+
 </script>
 
 <style>
