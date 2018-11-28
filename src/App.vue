@@ -1,16 +1,20 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header
+      v-bind:types="pokemonTypes"
+      v-bind:filter="filter"
+      v-bind:sort="sort"/>
+
+    </Header>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Pokedex from'/components/Pokedex.vue';
+import Header from '/componens/Head.vue';
 
 export default {
-  name: 'app',
-  components: {
+  {
     HelloWorld
   }
 }
