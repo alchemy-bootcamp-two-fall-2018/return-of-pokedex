@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import pokedex from '../../pokedex';
 export default {
     props: {
         pokemon: Object
@@ -21,7 +22,7 @@ export default {
 
 <style>
     img {
-        width: 50px;
+        width: 100%;
     }
     li {
         background: rgba(224,213,213, 0.7);
@@ -29,5 +30,8 @@ export default {
         margin: 5px;
         padding: 1vw;
         width: 200px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
     }
 </style>
