@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Header 
+      
       v-bind:types="pokemonTypes"
       v-bind:filter="filter"
     />
@@ -45,8 +46,8 @@ export default {
         filteredPokemons() {
             return this.pokemons.filter(pokemon => {
                 const hasType = !this.filter.type || pokemon.type_1 === this.filter.type;
-
-                return hasType;
+                const hasAttack = !this.filter.attack || pokemon.attack >= this.filter.attack;
+                return hasType && hasAttack;
             });
         }
      

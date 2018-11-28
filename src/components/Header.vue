@@ -1,6 +1,13 @@
 <template>
     <header>
-        
+        <label>
+            Attack:
+            <input type="number"
+                v-model.number="filter.attack"
+                step="20"
+            >
+        </label>
+
         <label>
             Type:
             <select v-model="filter.type">
