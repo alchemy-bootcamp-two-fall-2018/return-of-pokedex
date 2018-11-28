@@ -19,7 +19,8 @@ export default {
             pokemons: PokemonsArray,
             filter: {
                 name: '',
-                type: ''
+                type: '',
+                attack: ''
             }
             
         };
@@ -42,7 +43,8 @@ export default {
             return this.pokemons.filter(pokemon => {
                 const hasLetters = !this.filter.name || pokemon.pokemon.includes(this.filter.name);
                 const selectedType1 = !this.filter.type || pokemon.type_1 === this.filter.type || pokemon.type_2 === this.filter.type;
-                return hasLetters && selectedType1;
+                const hasAttack = !this.filter.attack || pokemon.attack >= this.filter.attack ;
+                return hasLetters && selectedType1 && hasAttack;
             });
         }
     }  

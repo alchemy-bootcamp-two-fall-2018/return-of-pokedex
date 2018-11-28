@@ -5,6 +5,7 @@
             <input type="text"
                 v-model="filter.name">
         </label>
+        <label>
             Type
             <select v-model="filter.type">
                 <option value="">All</option>
@@ -14,10 +15,13 @@
                     v-bind:value="type">
                     {{type}}
                 </option>   
-               
             </select>
-        <label>
+        </label>
 
+        <label>
+            Attack
+            <input type="number"
+                v-model.number="filter.attack">
         </label>
     </header>
 </template>
