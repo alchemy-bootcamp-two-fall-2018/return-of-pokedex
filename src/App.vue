@@ -15,8 +15,6 @@ import PokeSort from './components/Sort.vue';
 import Tile from './components/Tile.vue';
 
 // allow for double filtering
-// sort revert back to none
-// sort by other options
 
 export default {
     data() {
@@ -42,10 +40,19 @@ export default {
             });
         },
         handleSort(sortFilter) {
+            let comp;
+            function compare(a, b) {
+                return a - b;
+            }
             if(sortFilter) {
+                if(sortFilter === 'pokemon') {
+                    comp = undefined;
+                } else if(sortFilter === 'weight') {
+                    comp = compare;
+                }
                 this.pokemons = pokemons.map(poke => {
                     return poke[sortFilter];
-                }).sort().map(val => {
+                }).sort(comp).map(val => {
                     return pokemons[pokemons.findIndex(poke => poke[sortFilter] === val)];
                 });
             } else {
