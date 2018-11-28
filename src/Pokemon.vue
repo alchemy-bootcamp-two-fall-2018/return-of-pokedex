@@ -5,6 +5,7 @@
             <h3 class="name">{{ pokemon.pokemon}}</h3>
             <p>Weight: {{pokemon.weight}}</p>
             <p>Height: {{pokemon.height}}</p> 
+            <p>Types: {{pokemon.type_1}}, {{pokemon.type_2}}</p>
 
          </div>
      </li>
