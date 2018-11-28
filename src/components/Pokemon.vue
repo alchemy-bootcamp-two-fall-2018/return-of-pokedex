@@ -28,6 +28,8 @@ export default {
        transform-style: preserve-3d;
        transition: all 1s ease-in-out;
        position: relative;
+       box-shadow:0px 0px 0px 2px grey inset;
+       margin-bottom:20px;
     }
     .card:hover {
         transform: rotateY(180deg);

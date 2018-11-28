@@ -58,11 +58,6 @@ export default {
         filter: Object,
         types: Array,
         sort: Object
-    },
-    data() {
-        return {
-
-        };
     }
 };
 </script>
@@ -70,7 +65,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   h3 {
-    margin: 40px 0 0;
+    margin-top: 40px;
   }
 
   h1 {
@@ -87,7 +82,5 @@ export default {
     margin: 0 10px;
   }
 
-  a {
-    color: #42b983;
-  }
+
 </style>

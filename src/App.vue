@@ -81,8 +81,8 @@ export default {
     grid-row-gap: 20px;
     grid-column-gap: 10px;
 }
-header {
-    margin: 40px;
+ul {
+    padding: 0px;
 }
 img {
     width: 200px;
