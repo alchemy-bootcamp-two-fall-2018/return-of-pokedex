@@ -12,10 +12,8 @@ import pokemonsApi from '../services/pokedex.js';
 import Pokemon from './Pokemon.vue';
 
 export default {
-    data() {
-        return {
-            pokemons: pokemonsApi
-        };
+    props: {
+        pokemons: Array
     },
     components: {
         Pokemon
@@ -31,7 +29,7 @@ ul {
   margin: 0;
   padding: 0;
   grid-row-gap: 200px;
-  
+
 }
       
 </style>

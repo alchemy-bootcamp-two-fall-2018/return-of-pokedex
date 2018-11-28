@@ -1,18 +1,38 @@
 <template>
   <div id="app">
-    <Pokemons/>
+    <Header v-bind:filter="filter"/>
+    {{filter}}
+    <Pokemons v-bind:pokemons="filteredPokemons"/>
   </div>
 </template>
 
 <script>
 import Pokemons from './components/Pokemons.vue';
+import pokemonsApi from './services/pokedex';
+import Header from './components/Header.vue';
 
 export default {
-    name: 'app',
+    data() {
+        return {
+            pokemons:pokemonsApi,
+            filter: {
+                attack: 0
+            }
+        };
+    },
     components: {
+        Header,
         Pokemons
+    },
+    computed: {
+        filteredPokemons() {
+            return this.pokemons.filter(pokemon => {
+                return pokemon.attack > this.filter.attack;
+            });
+        }
     }
 };
+
 </script>
 
 <style>
