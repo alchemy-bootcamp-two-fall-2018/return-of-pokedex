@@ -23,15 +23,16 @@ h3,p {
 }
 li{
   position:relative;
-  height: 300px;
+  /*height: 300px;*/
 }
 img{
-  position:absolute;
+  /*position:absolute;*/
   top:0;
   left:0;
-  width:100%;
-  height:100%;
+  width:100px;
+  height:100px;
   object-fit: cover;
+  z-index:-1;
 
 }
 .info{
