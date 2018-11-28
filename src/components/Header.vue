@@ -28,6 +28,14 @@
                 </option>
             </select>
         </label>
+        <label>
+            Sort By:  
+            <select v-model="sort.field">
+                <option value="">All</option>
+                <option value="weight"> Weight </option>
+                <option value="attack"> Attack </option>
+            </select>
+        </label>
     </header>
 </template>
 
@@ -37,6 +45,7 @@ export default {
         filter: Object,
         types: Array,
         abilities: Array, 
+        sort: Object
     }
 }; 
 </script>

@@ -1,11 +1,12 @@
 <template>
   <div id="app"> 
     <Header 
+        v-bind:sort="sort"
         v-bind:filter="filter"
         v-bind:types="pokemonTypes"
         v-bind:abilities="pokemonAbility"/>
         
-    <Pokemons v-bind:pokemons="filteredPokemons"/>
+    <Pokemons v-bind:pokemons="sortedPokemons"/>
   </div>
 </template>
 
@@ -23,6 +24,9 @@ export default {
                 name:'', 
                 type: '',
                 ability: ''
+            },
+            sort: {
+                field: 'all'
             }
         }; 
     },
@@ -56,6 +60,18 @@ export default {
                 const hasName = !this.filter.name || pokemon.pokemon.includes(this.filter.name);  
                 return hasType && hasAbility && hasName; 
             }); 
+        }, 
+        sortedPokemons() {
+            const field = this.sort.field; 
+            return this.filteredPokemons.slice().sort((a, b) => {
+                if(a[field] > b[field]) {
+                    return 1;
+                }
+                if(a[field] < b[field]) {
+                    return -1;
+                }
+                return 0;
+            });
         }
     }
 };
