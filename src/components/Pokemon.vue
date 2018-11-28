@@ -1,5 +1,5 @@
 <template>
-    <div class="info">
+    <div class="info" v-bind:style="{color:pokemon.color_1}">
     <li>
             <img v-bind:src="pokemon.url_image"/>
             <h3> {{ pokemon.pokemon }}</h3>
