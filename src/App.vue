@@ -1,19 +1,20 @@
 <template>
   <div id="app">
-    <ul>
-      <Characters 
-      v-for="character in characters"
-      v-bind:"filter"
-      v-bind:"types"
+      <Header 
+      v-bind:filter="filter"
+      v-bind:types="pokemonTypes"/>
   </div>
 </template>
 
 <script>
+import pokemonApi from './services/pokemonApi.js';
+import Characters from './components/Characters';
+import Header from './components/Header';
 
 export default {
   data() {
     return {
-      characters:pokedex.getCharacters(),
+      characters: pokemonApi.getCharacters(),
       filter:{
         type: ''
       }
@@ -21,7 +22,8 @@ export default {
   },
   components: {
     Header,
-    characters
+    Characters 
+    
   },
   computed: {
     filteredCharacters() {

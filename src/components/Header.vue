@@ -1,11 +1,13 @@
 <template>
     <header>
+        <h1>POKEDEX</h1>
+        <!--<img src="http://www.pokestadium.com/sprites/black-white/animated/shiny/pichu.gif">-->
         <label>
             Type:   
             <input
-            v-model="filter.type"
-            >
+            v-model="filter.type" />
         </label>
+    </header>
 </template>
 
 <script>
@@ -22,6 +24,11 @@ header {
 background: black;
 color: white;
 padding: 10px;
+}
+img{
+    bottom:0px;
+    
+    width:20%;
 }
 
 </style>
