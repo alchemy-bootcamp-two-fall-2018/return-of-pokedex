@@ -1,8 +1,10 @@
 <template>
   <div id="app">
     <Header
-      v-bind:filter="filter"
-      v-bind:types="pokemonTypes"
+        v-bind:sort="sort"
+        v-bind:filter="filter"
+        v-bind:types="pokemonTypes"
+      
     />
     <PokemonsList v-bind:pokemons="filteredPokemon"/>
   </div>
@@ -22,8 +24,11 @@ export default {
                 type: '',
                 attack: '',
                 deffense: ''
+            },
+            sort: {
+                field: 'name',
+                direction: 1
             }
-            
         };
     },
     components: {

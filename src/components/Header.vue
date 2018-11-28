@@ -29,6 +29,20 @@
             <input type="number"
                 v-model.number="filter.defense">
         </label>
+        
+        <label>
+            Sort By
+            <select v-model="sort.field">
+                <option value="name">Name</option>
+                <option value="type">Type</option>
+                <option value="attack">Attack</option>
+                <option value="defense">Defense</option>
+            </select>
+            <select v-model="sort.direction">
+                <option value="1">Asc</option>
+                <option value="-1">Desc</option>
+            </select>
+        </label>
     </header>
 </template>
 import pokemonArray from '../pokedex.js'
@@ -36,7 +50,8 @@ import pokemonArray from '../pokedex.js'
 export default {
     props: {
         filter: Object,
-        types: Array
+        types: Array,
+        sort: Object
     }
 };
 </script>
