@@ -22,6 +22,11 @@ export default {
     img {
         width: 50px;
     }
-    
-
+    li {
+        background: rgba(224,213,213, 0.7);
+        border: 1px solid darkgreen;
+        margin: 5px;
+        padding: 1vw;
+        width: 200px;
+    }
 </style>
