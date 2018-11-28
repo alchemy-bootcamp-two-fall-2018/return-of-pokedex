@@ -7,6 +7,7 @@
             <p> ability: {{ pokemon.ability_1}}</p>
             <p> attack: {{ pokemon.attack}}</p>
             <p> weight: {{ pokemon.weight}}</p>
+            <p> speed: {{ pokemon.speed }} </p>
     </li>
     </div>
 </template>

@@ -5,7 +5,7 @@
         v-bind:types="pokemonTypes"
         v-bind:abilities="pokemonAbility"/>
         
-    <Pokemons v-bind:pokemons="pokemons"/>
+    <Pokemons v-bind:pokemons="filteredPokemons"/>
   </div>
 </template>
 
@@ -47,6 +47,13 @@ export default {
                 }
             });
             return abilities;
+        }, 
+        filteredPokemons() {
+            return this.pokemons.filter(pokemon => { 
+                const hasType = !this.filter.type || pokemon.type_1 === this.filter.type;
+                const hasAbility = !this.filter.ability || pokemon.ability_1 === this.filter.ability;
+                return hasType && hasAbility; 
+            }); 
         }
     }
 };
