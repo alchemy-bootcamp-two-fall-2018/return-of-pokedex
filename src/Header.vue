@@ -3,7 +3,9 @@
         
         <label>
             Name:
-            <input>      
+            <input 
+                v-model="filter.pokemon"
+            >      
         </label>
         
         <label>

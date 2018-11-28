@@ -5,7 +5,7 @@
     />
 
     <Pokemons v-bind:pokemons="filteredPokemons"/>
-    
+
   </div>
 </template>
 
@@ -39,7 +39,8 @@ export default {
         filteredPokemons() {
             return this.pokemons.filter(pokemon => {
                 const hasWeight = !this.filter.weight || pokemon.weight >= this.filter.weight;
-                return hasWeight;
+                const hasName = !this.filter.pokemon || pokemon.pokemon.includes(this.filter.pokemon);
+                return hasWeight && hasName;
             });
         },
 
