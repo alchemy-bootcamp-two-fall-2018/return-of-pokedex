@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Header />
     {{pokethem}}
     <!-- <Pokethem /> -->
   </div>
@@ -8,6 +9,7 @@
 <script>
 // import Pokethem from './components/Pokethem';
 import pokethemApi from './services/pokethemApi.js';
+import Header from './components/Header';
 
 
 export default {
@@ -18,6 +20,7 @@ export default {
     },
     name: 'app',
     components: {
+        Header,
         // Pokethem
     }
 };
