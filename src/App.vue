@@ -3,15 +3,16 @@
     <Header
       v-bind:sort="sort"
       v-bind:filter="filter"
-      v-bind:types="pokemonTypes"/>
-    <Pokemons v-bind:pokemons="sortedPokemons"/>
+      v-bind:types="pokemonTypes"
+      />
+    <Pokedex v-bind:pokemons="sortedPokemons"/>
   </div>
 </template>
 
 <script>
 
-import pokemonsApi from './services/pokemonsApi';
-import Pokemons from './components/Pokemons.vue';
+import pokemonsApi from './pokemonsApi.js';
+import Pokedex from './components/Pokedex.vue';
 import Header from './components/Header.vue';
 
 export default {
@@ -20,7 +21,7 @@ export default {
             pokemons: pokemonsApi.getPokemons(),
             filter: {
                 attack: 0,
-                type: '',
+                type: ''
             },
             sort: {
                 field: 'name',
@@ -29,7 +30,7 @@ export default {
     },
     components: {
         Header,
-        Pokemons
+        Pokedex
     },
     computed: {
         pokemonTypes() {

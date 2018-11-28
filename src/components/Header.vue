@@ -26,8 +26,7 @@
       Sort By:
       <select v-model="sort.field">
         <option value="pokemon">Name</option>
-        <!-- maybe exclude type here -->
-        <option value="type">Type</option>
+        <option value="type1">Type</option>
         <option value="attack">Attack</option>
       </select>
     </label>
