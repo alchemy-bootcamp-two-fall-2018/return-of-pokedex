@@ -7,15 +7,14 @@
 </template>
 
 <script>
-import pokemonApi from '../pokemonsApi.js';
+
 import Pokemon from './Pokemon.vue';
 
 export default {
-    data() {
-        return {
-            pokemons: pokemonApi.getPokemons()
-        };
+    props: {
+        pokemons: Array
     },
+    
     components: {
         Pokemon
     }

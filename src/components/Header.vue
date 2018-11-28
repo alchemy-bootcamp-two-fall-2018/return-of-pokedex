@@ -1,8 +1,9 @@
 <template>
     <header>
+        
         <label>
             Type:
-            <select v-model="filter.type_1">
+            <select v-model="filter.type">
                 <option value="">All</option>
                 <option
                     v-for="type in types"

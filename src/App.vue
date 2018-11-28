@@ -4,7 +4,7 @@
       v-bind:types="pokemonTypes"
       v-bind:filter="filter"
     />
-    <Pokedex v-bind:pokemons="pokemons" />
+    <Pokedex v-bind:pokemons="filteredPokemons" />
   </div>
 </template>
 
@@ -19,7 +19,7 @@ export default {
             pokemons: pokemonApi.getPokemons(), 
 
             filter: {
-                type_1: '',
+                type: '',
                 attack: 0,
                 defense: 0
             },
@@ -41,13 +41,14 @@ export default {
             });
             return types;
         },
-        // filtered(){ 
-        //     return this.pokemons.filter(pokemon => {
-                
-                
-        //     });
-            
-        // }
+        
+        filteredPokemons() {
+            return this.pokemons.filter(pokemon => {
+                const hasType = !this.filter.type || pokemon.type_1 === this.filter.type;
+
+                return hasType;
+            });
+        }
      
     }
 };
