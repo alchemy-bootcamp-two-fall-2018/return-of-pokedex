@@ -4,7 +4,7 @@
       v-bind:filter="filter"
       v-bind:types="pokemonTypes"
     />
-    <Pokedex v-bind:pokemons="pokemons"/>
+    <Pokedex v-bind:pokemons="filteredPokemon"/>
   </div>
 </template>
 
@@ -29,7 +29,7 @@ export default {
     pokemonTypes() {
       const types = [];
       this.pokemons.forEach(pokemon => {
-        if(!types.includes(pokemon.type_1)) {
+        if(!types.includes(pokemon.type_1 || pokemon.type_2)) {
           types.push(pokemon.type_1);
         }
       });
@@ -37,7 +37,7 @@ export default {
     },
     filteredPokemon() {
       return this.pokemons.filter(pokemon => {
-        const hasType = !this.filter.type || pokemon.filter === this.filter.type;
+        const hasType = !this.filter.type || pokemon.type_1 === this.filter.type;
         return hasType;
       });
     },
