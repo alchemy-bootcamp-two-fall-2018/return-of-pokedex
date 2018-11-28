@@ -14,6 +14,7 @@ import NumFilter from './components/NumFilter.vue';
 import PokeSort from './components/Sort.vue';
 import Tile from './components/Tile.vue';
 
+// add full pokemon list
 // allow for double filtering
 // sort by other options
 
