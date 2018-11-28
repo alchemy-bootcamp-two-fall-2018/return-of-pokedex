@@ -25,7 +25,7 @@ export default {
             filter: {
                 weight: 0,
                 pokemon:'',
-
+                height: 0,
             }
         };
     },
@@ -38,9 +38,10 @@ export default {
     computed: {
         filteredPokemons() {
             return this.pokemons.filter(pokemon => {
-                const hasWeight = !this.filter.weight || pokemon.weight >= this.filter.weight;
                 const hasName = !this.filter.pokemon || pokemon.pokemon.includes(this.filter.pokemon);
-                return hasWeight && hasName;
+                const hasWeight = !this.filter.weight || pokemon.weight >= this.filter.weight;
+                const hasHeight = !this.filter.height || pokemon.height >= this.filter.height;
+                return hasName && hasWeight && hasHeight;
             });
         },
 

@@ -4,6 +4,7 @@
          <div class="descriptions">
             <h3 class="name">{{ pokemon.pokemon}}</h3>
             <p>Weight: {{pokemon.weight}}</p>
+            <p>Height: {{pokemon.height}}</p> 
 
          </div>
      </li>
@@ -34,6 +35,16 @@ export default {
         z-index: -1;
         object-fit: cover;
         border: 1px solid black;
+    }
+
+    .descriptions {
+        text-align: center;
+        font-weight: bold;
+        border: 1px solid black;
+        width: 50%;
+        margin: auto;
+        border-radius: 15px;
+        background-color: rgba(199, 216, 126, 0.4);
     }
 
 </style>

@@ -15,7 +15,15 @@
                 step="5"
             >
         </label>
-    
+
+        <label>
+            Height: 
+            <input type = "number"
+            v-model.number="filter.height"
+            step="5"
+            >
+        </label>
+
     </header>
 </template>
 
