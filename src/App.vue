@@ -8,14 +8,14 @@
 </template>
 
 <script>
-import pokemons from './pokedex.js';
+import pokemons from './pokedex2.js';
 import PokeFilter from './components/Filter.vue';
 import NumFilter from './components/NumFilter.vue';
 import PokeSort from './components/Sort.vue';
 import Tile from './components/Tile.vue';
 
-// add full pokemon list
 // allow for double filtering
+// sort revert back to none
 // sort by other options
 
 export default {
@@ -37,17 +37,20 @@ export default {
             });
         },
         handleNumSearch(filterInput) {
-            this.pokemons = pokemons.filter(poke => {
+            this.pokemons = this.pokemons.filter(poke => {
                 return poke[filterInput.chosen] >= filterInput.input;
             });
         },
         handleSort(sortFilter) {
-            console.log(sortFilter);
-            this.pokemons = pokemons.map(poke => {
-                return poke[sortFilter];
-            }).sort().map(val => {
-                return pokemons[pokemons.findIndex(poke => poke[sortFilter] === val)];
-            });
+            if(sortFilter) {
+                this.pokemons = pokemons.map(poke => {
+                    return poke[sortFilter];
+                }).sort().map(val => {
+                    return pokemons[pokemons.findIndex(poke => poke[sortFilter] === val)];
+                });
+            } else {
+                this.pokemons = pokemons;
+            }
         }
     }
 };
