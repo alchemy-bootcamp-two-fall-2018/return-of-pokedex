@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <Header/>
+    <Header
+    v-bind:filter="filter"
+    v-bind:types="pokemonTypes"
+    />
     <Pokedex v-bind:pokemons="pokemons"/>
   </div>
 </template>
@@ -14,13 +17,35 @@ export default {
   data() {
     return {
       pokemons: pokemonApi.getAll(),
+      filter: {
+        type:'',
+      }
     };
   },
   components: {
     Header,
     Pokedex
-  }
+  },
+  computed: {
+    pokemonTypes() {
+      const types = [];
+      this.pokemons.forEach(pokemon => {
+        if(!types.includes(pokemon.type_1)) {
+          types.push(pokemon.type_1);
+        }
+      });
+      return types;
+    },
+    filteredPokemon() {
+      return this.pokemons.filter(pokemon => {
+        const hasType = !this.filter.type || pokemon.type === this.filter.type;
+        return hasType;
+      });
+    }
+  },
 };
+
+
 </script>
 
 <style>

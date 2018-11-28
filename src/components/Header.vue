@@ -1,20 +1,26 @@
 <template>
-    <div class="header">
-        This is the header.<br/>
-    <label>
-      Attack:
-      <input type="number">
-       Type:
-       <select>
-        <option value="volvo">Type 1</option>
-        <option value="saab">Type 2</option>
-      </select> 
-    </label>
-    </div>
+    <header>
+        <label>
+            Type:
+            <select v-model="filter.type">
+                <option value="">All</option>
+                <option
+                v-for="type in types"
+                v-bind:key="type"
+                v-bind:value="type">
+                {{type}}
+                </option>
+            </select>
+        </label>
+    </header>
 </template>
 
 <script>
 export default {
+  props: {
+    filter: Object,
+    types: Array,
+  }
 
 };
 </script>
