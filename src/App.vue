@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <!-- <Header
-        v-bind:sort="sort"
-        v-bind:filter="filter"/> -->
+    <Header
+        v-bind:types="pokemonTypes"
+        v-bind:filter="filter"/>
 
     <Pokedex v-bind:pokedex="pokedex"/>
   </div>
@@ -10,7 +10,7 @@
 
 <script>
 import pokedex from '../pokedex.js';
-// import Header from './components/Header.vue';
+import Header from './components/Header.vue';
 import Pokedex from './components/Pokedex.vue';
 
 export default {
@@ -26,15 +26,26 @@ export default {
         };
     },
     components: {
-        // Header,
+        Header,
         Pokedex
     },
-    filteredPokedex() {
-        return this.pokedex.filter(pokemon => {
-            const hasType = !this.filter.type || pokemon.type_1 === this.filter.type;
-            return hasType;
-        });
-    
+    computed: {
+        pokemonTypes() {
+            const types = [];
+            this.pokedex.forEach(pokemon => {
+                if(!types.includes(pokemon.type_1)) {
+                    types.push(pokemon.type_1);
+                }
+            });
+            console.log(types);
+            return types;
+        },
+        filteredPokedex() {
+            return this.pokedex.filter(pokemon => {
+                const hasType = !this.filter.type || pokemon.type_1 === this.filter.type;
+                return hasType;
+            });
+        }
     }
 };  
 
