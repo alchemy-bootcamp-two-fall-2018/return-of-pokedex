@@ -6,6 +6,6 @@ export default {
     },
 
     getTypes() {
-        return type_1;
+        // return type_1;
     }
 };
