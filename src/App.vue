@@ -1,19 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <header
+      v-bind:sort="sort"
+      v-bind:filter="filter"/>
+    <Pokemons v-bind:pokemons="sortedPokemons"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import pokedex from '../pokedex.js';
+import Pokemons from './components/Pokemons.vue';
+import Header from './components/Header.vue';
 
 export default {
-    name: 'app',
-    components: {
-        HelloWorld
-    }
+    data() {
+        return {
+            pokemons: pokedex.getPokemons(),
+        };
+    },
+    
 };
+
 </script>
 
 <style>

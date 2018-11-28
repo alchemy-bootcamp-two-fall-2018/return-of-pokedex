@@ -1,4 +1,4 @@
-export default [
+const pokedex = [
     {
         'pokemon': 'bulbasaur',
         'id': 1,
@@ -25632,3 +25632,8 @@ export default [
         'pokedex': 'http://www.pokemon.com/us/pokedex/volcanion'
     }
 ];
+export default {
+    getPokedex() {
+        return pokedex;
+    }
+};
