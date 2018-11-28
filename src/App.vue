@@ -1,26 +1,51 @@
 <template>
   <div id="app">
-    <!-- <Header
-      v-bind:sort="sort"
-      v-bind:filter="filter"
-      v-bind:types="pokemonTypes"/> -->
-
-    <Pokemons v-bind:pokemons="pokemons"/>
+    <Header
+      v-bind:types="pokemonTypes"
+      v-bind:filter="filter"/>
+      <!-- v-bind:sort="sort"/> -->
+    <Pokemons v-bind:pokemons="sortedPokemons"/>
   </div>
 </template>
 
 <script>
 import pokemonsApi from './services/pokemons-api';
 import Pokemons from './components/Pokemons';
+import Header from './components/Header';
 
 export default {
   data() {
     return {
       pokemons: pokemonsApi.getPokemons(),
+
+      filter: {
+        type: ''
+      }
     };
   },
   components: {
-    Pokemons,
+    Header,
+    Pokemons
+  },
+  computed: {
+    pokemonTypes() {
+      const types = [];
+      this.pokemons.forEach(pokemon => {
+        if(!types.includes(pokemon.type_1)) {
+          types.push(pokemon.type_1);
+        }
+        if(!types.includes(pokemon.type_2)) {
+          types.push(pokemon.type_2);
+        }
+      });
+      return types;
+    },
+    filteredPokemons() {
+      return this.pokemons.filter(pokemon => {
+        const hasType = !this.filter.type || pokemon.type_1 === this.filter.type || pokemon.type_2 === this.filter.type;
+        return hasType;
+      });
+    }
   }
 };
 </script>
