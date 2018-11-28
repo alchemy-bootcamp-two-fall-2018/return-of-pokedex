@@ -1,11 +1,22 @@
 <template>
-    <div>Hello</div>
+    <ul>
+        <Pokemon v-for="pokemon in pokemons"
+            v-bind:key="pokemon.name"
+            v-bind:pokemon="pokemon"/>
+    </ul>
 </template>
 
 <script>
-export default {
+import Pokemon from './Pokemon.vue';
 
-}
+export default {
+  props: {
+    pokemons: Array
+  },
+  components: {
+    Pokemon
+  }
+};
 </script>
 
 <style>
