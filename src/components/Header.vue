@@ -12,6 +12,12 @@
                 </option>
             </select>
         </label>
+        <label>
+        Attack:
+        <input type="number" 
+            v-model.number="filter.attack" 
+        >
+    </label>
     </header>
 </template>
 
