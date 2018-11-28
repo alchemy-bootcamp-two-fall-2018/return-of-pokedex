@@ -1,5 +1,6 @@
 <template>
     <header>
+        <h1>Pokedex</h1>
         <label>
             Type:
             <select v-model="filter.type">
@@ -55,6 +56,20 @@ export default {
         background: red;
         color: white;
         padding: 20px;
+        margin-bottom: 20px;
+        margin-top: 0px;
+        padding-top: 5px;
+    }
+
+    h1 {
+        font-size: 4em;
+        padding: 10px;
+        margin: 0px;
+    }
+
+    html {
+        margin: 0px;
+        padding: 0px;
     }
 
 </style>
