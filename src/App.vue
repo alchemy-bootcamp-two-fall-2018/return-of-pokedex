@@ -3,7 +3,7 @@
     <Header
       v-bind:sort="sort"
       v-bind:filter="filter"/>
-    <Pokemons v-bind:pokemons="sortedPokemons"/>
+    <Pokemons v-bind:pokemons="pokemons"/>
   </div>
 </template>
 
