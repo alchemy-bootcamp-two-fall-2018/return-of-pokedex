@@ -1,5 +1,6 @@
 <template>
-    <header>
+    <header class="header">
+        <h1>The Pokedex of Doom</h1>
         <label>
             Type:
             <select v-model="filter.type">
@@ -49,5 +50,6 @@ export default {
     padding: 20px;
     background: burlywood;
     margin-bottom: 40px;
+    box-shadow: 5px 10px 10px grey;
 }
 </style>
