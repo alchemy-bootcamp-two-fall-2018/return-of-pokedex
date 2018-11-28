@@ -23,6 +23,7 @@ export default {
 li {
   position: relative;
   height: 400px;
+  /* min-width: 150px; */
 }
 img {
   /* position: absolute; */
@@ -37,7 +38,7 @@ img {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.8);
+  background:black;
   text-align: center;
 }
 </style>

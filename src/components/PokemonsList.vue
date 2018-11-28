@@ -21,9 +21,16 @@ export default {
 <style scoped>
 ul {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(50px, 75px));
+    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
     list-style: none;
+    margin: 20px;
+    padding: 20px;
+    color: whitesmoke;
+    border: solid yellow;
+}
+li {
     margin: 10px;
-    padding: 5px solid blue;
+    border: solid red;
+    min-width: 175px;
 }
 </style>
