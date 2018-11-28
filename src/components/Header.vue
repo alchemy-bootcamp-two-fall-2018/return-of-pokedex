@@ -21,6 +21,15 @@
             </select>
         </label>
 
+        <label>
+            Sort By:
+            <select v-model="sort.field">
+                <option value="pokemon">Name</option>
+                <option value="type_1">Type</option>
+                <option value="attack">Attack</option>
+            </select>
+
+        </label>
 
         
     </header>
@@ -31,7 +40,8 @@
 export default {
     props: {
         types: Array,
-        filter: Object
+        filter: Object,
+        sort: Object
         
     }
 };

@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <Header 
-      
+      v-bind:sort="sort"
       v-bind:types="pokemonTypes"
       v-bind:filter="filter"
     />
-    <Pokedex v-bind:pokemons="filteredPokemons" />
+    <Pokedex v-bind:pokemons="sortedPokemons" />
   </div>
 </template>
 
@@ -24,6 +24,11 @@ export default {
                 attack: 0,
                 defense: 0
             },
+
+            sort: {
+                field: 'name',
+                
+            }
         };
     },
 
@@ -49,8 +54,23 @@ export default {
                 const hasAttack = !this.filter.attack || pokemon.attack >= this.filter.attack;
                 return hasType && hasAttack;
             });
+        },
+
+        sortedPokemons() {
+            const field = this.sort.field;
+
+            return this.filteredPokemons.slice().sort((a, b) => {
+                if(a[field] > b[field]) {
+                    return 1;
+                }
+
+                if(a[field] < b[field]) {
+                    return -1;
+                }
+
+                return 0;
+            });    
         }
-     
     }
 };
 </script>
