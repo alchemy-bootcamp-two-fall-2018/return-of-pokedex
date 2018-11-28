@@ -1,21 +1,55 @@
 <template>
   <div id="app">
-    <Pokedex v-bind:pokemons="pokemons"/>
+    <Header 
+        v-bind:types="pokemonTypes"
+        v-bind:filter="filter"/>
+    <Pokedex v-bind:pokemons="filteredPokemons"/>
   </div>
 </template>
 
 <script>
-import Pokedex from './components/Pokedex';
+import Pokedex from './components/Pokedex.vue';
 import pokemonApi from './pokemonApi.js';
+import Header from './components/Header.vue';
 
 export default {
     data() {
         return {
-            pokemons: pokemonApi.getPokemons()
+            pokemons: pokemonApi.getPokemons(),
+
+            filter: {
+                attack: 0,
+                defense: 0,
+                type: ''
+            }
         };
     },
     components: {
+        Header,
         Pokedex
+    },
+    computed: {
+        pokemonTypes() {
+            const types = [];
+            this.pokemons.forEach(pokemon => {
+                if(!types.includes(pokemon.type_1)) {
+                    types.push(pokemon.type_1);
+                }
+                if(!types.includes(pokemon.type_2)) {
+                    types.push(pokemon.type_2);
+                }
+            });
+            return types;
+        },
+        filteredPokemons() {
+            return this.pokemons.filter(pokemon => {
+                const hasAttack = !this.filter.attack || pokemon.attack >= this.filter.attack;
+                const hasDefense = !this.filter.defense || pokemon.defense >= this.filter.defense;
+                const hasType = !this.filter.type || pokemon.type_1 === this.filter.type || pokemon.type_2 === this.filter.type;
+                return hasAttack && hasDefense && hasType;
+            })
+        }
+        
     }
 };
 </script>

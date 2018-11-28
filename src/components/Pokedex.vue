@@ -11,10 +11,8 @@ import pokemonApi from '../pokemonApi.js';
 import Pokemon from './Pokemon.vue';
 
 export default {
-    data() {
-        return {
-            pokemons: pokemonApi.getPokemons()
-        };
+    props: {
+        pokemons: Array
     },
     components: {
         Pokemon
