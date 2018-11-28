@@ -42,7 +42,6 @@ export default {
         justify-content: center;
         position: absolute;
         top: -5px;
-        right: 40px;
-        
+        width: 100%;
     }
 </style>
