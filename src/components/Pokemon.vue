@@ -22,7 +22,7 @@ export default {
 
 <style scoped>
 li {
-  position: relative;
+  text-align: center;
   /* height: 50px; */
 }
 img {
@@ -33,6 +33,9 @@ img {
   height: 100px;
   z-index: -1;
   object-fit: cover;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
 }
 /* .info {
   position: absolute;
@@ -46,7 +49,9 @@ h3, p {
   margin: 0;
 }
 li {
-    border: 1px solid red;
+    border: 1px solid black;
     margin: 10px;
+    background-color: grey; 
+    text-shadow: 1px 1px 1px black;
 }
 </style>
