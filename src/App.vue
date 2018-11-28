@@ -19,6 +19,7 @@ export default {
     return {
       pokemons: pokemonApi.getAll(),
       filter: {
+        attack: 0,
         type:'',
       },
       sort: {

@@ -28,8 +28,8 @@
         <option value="attack">Attack</option>
       </select>
       <select v-model="sort.direction">
-        <option value="1">Ascending</option>
-        <option value="-1">Descending</option>
+        <option value="1">Asc</option>
+        <option value="-1">Dec</option>
       </select>
     </label>
     </header>
