@@ -2,7 +2,9 @@
   <div id="app">
       <Header 
       v-bind:filter="filter"
-      v-bind:types="pokemonTypes"/>
+      v-bind:types="types"/>
+      <Characters
+      v-bind:characters="characters"/>
   </div>
 </template>
 
@@ -14,6 +16,7 @@ import Header from './components/Header';
 export default {
   data() {
     return {
+      types: pokemonApi.getTypes(),
       characters: pokemonApi.getCharacters(),
       filter:{
         type: ''

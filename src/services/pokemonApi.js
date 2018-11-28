@@ -4,8 +4,8 @@ import characters from '../assets/pokedex';
 const types = [];
 //const seen = {};
 
-characters.forEach(characters => {
-  const type = characters.type;
+characters.forEach(character => {
+  const type = character.type_1;
   if(types.includes(type)) {
     return;
   }
@@ -17,6 +17,6 @@ export default{
     return characters;
   },
   getTypes(){
-    return;
+    return types;
   }
 };
