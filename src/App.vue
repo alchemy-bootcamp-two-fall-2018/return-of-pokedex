@@ -3,10 +3,8 @@
     <Header
         v-bind:sort="sort"
         v-bind:filter="filter"
-        v-bind:types="pokemonTypes"
-      
-    />
-    <PokemonsList v-bind:pokemons="filteredPokemon"/>
+        v-bind:types="pokemonTypes"/>
+    <PokemonsList v-bind:pokemons="sortedPokemon"/>
   </div>
 </template>
 
@@ -52,6 +50,20 @@ export default {
                 const hasAttack = !this.filter.attack || pokemon.attack >= this.filter.attack;
                 const hasDefense = !this.filter.defense || pokemon.defense >= this.filter.defense;
                 return hasLetters && selectedType1 && hasAttack && hasDefense;
+            });
+        },
+        sortedPokemon() {
+            const field = this.sort.field;
+            const direction = this.sort.direction;
+
+            return this.filteredPokemon.slice().sort((a, b) => {
+                if(a[field] > b[field]) {
+                    return 1 * direction;
+                }
+                if(a[field] < b[field]) {
+                    return -1 * direction;
+                }
+                return 0;
             });
         }
     }  
