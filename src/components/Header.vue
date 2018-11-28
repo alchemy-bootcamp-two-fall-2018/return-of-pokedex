@@ -1,5 +1,7 @@
 <template>
+    
     <header>
+        <h1>Pokedex Round 2!</h1>
         <label>
             Attack:
             <input type="number"
@@ -49,8 +51,9 @@ export default {
 
 <style scoped>
 header {
-  background: steelblue;
+  background: #DC0B2D;
   color: white;
-  padding: 10px;
+  padding: 20px;
+  margin-bottom: 10px;
 }
 </style>
