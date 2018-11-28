@@ -2,8 +2,8 @@
     <section>
         <h3>Number Filter:</h3>
         <select v-model="numFilter.chosen">
-            <option value="weight">weight</option>
-            <option value="height">height</option>
+            <option value="weight">Weight</option>
+            <option value="height">Height</option>
         </select>
         <input type="number" v-model.number="numFilter.input" v-on:keyup="onNum(numFilter)">
     </section>
