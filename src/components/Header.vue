@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Header Search the Pokedex!</h1>
+        <h1>Search the Pokedex!</h1>
         <label for="name"> Name:
             <input type="text" name="name" id="name"
             v-model.text:="filter.name"
@@ -8,7 +8,7 @@
         </label>
 
 
-        <label for="type_1"> type One:
+        <label for="type_1"> Type:
             <input type_1="text" name="type_1" id="type_1"
             v-model.text:="filter.type_1"
             >
@@ -53,5 +53,6 @@ export default {
 </script>
 
 <style>
+
 
 </style>
