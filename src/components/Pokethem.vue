@@ -7,11 +7,16 @@
 </template>
 
 <script>
-import pokethemApi from '../services/pokethem.Api';
-import Pokemon from './Pokemon';
+// import pokethemApi from '../services/pokemonApi';
+// import Pokemon from './Pokemon';
 
 export default {
-
+    props: {
+        pokethem: Array
+    },
+    components: {
+        // Pokethem
+    }
 };
 </script>
 

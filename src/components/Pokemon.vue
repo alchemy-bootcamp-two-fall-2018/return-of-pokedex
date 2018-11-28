@@ -1,6 +1,6 @@
 <template>
     <li>
-        <img :src="" />
+        <!-- <img :src="" /> -->
         <div class="info">
             <h3>{{ pokemon.pokemon }}</h3>
         </div>
