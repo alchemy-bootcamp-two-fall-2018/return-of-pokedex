@@ -21,8 +21,9 @@ export default {
 <style scoped>
 ul {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(50px, 75px));
     list-style: none;
     margin: 10px;
+    padding: 5px solid blue;
 }
 </style>

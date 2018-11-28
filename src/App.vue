@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <h3>Test</h3>
+    <Header
+      v-bind:filter="filter"
+    />
     <PokemonsList v-bind:pokemons="pokemons"/>
   </div>
 </template>
@@ -8,15 +10,21 @@
 <script>
 import PokemonsList from './components/PokemonsList.vue';
 import PokemonsArray from '../pokedex.js';
+import Header from './components/Header.vue';
 
 export default {
     data() {
         return {
-            pokemons: PokemonsArray
+            pokemons: PokemonsArray,
+            filter: {
+                name: ''
+            }
+            
         };
     },
     components: {
-        PokemonsList
+        PokemonsList,
+        Header
     },
     
 
