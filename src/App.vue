@@ -20,7 +20,8 @@ export default {
             filter: {
                 name: '',
                 type: '',
-                attack: ''
+                attack: '',
+                deffense: ''
             }
             
         };
@@ -43,8 +44,9 @@ export default {
             return this.pokemons.filter(pokemon => {
                 const hasLetters = !this.filter.name || pokemon.pokemon.includes(this.filter.name);
                 const selectedType1 = !this.filter.type || pokemon.type_1 === this.filter.type || pokemon.type_2 === this.filter.type;
-                const hasAttack = !this.filter.attack || pokemon.attack >= this.filter.attack ;
-                return hasLetters && selectedType1 && hasAttack;
+                const hasAttack = !this.filter.attack || pokemon.attack >= this.filter.attack;
+                const hasDefense = !this.filter.defense || pokemon.defense >= this.filter.defense;
+                return hasLetters && selectedType1 && hasAttack && hasDefense;
             });
         }
     }  

@@ -23,6 +23,12 @@
             <input type="number"
                 v-model.number="filter.attack">
         </label>
+
+        <label>
+            Defense
+            <input type="number"
+                v-model.number="filter.defense">
+        </label>
     </header>
 </template>
 import pokemonArray from '../pokedex.js'
