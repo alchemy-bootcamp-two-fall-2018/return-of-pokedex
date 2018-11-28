@@ -1,5 +1,6 @@
 <template>
     <header>
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
         <label>
             Type:
             <select v-model="filter.type">
@@ -45,8 +46,15 @@ export default {
 
 <style>
     header {
-        padding: 10px;
-        background: steelblue;
-        color: white;
+        padding:25px;
+        background:brown; 
+        text-align: center;  
+        font-family: 'VT323', monospace;
+        font-size: 40px;
+ 
     }
+
+
+
+
 </style>
