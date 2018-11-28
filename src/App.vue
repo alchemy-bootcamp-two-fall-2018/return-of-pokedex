@@ -20,6 +20,7 @@ export default {
             pokemons,
         
             filter: {
+                name:'', 
                 type: '',
                 ability: ''
             }
@@ -52,7 +53,8 @@ export default {
             return this.pokemons.filter(pokemon => { 
                 const hasType = !this.filter.type || pokemon.type_1 === this.filter.type;
                 const hasAbility = !this.filter.ability || pokemon.ability_1 === this.filter.ability;
-                return hasType && hasAbility; 
+                const hasName = !this.filter.name || pokemon.pokemon.includes(this.filter.name);  
+                return hasType && hasAbility && hasName; 
             }); 
         }
     }

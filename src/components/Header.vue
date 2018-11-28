@@ -2,7 +2,7 @@
     <header>
         <label>
             Name:
-            <input type="text">
+            <input type="text" v-model="filter.name">
         </label>
         <label> 
             Type: 
@@ -36,7 +36,7 @@ export default {
     props: {
         filter: Object,
         types: Array,
-        abilities: Array
+        abilities: Array, 
     }
 }; 
 </script>
