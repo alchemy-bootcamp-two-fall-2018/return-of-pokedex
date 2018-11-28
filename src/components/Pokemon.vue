@@ -1,6 +1,6 @@
 <template>
-  <li>
-    <img v-bind:src="pokemon.url_image" />
+  <li class="card">
+    <img v-bind:src="pokemon.url_image" class="side" />
     <div class="info" v-bind:style="{ color: pokemon.color_1 }">
       <h3 class="pokemon-name">{{ pokemon.pokemon }}</h3>
       <p>Type 1: {{ pokemon.type_1 }}</p>
@@ -23,7 +23,26 @@ export default {
     .pokemon-name {
         text-transform: capitalize;
     }
-    body {
-        background: #F0EAD6
+    .card {
+       background: #001f3f; 
+       transform-style: preserve-3d;
+       transition: all 1s ease-in-out;
+       position: relative;
+    }
+    .card:hover {
+        transform: rotateY(180deg);
+    }
+    .card .side {
+        backface-visibility: hidden;
+    }
+    .card .info {
+        transform: rotateY(180deg);
+    }
+    .info {
+        justify-content: center;
+        position: absolute;
+        top: -5px;
+        right: 40px;
+        
     }
 </style>

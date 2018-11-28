@@ -85,8 +85,8 @@ header {
     margin: 40px;
 }
 img {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
