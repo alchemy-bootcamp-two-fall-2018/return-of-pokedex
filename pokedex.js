@@ -25632,3 +25632,4 @@ export default [
         'pokedex': 'http://www.pokemon.com/us/pokedex/volcanion'
     }
 ];
+

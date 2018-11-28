@@ -2,6 +2,7 @@
   <div id="app">
     <Header
       v-bind:filter="filter"
+      v-bind:types="pokemonTypes"
     />
     <PokemonsList v-bind:pokemons="filteredPokemon"/>
   </div>
@@ -17,7 +18,8 @@ export default {
         return {
             pokemons: PokemonsArray,
             filter: {
-                name: ''
+                name: '',
+                type: ''
             }
             
         };
@@ -27,10 +29,20 @@ export default {
         Header
     },
     computed: {
+        pokemonTypes() {
+            const types = [];
+            this.pokemons.forEach(pokemon => {
+                if(!types.includes(pokemon.type_1)) {
+                    types.push(pokemon.type_1);
+                }
+            });
+            return types;
+        },
         filteredPokemon() {
             return this.pokemons.filter(pokemon => {
                 const hasLetters = !this.filter.name || pokemon.pokemon.includes(this.filter.name);
-                return hasLetters;
+                const selectedType1 = !this.filter.type || pokemon.type_1 === this.filter.type || pokemon.type_2 === this.filter.type;
+                return hasLetters && selectedType1;
             });
         }
     }  
