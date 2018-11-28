@@ -41,7 +41,8 @@ export default {
     filteredPokemon() {
       return this.pokemons.filter(pokemon => {
         const hasType = !this.filter.type || pokemon.type_1 === this.filter.type || pokemon.type_2 === this.filter.type;
-        return hasType;
+        const hasAttack = !this.filter.attack || pokemon.attack >= this.filter.attack;
+        return hasType && hasAttack;
       });
     },
     // sortedPokemon() {
