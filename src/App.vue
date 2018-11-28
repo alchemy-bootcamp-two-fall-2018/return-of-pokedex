@@ -4,7 +4,7 @@
         v-bind:types="pokemonTypes"
         v-bind:filter="filter"/>
 
-    <Pokedex v-bind:pokedex="pokedex"/>
+    <Pokedex v-bind:pokedex="filteredPokedex"/>
   </div>
 </template>
 
