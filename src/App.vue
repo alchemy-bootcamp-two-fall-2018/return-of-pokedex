@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-
+<!-- creates place for the header component to be render and gives aka "binds" the filter method to the component -->
     <Header
-    v-bind:filter="filter"/>
+    v-bind:filter="filter"
+    />
 
 
     <Pokemons v-bind:pokemons="filtered"/>
@@ -21,7 +22,10 @@ export default {
         return {
             pokemons: PokemonApi.getPokemon(), 
             filter: {
-                name:''
+                name:'',
+                type_1:'',
+                attack:'',
+                defense:''
             }
         };
     },
@@ -33,7 +37,12 @@ export default {
         filtered(){
             return this.pokemons.filter(pokemon => {
                 const hasName = !this.filter.name || pokemon.pokemon.includes(this.filter.name);
-                return hasName;
+                const hasType = !this.filter.type_1 || pokemon.type_1.includes(this.filter.type_1);
+                const hasAttack = !this.filter.attack || pokemon.attack >= this.filter.attack;
+                const hasDefense = !this.filter.defense || pokemon.defense >= this.filter.defense;
+
+
+                return hasName && hasType && hasAttack && hasDefense;
             });
         }
     }
