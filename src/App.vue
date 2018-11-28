@@ -1,25 +1,40 @@
 <template>
   <div id="app">
-    <Header/>
+    <!-- <Header
+        v-bind:sort="sort"
+        v-bind:filter="filter"/> -->
+
     <Pokedex v-bind:pokedex="pokedex"/>
   </div>
 </template>
 
 <script>
 import pokedex from '../pokedex.js';
-import Header from './components/Header.vue';
+// import Header from './components/Header.vue';
 import Pokedex from './components/Pokedex.vue';
 
 export default {
     data() {
         return {
-            pokedex
-            // pokedex: pokedex.getPokedex(),
+            pokedex: pokedex,
+            filter: {
+                type: '',
+            },
+            sort: {
+                field: 'pokemon',
+            }
         };
     },
     components: {
-        Header,
+        // Header,
         Pokedex
+    },
+    filteredPokedex() {
+        return this.pokedex.filter(pokemon => {
+            const hasType = !this.filter.type || pokemon.type_1 === this.filter.type;
+            return hasType;
+        });
+    
     }
 };  
 
