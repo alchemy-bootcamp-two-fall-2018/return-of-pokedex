@@ -1,0 +1,22 @@
+<template>
+    <li>
+        <img v-bind:src="pokemon.url_image" />
+        <div class="info">
+            <h3>{{ pokemon.pokemon }}</h3>
+            <p>Type 1: {{ pokemon.type_1 }}</p>
+            <p>Attack: {{ pokemon.attack }}</p>
+        </div>
+    </li>
+</template>
+
+<script>
+export default {
+    props: {
+        pokemon: Object
+    }
+};
+</script>
+
+<style scoped>
+
+</style>
