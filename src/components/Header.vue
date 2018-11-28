@@ -28,6 +28,15 @@
                 step="10"
             >
         </label>
+
+        <label>
+            Sort By:
+            <select v-model="sort.field">
+                <option value="pokemon">Name</option>
+                <option value="attack">Attack</option>
+                <option value="defense">Defense</option>
+            </select>
+        </label>
     </header>
 </template>
 
@@ -35,7 +44,8 @@
 export default {
     props: {
         filter: Object,
-        types: Array
+        types: Array,
+        sort: Object
     }
 };
 </script>

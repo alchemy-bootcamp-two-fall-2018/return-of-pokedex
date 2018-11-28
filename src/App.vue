@@ -2,8 +2,9 @@
   <div id="app">
     <Header 
         v-bind:types="pokemonTypes"
-        v-bind:filter="filter"/>
-    <Pokedex v-bind:pokemons="filteredPokemons"/>
+        v-bind:filter="filter"
+        v-bind:sort="sort"/>
+    <Pokedex v-bind:pokemons="sortedPokemons"/>
   </div>
 </template>
 
@@ -21,6 +22,9 @@ export default {
                 attack: 0,
                 defense: 0,
                 type: ''
+            },
+            sort: {
+                field: 'name'
             }
         };
     },
@@ -48,8 +52,22 @@ export default {
                 const hasType = !this.filter.type || pokemon.type_1 === this.filter.type || pokemon.type_2 === this.filter.type;
                 return hasAttack && hasDefense && hasType;
             })
+        },
+        sortedPokemons() {
+            const field = this.sort.field;
+            
+            return this.filteredPokemons.slice().sort((a, b) => {
+                if(a[field] > b[field]) {
+                    return 1
+                }
+
+                if(a[field] < b[field]) {
+                    return -1
+                }
+
+                return 0;
+            });
         }
-        
     }
 };
 </script>
