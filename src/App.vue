@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <header
+    <Header
       v-bind:sort="sort"
       v-bind:filter="filter"/>
     <Pokemons v-bind:pokemons="sortedPokemons"/>
@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import pokedex from '../pokedex.js';
+import pokedex from './services/pokedex.js';
 import Pokemons from './components/Pokemons.vue';
 import Header from './components/Header.vue';
 
@@ -21,6 +21,9 @@ export default {
                 type2: '',
                 attack: 0
             },
+            sort: {
+                field: 'pokemon',
+            }
         };
     },
     components: {
@@ -31,20 +34,26 @@ export default {
         filteredPokemons() {
             return this.pokemons.filter(pokemon => {
                 const hasType1 = pokemon.type1 === this.filter.type1;
-                const hasType2 = pokemon.type2 === this.filter.type1;
-                const hasAttack = pokemon.attack === this.filter.attack;
+                const hasType2 = pokemon.type2 === this.filter.type2;
+                const hasAttack = pokemon.attack >= this.filter.attack;
                 return hasType1 && hasType2 && hasAttack;
             });
         },
+        // pokemon is confusingly in pokemon.js in place of "name"
         sortedPokemons() {
-            const field = this.sort.field;
+            const field = this.sort.pokemon;
             return this.filteredPokemons.slice().sort((a, b) => {
                 if(a[field] > b[field]) {
                     return 1;
                 }
+                if(a[field] < b[field]) {
+                    return -1;
+                }
+
+                return 0;
             });
-        },
-    },
+        }
+    }
 };
 
 </script>

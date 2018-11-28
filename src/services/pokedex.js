@@ -25633,7 +25633,7 @@ const pokedex = [
     }
 ];
 export default {
-    getPokedex() {
+    getPokemons() {
         return pokedex;
     }
 };

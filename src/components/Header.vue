@@ -22,7 +22,7 @@
 
         <label>
             Sort By Name:
-            <input type="checkbox" v-model.number="sort.field.name">
+            <input type="checkbox" v-model.number="sort.field.pokemon">
 
         </label>
     </header>
@@ -43,5 +43,6 @@ header {
     background: greenyellow;
     color: black;
     padding: 10px;
+    display: flex;
 }
 </style>
