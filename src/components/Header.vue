@@ -2,8 +2,6 @@
 
   <header>
     <h1>{{ msg }}</h1>
-    <h1>{{filter}}</h1>
-    <h1>{{types}}</h1>
       <label>
         Name:
         <input type="text" v-model="filter.pokemon">
@@ -73,6 +71,10 @@ export default {
 <style scoped>
   h3 {
     margin: 40px 0 0;
+  }
+
+  h1 {
+    padding-bottom: 40px;
   }
 
   ul {
