@@ -6,13 +6,13 @@
         <label>
             Type 1:
             <input type="text"
-                v-model="filter.type-1">
+                v-model.lazy="filter.type1">
         </label>
 
         <label>
             Type 2:
             <input type="text"
-                v-model="filter.type-2">
+                v-model.lazy="filter.type1">
         </label>
         <label>
             Attack:
@@ -22,7 +22,7 @@
 
         <label>
             Sort By Name:
-            <input type="checkbox" v-model.number="sort.field">
+            <input type="checkbox" v-model.number="sort.field.name">
 
         </label>
     </header>
