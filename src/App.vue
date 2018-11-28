@@ -31,20 +31,27 @@ export default {
     },
     computed: {
         pokemonTypes() {
+            const names = [];
+            this.pokedex.forEach(pokemon => {
+                if(!names.includes(pokemon.pokemon)) {
+                    names.push(pokemon.pokemon);
+                }
+            });
+
             const types = [];
             this.pokedex.forEach(pokemon => {
                 if(!types.includes(pokemon.type_1)) {
                     types.push(pokemon.type_1);
                 }
             });
-            console.log(types);
             return types;
         },
         filteredPokedex() {
             return this.pokedex.filter(pokemon => {
+                const hasName = !this.filter.type || pokemon.pokemon === this.filter.name;
                 const hasType = !this.filter.type || pokemon.type_1 === this.filter.type;
-                return hasType;
-            });
+                return hasName && hasType;
+            }),
         }
     }
 };  
