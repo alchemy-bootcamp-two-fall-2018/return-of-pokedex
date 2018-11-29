@@ -6,7 +6,31 @@
             getPokemons() {
                 return pokedex
 
-2. src\components\Pokemon.vue:
+5. App.vue:
+
+        ***<Pokemons v-bind:pokemons="pokemons"/>*** </br>
+        
+        filter type1, filter type2, filter attack
+        sort field 'pokemon'
+        components: 
+            Header, Pokemons
+        computed:
+            filteredPokemons() {
+                return this.pokemons.filter(pokemon => {
+                    const hasType1 = pokemon.type_1 === this.filter.type1;
+                    const hasType2 = pokemon.type_2 === this.filter.type2;
+                    const hasAttack = pokemon.attack >= this.filter.attack;
+                    return hasType1 && hasType2 && hasAttack;
+
+            sortedPokemons() {
+                const field = this.sort.pokemon;
+            return this.filteredPokemons.slice().sort((a, b) => {
+                if(a[field] > b[field]) {
+                    return 1;
+                }
+                if(a[field] < b[field]) {
+
+?. src\components\Pokemon.vue:  changed
          <p>Type 1: {{ pokemon.type_1 }}</p>
          <p>Attack: {{ pokemon.attack }}</p>
           export default {
@@ -30,30 +54,6 @@
         filter.type2
         filter.attack
         sort.field.pokemon
-
-5. App.vue:
-        filter type1
-        filter type2
-        filter attack
-        sort field 'pokemon'
-        components: 
-            Header
-            Pokemons
-        computed:
-            filteredPokemons() {
-                return this.pokemons.filter(pokemon => {
-                    const hasType1 = pokemon.type_1 === this.filter.type1;
-                    const hasType2 = pokemon.type_2 === this.filter.type2;
-                    const hasAttack = pokemon.attack >= this.filter.attack;
-                    return hasType1 && hasType2 && hasAttack;
-
-            sortedPokemons() {
-                const field = this.sort.pokemon;
-            return this.filteredPokemons.slice().sort((a, b) => {
-                if(a[field] > b[field]) {
-                    return 1;
-                }
-                if(a[field] < b[field]) {
 
       **References to "pokemon" vs "pokedex":** </br>
 pokedex.js list - getPokemons() returns pokedex
