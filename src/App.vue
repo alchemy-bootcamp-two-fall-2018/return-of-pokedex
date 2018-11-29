@@ -33,8 +33,8 @@ export default {
     computed: {
         filteredPokemons() {
             return this.pokemons.filter(pokemon => {
-                const hasType1 = pokemon.type1 === this.filter.type1;
-                const hasType2 = pokemon.type2 === this.filter.type2;
+                const hasType1 = pokemon.type_1 === this.filter.type1;
+                const hasType2 = pokemon.type_2 === this.filter.type2;
                 const hasAttack = pokemon.attack >= this.filter.attack;
                 return hasType1 && hasType2 && hasAttack;
             });
