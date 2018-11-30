@@ -9,6 +9,7 @@
             v-for="type in types"
             v-bind:key="type"
             v-bind:value="type">
+            {{type}}
           </option>
         </select>
       </label>

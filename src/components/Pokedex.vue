@@ -20,5 +20,9 @@ export default {
 </script>
 
 <style>
-
+ul {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
+  list-style-type: none;
+}
 </style>
