@@ -1,9 +1,9 @@
 <template>
-    <ul>
-        <Pokemon v-for="pokemon in pokemons"
-            v-bind:key="pokemon.name"
-            v-bind:pokemon="pokemon"/>
-    </ul>
+  <ul>
+    <Pokemon v-for="pokemon in pokemons"
+      v-bind:key="pokemon.pokemon"
+      v-bind:pokemon="pokemon"/>
+  </ul>
 </template>
 
 <script>

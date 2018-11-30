@@ -2,16 +2,16 @@
   <div id="app">
     <Header
       v-bind:types="pokemonTypes"
-      v-bind:filter="filter"/>
-      <!-- v-bind:sort="sort"/> -->
-    <Pokemons v-bind:pokemons="sortedPokemons"/>
+      v-bind:filter="filter"
+      v-bind:sort="sort"/>
+    <Pokedex v-bind:pokemons="sortedPokemons"/>
   </div>
 </template>
 
 <script>
-import pokemonsApi from './services/pokemons-api';
-import Pokemons from './components/Pokemons';
-import Header from './components/Header';
+import pokemonsApi from './services/pokemonsApi.js';
+import Pokedex from './components/Pokedex.vue';
+import Header from './components/Header.vue';
 
 export default {
   data() {
@@ -19,13 +19,19 @@ export default {
       pokemons: pokemonsApi.getPokemons(),
 
       filter: {
+        attack: 0,
+        defense: 0,
         type: ''
+      },
+      sort: {
+        field: 'name',
+        direction: 1
       }
     };
   },
   components: {
     Header,
-    Pokemons
+    Pokedex
   },
   computed: {
     pokemonTypes() {
@@ -42,10 +48,25 @@ export default {
     },
     filteredPokemons() {
       return this.pokemons.filter(pokemon => {
+        const hasAttack = !this.filter.attack || pokemon.attack >= this.filter.attack;
+        const hasDefense = !this.filter.defense || pokemon.defense >= this.filter.defense;
         const hasType = !this.filter.type || pokemon.type_1 === this.filter.type || pokemon.type_2 === this.filter.type;
-        return hasType;
+        return hasAttack && hasDefense && hasType;
       });
-    }
+    },
+    sortedPokemons() {
+      const field = this.sort.field;
+      const direction = this.sort.direction;
+      return this.filteredPokemons.slice().sort((a, b) => {
+        if(a[field] > b[field]) {
+          return 1 * direction;
+        }
+        if(a[field] < b[field]) {
+          return -1 * direction;
+        }
+        return 0;
+      });
+    }  
   }
 };
 </script>
