@@ -19,7 +19,7 @@ export default {
     props: {
         pokemon: Object
     }
-}
+};
 </script>
 
 <style>

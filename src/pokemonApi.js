@@ -1,5 +1,5 @@
 import pokemon from '../pokedex.js';
- export default {
+export default {
     getAll() {
         return pokemon;
     }

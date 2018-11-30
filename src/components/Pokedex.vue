@@ -5,9 +5,9 @@
         v-bind:pokemon="pokemon"/>
     </ul>
 </template>
- <script>
+<script>
 import Pokemon from './Pokemon.vue';
- export default {
+export default {
     props: {
         pokemons: Array
     },
