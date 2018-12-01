@@ -24,7 +24,7 @@
 
         <label>
             Types:
-            <select v-model="filter.type">
+            <select v-model="filter.types">
                 <option value="">All</option>
                 <option 
                     v-for="type in types"

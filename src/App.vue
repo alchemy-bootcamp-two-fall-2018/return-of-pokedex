@@ -44,6 +44,9 @@ export default {
                 if(!types.includes(pokemon.type_1)) {
                     types.push(pokemon.type_1);
                 }
+                if(!types.includes(pokemon.type_2)) {
+                    types.push(pokemon.type_2);
+                }
             });
             return types;
         },
@@ -53,10 +56,10 @@ export default {
                 const hasName = !this.filter.pokemon || pokemon.pokemon.includes(this.filter.pokemon);
                 const hasWeight = !this.filter.weight || pokemon.weight >= this.filter.weight;
                 const hasHeight = !this.filter.height || pokemon.height >= this.filter.height;
-                const hasTypes = !this.filter.type_1 || pokemon.type_1.includes(this.filter.pokemon);
+                const hasTypes = !this.filter.types || pokemon.types.includes(this.filter.types);
                 return hasName && hasWeight && hasHeight && hasTypes;
             });
-        },
+        }
 
 
 
