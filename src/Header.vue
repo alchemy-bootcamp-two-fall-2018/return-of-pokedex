@@ -3,9 +3,7 @@
         
         <label>
             Name:
-            <input 
-                v-model="filter.pokemon"
-            >      
+            <input v-model="filter.pokemon">      
         </label>
         
         <label>
@@ -26,7 +24,7 @@
 
         <label>
             Types:
-            <select v-model="filter.type_1">
+            <select v-model="filter.type">
                 <option value="">All</option>
                 <option 
                     v-for="type in types"
@@ -44,7 +42,8 @@
 
 export default {
     props: {
-        filter: Object
+        filter: Object,
+        types: Array
     }
 };
 
