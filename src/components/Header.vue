@@ -1,6 +1,7 @@
 <template>
     <header>
         <h1>POKEDEX</h1>
+        <img scr="http://pngimg.com/uploads/pokemon_logo/pokemon_logo_PNG14.png">
         <!--<img src="http://www.pokestadium.com/sprites/black-white/animated/shiny/pichu.gif">-->
         <label>
             Name:
@@ -55,10 +56,10 @@ background: black;
 color: white;
 padding: 10px;
 }
-img{
-    bottom:0px;
+img {
+    ;
     
-    width:20%;
+    width:100%;
 }
 
 </style>
