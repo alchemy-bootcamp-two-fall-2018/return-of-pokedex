@@ -16,6 +16,20 @@
           </option>
         </select>
       </label>
+       <label>
+        Type Two:
+        <select v-model="filter.type_2">
+          <option value="">Any</option>
+          <option v-for="type in types" v-bind:key="type" v-bind:value="type">
+            {{type}}
+          </option>
+        </select>
+      </label>
+       <label>
+            Attack
+            <input type="number"
+                v-model.number="filter.attack" min="30" step="5">
+        </label>
     </header>
 </template>
 

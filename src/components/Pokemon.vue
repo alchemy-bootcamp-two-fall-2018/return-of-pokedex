@@ -4,6 +4,8 @@
         <div class="info">
             <h3>{{pokemon.pokemon}}</h3>
             <p>Type One: {{pokemon.type_1}}</p>
+            <p>Type Two: {{pokemon.type_2}}</p>
+            <p>Attack: {{pokemon.attack}}</p>
           </div>  
       </li>
 
