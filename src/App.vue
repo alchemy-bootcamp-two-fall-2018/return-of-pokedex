@@ -45,10 +45,11 @@ export default {
     },
     filteredPokemons() {
       return this.pokemons.filter(pokemon => {
+        const hasName = !this.filter.pokemon || pokemon.pokemon >= this.filter.pokemon;
         const hasType_1 = !this.filter.type_1 || pokemon.type_1 === this.filter.type_1;
         
         
-        return hasType_1;
+        return hasName && hasType_1;
       });
     },
     sortedPokemon() {

@@ -3,6 +3,11 @@
         <h1>POKEDEX</h1>
         <!--<img src="http://www.pokestadium.com/sprites/black-white/animated/shiny/pichu.gif">-->
         <label>
+            Name:
+            <input type="text"
+            v-model="filter.pokemon" >
+        </label>
+        <label>
         Type One:
         <select v-model="filter.type_1">
           <option value="">Any</option>
@@ -19,7 +24,8 @@ export default {
 
   props: {
     filter: Object,
-    types: Array
+    types: Array,
+    
   }
 };
 </script>
