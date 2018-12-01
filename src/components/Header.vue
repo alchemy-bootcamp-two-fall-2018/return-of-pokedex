@@ -3,7 +3,7 @@
         <h1>POKEDEX</h1>
         <!--<img src="http://www.pokestadium.com/sprites/black-white/animated/shiny/pichu.gif">-->
         <label>
-        Type 1:
+        Type One:
         <select v-model="filter.type_1">
           <option value="">Any</option>
           <option v-for="type in types" v-bind:key="type" v-bind:value="type">
