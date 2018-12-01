@@ -30,6 +30,11 @@
             <input type="number"
                 v-model.number="filter.attack" min="30" step="5">
         </label>
+        <label>
+            Defense
+            <input type="number"
+                v-model.number="filter.defense" min="30" step="5">
+        </label>
     </header>
 </template>
 

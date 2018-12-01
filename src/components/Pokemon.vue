@@ -6,6 +6,7 @@
             <p>Type One: {{pokemon.type_1}}</p>
             <p>Type Two: {{pokemon.type_2}}</p>
             <p>Attack: {{pokemon.attack}}</p>
+            <p>Defense: {{pokemon.defense}}</p>
           </div>  
       </li>
 
