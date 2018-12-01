@@ -40,7 +40,7 @@ img{
 
 }
 .info{
-  position: absolute; 
+  position: relative; 
   bottom: 0;
   width: 100%;
   background: rgba(255, 255, 0.8);
