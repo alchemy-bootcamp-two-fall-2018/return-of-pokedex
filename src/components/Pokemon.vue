@@ -1,5 +1,5 @@
 <template>
-    <li>
+    <li class="card">
         <img v-bind:src="pokemon.url_image" />
         <div class="info">
             <h3>{{pokemon.pokemon}}</h3>
@@ -25,21 +25,22 @@ export default {
 h3,p {
     margin: 0;
 }
-li{
-  position:relative;
+li .card {
+  position: absolute;
+  border: 3px solid aquamarine; 
   /*height: 300px;*/
 }
-img{
+.card img {
   /*position:absolute;*/
   top:0;
   left:0;
-  width:100px;
-  height:100px;
+  width:100%;
+  height:100%;
   object-fit: cover;
   z-index:-1;
 
 }
-.info{
+.info {
   position: relative; 
   bottom: 0;
   width: 100%;
