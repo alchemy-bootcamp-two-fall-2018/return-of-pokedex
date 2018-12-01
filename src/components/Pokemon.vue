@@ -3,6 +3,7 @@
         <img v-bind:src="pokemon.url_image" />
         <div class="info">
             <h3>{{pokemon.pokemon}}</h3>
+            <p>{{pokemon.type_1}}</p>
           </div>  
       </li>
 

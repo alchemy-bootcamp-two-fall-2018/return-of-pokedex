@@ -1,11 +1,11 @@
-import characters from '../assets/pokedex';
+import pokemons from '../assets/pokedex';
 
 
 const types = [];
 //const seen = {};
 
-characters.forEach(character => {
-  const type = character.type_1;
+pokemons.forEach(pokemon => {
+  const type = pokemon.type;
   if(types.includes(type)) {
     return;
   }
@@ -13,10 +13,10 @@ characters.forEach(character => {
 });
 
 export default{
-  getCharacters() {
-    return characters;
+  getpokemons() {
+    return pokemons;
   },
   getTypes(){
-    return types;
+    return;
   }
 };

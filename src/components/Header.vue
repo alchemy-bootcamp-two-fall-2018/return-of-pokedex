@@ -3,10 +3,14 @@
         <h1>POKEDEX</h1>
         <!--<img src="http://www.pokestadium.com/sprites/black-white/animated/shiny/pichu.gif">-->
         <label>
-            Type:   
-            <input
-            v-model="filter.type" />
-        </label>
+        Type 1:
+        <select v-model="filter.type_1">
+          <option value="">Any</option>
+          <option v-for="type in types" v-bind:key="type" v-bind:value="type">
+            {{type}}
+          </option>
+        </select>
+      </label>
     </header>
 </template>
 
@@ -14,7 +18,8 @@
 export default {
 
   props: {
-    filter: Object
+    filter: Object,
+    types: Array
   }
 };
 </script>

@@ -1,20 +1,20 @@
 <template>
     <ul>
-        <Character v-for="character in characters"
-         v-bind:key="character.id"
-         v-bind:pokemon="character"/>
+        <Pokemon v-for="pokemon in pokemons"
+         v-bind:key="pokemon.id"
+         v-bind:pokemon="pokemon"/>
   </ul>
 </template>
 
 <script>
-import Character from './Character.vue';
+import Pokemon from './Pokemon.vue';
 
 export default {
   props: {
-    characters: Array
+    pokemons: Array
   },
   components: {
-    Character
+    Pokemon
   }
 };
 </script>

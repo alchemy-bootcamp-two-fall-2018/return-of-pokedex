@@ -2,22 +2,22 @@
   <div id="app">
       <Header 
       v-bind:filter="filter"
-      v-bind:types="types"/>
-      <Characters
-      v-bind:characters="characters"/>
+      v-bind:types="pokemonTypes"/>
+      <Pokemons
+      v-bind:pokemons="pokemons"/>
   </div>
 </template>
 
 <script>
 import pokemonApi from './services/pokemonApi.js';
-import Characters from './components/Characters';
+import Pokemons from './components/Pokemons';
 import Header from './components/Header';
 
 export default {
   data() {
     return {
       types: pokemonApi.getTypes(),
-      characters: pokemonApi.getCharacters(),
+      pokemons: pokemonApi.getpokemons(),
       filter:{
         type: ''
       }
@@ -25,16 +25,25 @@ export default {
   },
   components: {
     Header,
-    Characters 
+    Pokemons 
     
   },
   computed: {
-    filteredCharacters() {
-      return this.character.filter(character => {
-        const hasType = !this.filter.type || character.type >= this.filter.type;
+    pokemonTypes() {
+      const types = [];
+      this.pokemons.forEach(pokemon => {
+        if(!types.includes(pokemon.type_1)) {
+          types.push(pokemon.type_1);
+        }
+      });
+      return types;
+    },
+    filteredpokemons() {
+      return this.pokemons.filter(pokemon => {
+        const hasType_1 = !this.filter.type_1 || pokemon.type_1 === this.filter.type_1;
         
         
-        return hasType;
+        return hasType_1;
       });
     }
   }
