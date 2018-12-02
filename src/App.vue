@@ -3,13 +3,12 @@
         <Header :filter="filter" />
         {{filter}}
         <Pokethem :pokethem="filteredPokethem" />
-        {{pokethem}}
     </div>
 </template> 
 
 <script>
 import pokethemApi from './services/pokethemApi.js';
-// import Pokethem from './components/Pokethem';
+import Pokethem from './components/Pokethem';
 import Header from './components/Header';
 
 export default {
@@ -23,7 +22,7 @@ export default {
     },
     components: {
         Header,
-        // Pokethem
+        Pokethem
     },
     computed: {
         filteredPokethem() {
