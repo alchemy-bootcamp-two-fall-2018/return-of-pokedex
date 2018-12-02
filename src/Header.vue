@@ -7,18 +7,24 @@
         </label>
         
         <label>
-            Weight:
+            Minimum Weight:
             <input type = "number"
                 v-model.number="filter.weight"
-                step="5"
+                min="1"
+                step="1"
+                oninput="validity.valid||(value='')"
+                onfocus="this.value=''"
             >
         </label>
 
         <label>
-            Height: 
+            Minimum Height: 
             <input type = "number"
-            v-model.number="filter.height"
-            step="5"
+                v-model.number="filter.height"
+                min="1"
+                step="1"
+                oninput="validity.valid||(value='')"
+                onfocus="this.value=''"
             >
         </label>
 
