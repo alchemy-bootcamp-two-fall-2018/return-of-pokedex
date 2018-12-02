@@ -3,23 +3,17 @@
     <Header
         v-bind:filter="filter"
         v-bind:sort="sort"
-        v-bind:types="pokemonTypes"
-    />
-
+        v-bind:types="pokemonTypes"/>
     <Pokemons v-bind:pokemons="sortedPokemons"/>    <!--used to be filteredPokemons-->
-
   </div>
 </template>
 
 <script>
-import pokemons from '../pokedexApi.js';
-import Pokemons from './Pokemons.vue';
-import Header from './Header.vue';
-//each page or component needs to be added here if not on this page 
-
+import pokemons from './services/pokedexApi.js';
+import Pokemons from './components/Pokemons.vue';
+import Header from './components/Header.vue';
 
 export default {
-    name: 'app',
     data() {
         return {
             pokemons: pokemons.getPokemons(),
@@ -30,7 +24,7 @@ export default {
                 type: '',
             },
             sort: {
-                field: 'pokemon',        //should this be name or pokemon
+                field: 'pokemon',     
                 direction: 1
             }
         };
@@ -60,8 +54,6 @@ export default {
                 const hasName = !this.filter.pokemon || pokemon.pokemon.includes(this.filter.pokemon);
                 const hasWeight = !this.filter.weight || pokemon.weight >= this.filter.weight;
                 const hasHeight = !this.filter.height || pokemon.height >= this.filter.height;
-                // const hasTypes = !this.filter.type_1 || pokemon.type_1.includes(this.filter.type_1) 
-                //             || !this.filter.type_2 || pokemon.type_2.includes(this.filter.type_2);
                 const hasTypes = !this.filter.type || pokemon.type_1 === this.filter.type || pokemon.type_2 === this.filter.type;
                 return hasName && hasWeight && hasHeight && hasTypes;
             });
@@ -84,9 +76,6 @@ export default {
     }
 };
 </script>
-
-
-
 
 <style>
 

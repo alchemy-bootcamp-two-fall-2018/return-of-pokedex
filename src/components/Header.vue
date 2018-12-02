@@ -1,12 +1,13 @@
 <template>
     <header>
-        <div class="filter">
+        <h1>Poko-Filt-a-Rolo-Dex</h1>
+        <fieldset class="filter">
             <label>
                 Name:
                 <input v-model="filter.pokemon">      
             </label>
             <label>
-                Minimum Weight:
+                Min Weight:
                 <input type = "number"
                     v-model.number="filter.weight"
                     min="1"
@@ -16,7 +17,7 @@
                 >
             </label>
             <label>
-                Minimum Height: 
+                Min Height: 
                 <input type = "number"
                     v-model.number="filter.height"
                     min="1"
@@ -37,7 +38,7 @@
                     </option>
                 </select>
             </label>
-        </div>
+        </fieldset>
         <div class="sorter">
             <label>
                 Sort By:
@@ -55,7 +56,6 @@
 </template>
 
 <script>
-
 export default {
     props: {
         filter: Object,
@@ -63,14 +63,24 @@ export default {
         sort: Object
     }
 };
-
 </script>
 
 <style scoped>
     header {
+        display: inline-block;
+        margin: auto;
         background: yellowgreen;
         color: purple;
         padding: 10px;
+        width: 100%;
+    }
+    h1 {
+        text-align: center;
+        font-size: 3em
     }
 
+    label {
+        display: block;
+        text-align: center
+    }; 
 </style>
