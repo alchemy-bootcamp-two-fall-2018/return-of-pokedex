@@ -1,12 +1,12 @@
 <template>
   <div id="app">
     <Header
-        v-bind:sort="sort"
         v-bind:filter="filter"
+        v-bind:sort="sort"
         v-bind:types="pokemonTypes"
     />
 
-    <Pokemons v-bind:pokemons="filteredPokemons"/>
+    <Pokemons v-bind:pokemons="sortedPokemons"/>    <!--used to be filteredPokemons-->
 
   </div>
 </template>
@@ -19,18 +19,18 @@ import Header from './Header.vue';
 
 
 export default {
-    
+    name: 'app',
     data() {
         return {
             pokemons: pokemons.getPokemons(),
             filter: {
-                weight: 0,
                 pokemon:'',
+                weight: 0,
                 height: 0,
                 type: '',
             },
             sort: {
-                field: 'name',        //should this be name or pokemon
+                field: 'pokemon',        //should this be name or pokemon
                 direction: 1
             }
         };
@@ -83,11 +83,6 @@ export default {
         }
     }
 };
-
-
-
-
-
 </script>
 
 

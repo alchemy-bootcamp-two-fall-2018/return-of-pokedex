@@ -37,12 +37,13 @@
                     </option>
                 </select>
             </label>
-        <!-- </div>
-        <div class="sorter"> -->
+        </div>
+        <div class="sorter">
             <label>
                 Sort By:
                 <select v-model="sort.field">
                     <option value="name">Name</option>
+                    <option value="weight">Weight</option>
                 </select>
                 <select v-model="sort.direction">
                     <option value="1">Ascending</option>
