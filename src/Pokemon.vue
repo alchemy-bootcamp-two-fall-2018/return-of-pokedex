@@ -1,24 +1,21 @@
 <template>
-     <li>
-         <img v-bind:src='pokemon.url_image'>
-         <div class="descriptions">
+    <li>
+        <img v-bind:src='pokemon.url_image'>
+        <div class="descriptions">
             <h3 class="name">{{ pokemon.pokemon}}</h3>
             <p>Weight: {{pokemon.weight}}</p>
             <p>Height: {{pokemon.height}}</p> 
             <p>Types: {{pokemon.type_1}}, {{pokemon.type_2}}</p>
-
-         </div>
-     </li>
+        </div>
+    </li>
 </template>
 
 <script>
-
 export default {
     props: {
         pokemon: Object
     }
 };
-
 </script>
 
 <style>
@@ -47,5 +44,4 @@ export default {
         border-radius: 15px;
         background-color: rgba(199, 216, 126, 0.4);
     }
-
 </style>

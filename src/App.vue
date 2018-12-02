@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Header
+        v-bind:sort="sort"
         v-bind:filter="filter"
         v-bind:types="pokemonTypes"
     />
@@ -22,12 +23,15 @@ export default {
     data() {
         return {
             pokemons: pokemons.getPokemons(),
-
             filter: {
                 weight: 0,
                 pokemon:'',
                 height: 0,
                 type: '',
+            },
+            sort: {
+                field: 'name',        //should this be name or pokemon
+                direction: 1
             }
         };
     },
@@ -61,13 +65,22 @@ export default {
                 const hasTypes = !this.filter.type || pokemon.type_1 === this.filter.type || pokemon.type_2 === this.filter.type;
                 return hasName && hasWeight && hasHeight && hasTypes;
             });
+        },
+
+        sortedPokemons() {
+            const field = this.sort.field;
+            const direction = this.sort.direction;
+
+            return this.filteredPokemons.slice().sort((a, b) => {
+                if(a[field] > b[field]) {
+                    return 1 * direction;
+                }
+                if(a[field] < b[field]) {
+                    return -1 * direction;
+                }
+                return 0;
+            });
         }
-
-
-
-
-
-
     }
 };
 
