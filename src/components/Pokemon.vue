@@ -1,9 +1,10 @@
 <template>
+  
   <li>
       <img v-bind:src="pokemon.url_image"/>
       <div class="info">
           <h3>{{ pokemon.pokemon}}</h3>
-          <p>type-1: {{ pokemon.type-1 }}</p>
+          <p>type-1: {{ pokemon.type_1 }}</p>
           <p>attack: {{ pokemon.attack }}</p>
           <p>defense: {{ pokemon.defense }}</p>
       </div>
@@ -22,15 +23,20 @@ export default {
 li {
   position: relative;
   height: 300px;
+  border: 1px solid black;
+  background-color:cadetblue;
+  text-shadow: 1px 1px 1px black;
 }
 img {
-  position:absolute;
+  /* position:absolute; */
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 200px;
+  height: 200px;
   z-index: -1;
   object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
 }
 .info {
   position:absolute;
