@@ -55,6 +55,7 @@ header {
 background: black;
 color: white;
 padding: 10px;
+height:400px;
 }
 img {
     ;
