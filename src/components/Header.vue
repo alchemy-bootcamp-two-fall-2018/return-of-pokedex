@@ -1,5 +1,6 @@
 <template>
   <header>
+    <h1>Return Of The Pokemons</h1>
     <label>
       Name:
       <input type="text" v-model="filter.name" >
@@ -24,6 +25,20 @@
       Defense:
       <input type="number" v-model.number="filter.defense" step="10" >
     </label>  
+    <label>
+            Sort by:
+            <select v-model="sort.field">
+                <option value="all"></option>
+                <option value="pokemon">Name</option>
+                <option value="type">Type 1</option>
+                <option value="attack">Attack</option>
+                <option value="defense">Defense</option>
+            </select>
+            <select v-model="sort.direction">
+                <option value="1">Ascending</option>
+                <option value="-1">Descending</option>
+            </select>
+        </label>
   </header>    
 </template>
 
@@ -33,7 +48,8 @@ export default {
    
     props: {
         filter:Object,
-        types: Array
+        types: Array,
+        sort: Object
     }
 };
 </script>
