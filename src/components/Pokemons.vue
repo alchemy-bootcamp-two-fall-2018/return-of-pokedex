@@ -28,7 +28,8 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  grid-row-gap: 200px;
+  grid-row-gap: 3px;
+  background-color: silver;
 
 }
       
