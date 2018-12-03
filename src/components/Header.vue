@@ -58,8 +58,6 @@ padding: 10px;
 height:400px;
 }
 img {
-    ;
-    
     width:100%;
 }
 
