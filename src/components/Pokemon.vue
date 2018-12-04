@@ -3,9 +3,9 @@
         <img :src="pokemon.url_image" />
         <div class="info">
             <h3>{{ pokemon.pokemon }}</h3>
-            <p></p>
-            <p>Attack: {{ pokemon.attack }}</p>
-            <p></p>
+            <p>Type 1: {{ pokemon.type_1 }}</p>
+            <p>Attack Pts: {{ pokemon.attack }}</p>
+            <p>Defense Pts: {{ pokemon.defense }}</p>
         </div>
     </li>
 </template>
@@ -40,5 +40,6 @@ img {
 }
 h3, p {
     margin: 0;
+    font-size: 13px;
 }
 </style>
