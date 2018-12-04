@@ -2,22 +2,13 @@
     <header>
         <label>
             <strong>Name: </strong>
-            <select v-model="filter.pokemon">
-                <option value="">Any</option>
-                <option
-                    v-for="pokemon in types"
-                    :key="pokemon"
-                    :value="pokemon">
-                    {{pokemon}}
-                </option>
-            </select>
-
+            <input type="text" v-model="filter.pokemon">
         </label>
 
         <label>
             <strong>Type 1: </strong>
             <select v-model="filter.type_1">
-                <option value="">Any</option>
+                <option value="">All</option>
                 <option
                     v-for="type1 in types"
                     :key="type1"
@@ -41,7 +32,7 @@
         <label>
             Sort By:
             <select v-model="sort.field">
-                <option value="name">Pokemon Name</option>
+                <!-- <option value="name">Pokemon Name</option> -->
                 <option value="type">Type 1</option>
                 <option value="attack">Attack Points</option>
                 <option value="defense">Defense Points</option>

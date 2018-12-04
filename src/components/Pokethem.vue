@@ -1,6 +1,7 @@
 <template>
     <ul>
-        <Pokemon v-for="pokemon in pokethem"
+        <Pokemon
+            v-for="pokemon in pokethem"
             :key="pokemon.pokemon"
             :pokemon="pokemon"/>
     </ul>
@@ -14,7 +15,6 @@ export default {
         pokethem: Array
     },
     components: {
-        // Pokethem
         Pokemon
     }
 };

@@ -12,7 +12,6 @@ const types = [];
 
 export default {
     getPokethem() {
-        console.log('hi');
         return pokedex;
     },
     getTypes() {
