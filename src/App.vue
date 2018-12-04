@@ -57,10 +57,10 @@ export default {
             const field = this.sort.field;
             return this.filteredPokemons.slice().sort((a, b) => {
                 if(a[field] > b[field]) {
-                    return 1 * direction;
+                    return 1;
                 }
                 if(a[field] < b[field]) {
-                    return -1 * direction; 
+                    return -1; 
                 }
                 return 0;
             });
