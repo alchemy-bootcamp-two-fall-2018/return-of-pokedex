@@ -3,7 +3,7 @@
     <Header
       v-bind:sort="sort"
       v-bind:filter="filter"/>
-    <Pokemons v-bind:pokemons="pokemons"/>
+    <Pokemons v-bind:pokemons="sortedPokemons"/>
   </div>
 </template>
 
@@ -33,15 +33,18 @@ export default {
     computed: {
         filteredPokemons() {
             return this.pokemons.filter(pokemon => {
-                const hasType1 = pokemon.type_1 === this.filter.type1;
-                const hasType2 = pokemon.type_2 === this.filter.type2;
-                const hasAttack = pokemon.attack >= this.filter.attack;
+                const hasType1 = !this.filter.type1 || pokemon.type1 === this.filter.type1;
+                const hasType2 = !this.filter.type2 || pokemon.type2 === this.filter.type2;
+                const hasAttack = !this.filter.attack || pokemon.attack === this.filter.attack;
+                // const hasType1 = pokemon.type_1 === this.filter.type1;
+                // const hasType2 = pokemon.type_2 === this.filter.type2;
+                // const hasAttack = pokemon.attack >= this.filter.attack;
                 return hasType1 && hasType2 && hasAttack;
             });
         },
         // pokemon is confusingly in pokemon.js in place of "name"
         sortedPokemons() {
-            const field = this.sort.pokemon;
+            const field = this.sort.field; //was sort.pokemon
             return this.filteredPokemons.slice().sort((a, b) => {
                 if(a[field] > b[field]) {
                     return 1;
@@ -68,7 +71,6 @@ export default {
   margin-top: 60px;
 }
 </style>
-
 
 // Top-level container. Mediate between Filter/Sort in Header and Results.
 // App will need to own the data:
