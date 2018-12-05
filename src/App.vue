@@ -3,26 +3,28 @@
     <Header
       v-bind:sort="sort"
       v-bind:filter="filter"/>
-    <Pokemons v-bind:pokemons="sortedPokemons"/>
+    <Pokemons v-bind:pokedex="sortedPokemons"/>
   </div>
 </template>
 
 <script>
-import pokedex from './services/pokedex.js';
+import pokemonApi from './services/pokemonApi.js';
 import Pokemons from './components/Pokemons.vue';
 import Header from './components/Header.vue';
 
 export default {
     data() {
         return {
-            pokemons: pokedex.getPokemons(),
+            pokedex: pokemonApi.getPokemons(),
             filter: {
+                pokemon: '',
                 type1: '',
                 type2: '',
                 attack: 0
             },
             sort: {
                 field: 'pokemon',
+                direction: 1
             }
         };
     },
@@ -31,26 +33,26 @@ export default {
         Pokemons
     },
     computed: {
-        filteredPokemons() {
-            return this.pokemons.filter(pokemon => {
-                const hasType1 = !this.filter.type1 || pokemon.type1 === this.filter.type1;
-                const hasType2 = !this.filter.type2 || pokemon.type2 === this.filter.type2;
-                const hasAttack = !this.filter.attack || pokemon.attack === this.filter.attack;
-                // const hasType1 = pokemon.type_1 === this.filter.type1;
-                // const hasType2 = pokemon.type_2 === this.filter.type2;
-                // const hasAttack = pokemon.attack >= this.filter.attack;
-                return hasType1 && hasType2 && hasAttack;
-            });
+       filtered() {
+            return this.pokedex.filter(pokemon => {
+                const hasName = !this.filter.pokemon || pokemon.pokemon.includes(this.filter.pokemon);
+                const hasAttack = !this.filter.attack || pokemon.attack >= this.filter.attack;
+                //const hasDefense = !this.filter.defense || pokemon.defense >= this.filter.defense;
+                const hasType = !this.filter.type || pokemon.type_1 === this.filter.type ||
+                pokemon.type_2 === this.filter.type;
+            return hasAttack && hasName && hasType;
+        });
         },
         // pokemon is confusingly in pokemon.js in place of "name"
-        sortedPokemons() {
+        sortedPokemon() {
             const field = this.sort.field; //was sort.pokemon
-            return this.filteredPokemons.slice().sort((a, b) => {
+            const direction = this.sort.direction;
+            return this.filtered.slice().sort((a, b) => {
                 if(a[field] > b[field]) {
-                    return 1;
+                    return 1 * direction;
                 }
                 if(a[field] < b[field]) {
-                    return -1;
+                    return -1 * direction;
                 }
 
                 return 0;
