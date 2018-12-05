@@ -38,10 +38,6 @@
                 <option value="defense">Defense Points</option>
             </select>
 
-            <select v-model="sort.direction">
-                <option value="1">Asc</option>
-                <option value="-1">Dsc</option>
-            </select>
         </label>
     </header>
 </template>
