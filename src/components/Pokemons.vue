@@ -12,14 +12,11 @@ import Pokemon from './Pokemon.vue';
 export default {
     props: {
         pokemons: Array
-    },
-    
+    },    
     components: {
         Pokemon
     }
-
 };
-
 </script>
 
 <style>
@@ -30,5 +27,4 @@ export default {
         margin: 0;
         padding: 0;
     }
-
 </style>
