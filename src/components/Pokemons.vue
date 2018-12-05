@@ -1,6 +1,6 @@
 <template>
     <ul>
-        <Pokemon v-for="pokemon in pokemons"
+        <Pokemon v-for="pokemon in pokedex"
         v-bind:key="pokemon.pokemon"
         v-bind:pokemon="pokemon"/>
     </ul>
@@ -11,7 +11,7 @@ import Pokemon from './Pokemon.vue';
 
 export default {
     props: {
-        pokemons: Array,
+        pokedex: Array,
     },
     components: {
         Pokemon

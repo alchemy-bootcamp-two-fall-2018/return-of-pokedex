@@ -1,8 +1,27 @@
-// Header:
-// Container for Filter and Sort
-
 <template>
     <header>
+        <h1>Pokedex</h1>
+       <label>
+           Name:
+           <input v-model="filter.pokemon" type="text">
+       </label>
+       <label>
+           Attack:
+           <input type="number" v-model.number="filter.attack"  step="10">
+       </label>
+
+       <label>
+           Type:
+           <select v-model="filter.type">
+               <option value="">All</option>
+               <option v-for="type in types"
+                   v-bind:key="type"
+                   v-bind:value="type">
+               {{ type }}
+               </option>
+           </select>
+       </label>
+
         <label>
             Type 1:
             <input type="text"
@@ -12,25 +31,35 @@
         <label>
             Type 2:
             <input type="text"
-                v-model.lazy="filter.type1">
+                v-model.lazy="filter.type2">
         </label>
         <label>
             Attack:
             <input type="number"
                 v-model.number="filter.attack">
-        </label>
-
+        </label> -->
         <label>
             Sort By Name:
-            <input type="checkbox" v-model.number="sort.field.pokemon">
-
+            <select v-model="sort.field">
+                <options value="all"></options>
+                <options value="pokemon"></options>
+                <options value="type_1"></options>
+                <options value="attack"></options>
+            </select>
         </label>
     </header>
 </template>
 
 <script>
+import pokemonApi from '../services/pokemonApi.js';
 
 export default {
+    data() {
+        return {
+            pokemonz: pokemonApi.getPokemons()
+            types: pokemonApi.getTypes()
+        };
+    },
     props: {
         filter: Object,
         sort: Object
