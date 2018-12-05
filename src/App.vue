@@ -33,17 +33,16 @@ export default {
         Pokemons
     },
     computed: {
-       filtered() {
+        filtered() {
             return this.pokedex.filter(pokemon => {
                 const hasName = !this.filter.pokemon || pokemon.pokemon.includes(this.filter.pokemon);
                 const hasAttack = !this.filter.attack || pokemon.attack >= this.filter.attack;
-                //const hasDefense = !this.filter.defense || pokemon.defense >= this.filter.defense;
                 const hasType = !this.filter.type || pokemon.type_1 === this.filter.type ||
                 pokemon.type_2 === this.filter.type;
-            return hasAttack && hasName && hasType;
-        });
+                return hasAttack && hasName && hasType;
+            });
         },
-        // pokemon is confusingly in pokemon.js in place of "name"
+
         sortedPokemon() {
             const field = this.sort.field; //was sort.pokemon
             const direction = this.sort.direction;
@@ -54,7 +53,6 @@ export default {
                 if(a[field] < b[field]) {
                     return -1 * direction;
                 }
-
                 return 0;
             });
         }
@@ -73,10 +71,3 @@ export default {
   margin-top: 60px;
 }
 </style>
-
-// Top-level container. Mediate between Filter/Sort in Header and Results.
-// App will need to own the data:
-
-// pokedex
-// filter/sort
-// And have a set of computed properties for applying the filter and the sort (the result of which will be passed to Pokedex)

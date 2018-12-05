@@ -11,7 +11,7 @@ pokedex.forEach(pokemon => {
 export default {
     getPokemons() {
         return pokedex;
-    }
+    },
     getTypes() {
         return types;
     }

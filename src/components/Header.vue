@@ -7,7 +7,7 @@
        </label>
        <label>
            Attack:
-           <input v-model.number="filter.attack" type="number" step="10">
+           <input type="number" v-model.number="filter.attack"  step="10">
        </label>
 
        <label>
@@ -21,8 +21,8 @@
                </option>
            </select>
        </label>
-*********
-        <!-- <label>
+
+        <label>
             Type 1:
             <input type="text"
                 v-model.lazy="filter.type1">
@@ -31,14 +31,13 @@
         <label>
             Type 2:
             <input type="text"
-                v-model.lazy="filter.type1">
+                v-model.lazy="filter.type2">
         </label>
         <label>
             Attack:
             <input type="number"
                 v-model.number="filter.attack">
         </label> -->
-*******
         <label>
             Sort By Name:
             <select v-model="sort.field">
@@ -57,6 +56,7 @@ import pokemonApi from '../services/pokemonApi.js';
 export default {
     data() {
         return {
+            pokemonz: pokemonApi.getPokemons()
             types: pokemonApi.getTypes()
         };
     },
