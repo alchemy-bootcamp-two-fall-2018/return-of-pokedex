@@ -4,38 +4,52 @@
         <img scr="http://pngimg.com/uploads/pokemon_logo/pokemon_logo_PNG14.png">
         <!--<img src="http://www.pokestadium.com/sprites/black-white/animated/shiny/pichu.gif">-->
         <label>
-            Name:
+            NAME:
             <input type="text"
             v-model="filter.pokemon" >
         </label>
         <label>
-        Type One:
+        TYPE ONE:
         <select v-model="filter.type_1">
-          <option value="">Any</option>
+          <option value="">ANY</option>
           <option v-for="type in types" v-bind:key="type" v-bind:value="type">
             {{type}}
           </option>
         </select>
       </label>
        <label>
-        Type Two:
+        TYPE TWO:
         <select v-model="filter.type_2">
-          <option value="">Any</option>
+          <option value="">ANY</option>
           <option v-for="type in types" v-bind:key="type" v-bind:value="type">
             {{type}}
           </option>
         </select>
       </label>
        <label>
-            Attack
+            ATTACK
             <input type="number"
                 v-model.number="filter.attack" min="30" step="5">
         </label>
         <label>
-            Defense
+            DEFENSE
             <input type="number"
                 v-model.number="filter.defense" min="30" step="5">
         </label>
+         SORT BY:
+         <label>  
+      <select v-model="sort.field">
+        <option value="pokemon">NAME</option>
+        <option value="type_1">TYPE 02</option>
+        <option value="attack">ATTACK</option>
+        <option value="defense">DEFENSE</option>
+
+      </select>
+      <select v-model="sort.direction">
+        <option value="1">Asc</option>
+        <option value="-1">Desc</option>
+      </select>
+    </label>
     </header>
 </template>
 
@@ -45,6 +59,7 @@ export default {
   props: {
     filter: Object,
     types: Array,
+    sort: Object
     
   }
 };
