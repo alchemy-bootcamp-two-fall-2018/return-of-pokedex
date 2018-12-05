@@ -28,7 +28,6 @@
             </select>
         </label>
 
-
         <label>
             <span><strong>Sort By:</strong></span>
             <select v-model="sort.field">
@@ -37,7 +36,6 @@
                 <option value="attack">Attack Points</option>
                 <option value="defense">Defense Points</option>
             </select>
-
         </label>
     </header>
 </template>

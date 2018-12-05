@@ -23,14 +23,15 @@ li {
     position: relative;
     height: 200px;
 }
+
 img {
     position: absolute;
     top: 0;
     left: 30px;
     width: 100%;
-    /* height: 100%; */
     max-width: 150px;
 }
+
 .info {
     position: absolute;
     bottom: 0;
@@ -38,6 +39,7 @@ img {
     background: rgba(223, 219, 29, 0.8);
     text-align: center;
 }
+
 h3, p {
     margin: 0;
     font-size: 13px;
