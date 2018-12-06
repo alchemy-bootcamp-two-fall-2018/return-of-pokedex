@@ -45,11 +45,11 @@ export default {
     },
     filteredPokemons() {
       return this.pokemons.filter(pokemon => {
-        const hasName = !this.filter.pokemon || pokemon.pokemon >= this.filter.pokemon;
+        const hasName = !this.filter.pokemon || pokemon.pokemon.includes(this.filter.name);
         const hasType_1 = !this.filter.type_1 || pokemon.type_1 === this.filter.type_1;
         const hasType_2 = !this.filter.type_2 || pokemon.type_2 === this.filter.type_2;
-        const hasAttack = !this.filter.attack || pokemon.attack === this.filter.attack;
-        const hasDefense = !this.filter.defense || pokemon.defense === this.filter.defense;
+        const hasAttack = !this.filter.attack || pokemon.attack >= this.filter.attack;
+        const hasDefense = !this.filter.defense || pokemon.defense >= this.filter.defense;
         
         
         return hasName && hasType_1 && hasType_2 && hasAttack && hasDefense;
