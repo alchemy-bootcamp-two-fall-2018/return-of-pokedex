@@ -70,10 +70,10 @@ Offers controls for filtering:
 
 Offer sorting based one of:
 
-1. Pokemon name (default)
-1. Type (use `type_1`)
-1. Attack
-1. Defence
+1. ~~Pokemon name (default)~~
+1. ~~Type (use `type_1`)~~
+1. ~~Attack~~
+1. ~~Defence~~
 1. **BONUS** Add more sortable columns
 
 #### Pokedex

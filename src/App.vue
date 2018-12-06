@@ -1,15 +1,17 @@
 <template>
     <div id="app">
-        <Header :filter="filter" />
-        {{filter}}
-        <Pokethem :pokethem="filteredPokethem" />
-        {{pokethem}}
+        <Header
+            :filter="filter"
+            :sort="sort"
+            :types="pokemonTypes" />
+
+        <Pokethem :pokethem="sortedPokethem" />
     </div>
 </template> 
 
 <script>
 import pokethemApi from './services/pokethemApi.js';
-// import Pokethem from './components/Pokethem';
+import Pokethem from './components/Pokethem';
 import Header from './components/Header';
 
 export default {
@@ -17,23 +19,62 @@ export default {
         return {
             pokethem: pokethemApi.getPokethem(),
             filter: {
-                attack: 0
-            }
+                pokemon: '',
+                type_1: '',
+                attack: 0,
+                defense: 0
+            },
+            sort: {
+                field: 'pokemon',
+                direction: 1
+            },
         };
     },
+
     components: {
         Header,
-        // Pokethem
+        Pokethem
     },
+
     computed: {
+        pokemonTypes() {
+            const types = [];
+            this.pokethem.forEach(pokemon => {
+                if(!types.includes(pokemon.type_1)) {
+                    types.push(pokemon.type_1);
+                }
+            });
+            return types;
+        },
         filteredPokethem() {
             return this.pokethem.filter(pokemon => {
-                return pokemon.attack > this.filter.attack;
+                // return pokethem.attack > this.filter.attack;
+                const hasName = !this.filter.pokemon || pokemon.pokemon.includes(this.filter.pokemon);
+                const hasType1 = !this.filter.type_1 || pokemon.type_1 === this.filter.type_1;
+                const hasAttack = !this.filter.attack || pokemon.attack >= this.filter.attack;
+                const hasDefense = !this.filter.defense || pokemon.defense >= this.filter.defense;
+
+                return hasName && hasType1 && hasAttack && hasDefense;
+            });
+        },
+        sortedPokethem() {
+            const field = this.sort.field;
+            const direction = this.sort.direction;
+
+            return this.filteredPokethem.slice().sort((a, b) => {
+                if(a[field] > b[field]) {
+                    return 1 * direction;
+                }
+
+                if(a[field] < b[field]) {
+                    return -1 * direction;
+                }
+
+                return 0;
             });
         }
     }
 };
-
 </script>
 
 <style>
@@ -41,7 +82,6 @@ export default {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: left;
     color: #2c3e50;
 }
 </style>
