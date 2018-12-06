@@ -21,8 +21,8 @@ export default {
             filter: {
                 pokemon: '',
                 type_1: '',
-                attack: '0',
-                defense: '0'
+                attack: 0,
+                defense: 0
             },
             sort: {
                 field: 'pokemon',
@@ -48,6 +48,7 @@ export default {
         },
         filteredPokethem() {
             return this.pokethem.filter(pokemon => {
+                // return pokethem.attack > this.filter.attack;
                 const hasName = !this.filter.pokemon || pokemon.pokemon.includes(this.filter.pokemon);
                 const hasType1 = !this.filter.type_1 || pokemon.type_1 === this.filter.type_1;
                 const hasAttack = !this.filter.attack || pokemon.attack >= this.filter.attack;
