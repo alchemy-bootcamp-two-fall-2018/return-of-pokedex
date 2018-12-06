@@ -21,8 +21,8 @@ export default {
             filter: {
                 pokemon: '',
                 type_1: '',
-                attack: '',
-                defense: ''
+                attack: '0',
+                defense: '0'
             },
             sort: {
                 field: 'pokemon',
@@ -48,7 +48,7 @@ export default {
         },
         filteredPokethem() {
             return this.pokethem.filter(pokemon => {
-                const hasName = !this.filter.pokemon || pokemon.pokemon >= this.filter.pokemon;
+                const hasName = !this.filter.pokemon || pokemon.pokemon.includes(this.filter.pokemon);
                 const hasType1 = !this.filter.type_1 || pokemon.type_1 === this.filter.type_1;
                 const hasAttack = !this.filter.attack || pokemon.attack >= this.filter.attack;
                 const hasDefense = !this.filter.defense || pokemon.defense >= this.filter.defense;
@@ -81,7 +81,6 @@ export default {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: left;
     color: #2c3e50;
 }
 </style>
