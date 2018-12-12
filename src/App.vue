@@ -15,6 +15,7 @@ import PokeSort from './components/Sort.vue';
 import Tile from './components/Tile.vue';
 
 // allow for double filtering
+// fix number filter on backspace
 
 export default {
     data() {

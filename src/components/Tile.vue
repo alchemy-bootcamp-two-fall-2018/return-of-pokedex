@@ -1,23 +1,15 @@
 <template>
-    <table>
-        <tr>
-            <th>Image</th>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Egg Group</th>
-            <th>Weight</th>
-            <th>Height</th>
-        </tr>
-        <tr v-for="poke in pokemons"
+    <ul>
+        <li v-for="poke in pokemons"
             v-bind:key="poke.name">
-            <td><img v-bind:src="poke.url_image"></td>
-            <td>{{poke.pokemon}}</td>
-            <td>{{poke.type_1}}</td>
-            <td>{{poke.egg_group_1}}</td>
-            <td>{{poke.weight}}</td>
-            <td>{{poke.height}}</td>
-        </tr>
-    </table>
+            <p><img v-bind:src="poke.url_image"></p>
+            <p>Name: {{poke.pokemon}}</p>
+            <p>Type: {{poke.type_1}}</p>
+            <p>Egg Group: {{poke.egg_group_1}}</p>
+            <p>Weight: {{poke.weight}}</p>
+            <p>Height: {{poke.height}}</p>
+        </li>
+    </ul>
 </template>
 
 <script>
@@ -32,8 +24,12 @@ export default {
     img {
         width: 100px;
     }
-    table {
-        border: 2px solid black;
-        margin: auto;
+
+    li {
+        list-style: none;
+        display: inline-block;
+        border: 1px solid red;
+        padding: 2%;
+        margin: 1%;
     }
 </style>
