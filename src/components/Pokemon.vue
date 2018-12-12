@@ -6,7 +6,6 @@
             <h4>Type 1: {{pokemon.type_1}}</h4>
             <h4>Type 2: {{pokemon.type_2}}</h4>
             <h4>Attack: {{pokemon.attack}}</h4>
-            <h4>Defense: {{pokemon.defense}}</h4>
         </div>
         <span>
             <button @click="show = true">Details</button>

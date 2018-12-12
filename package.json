@@ -9,6 +9,7 @@
     "test": "npm run lint"
   },
   "dependencies": {
+    "animate.css": "^3.7.0",
     "vue": "^2.5.17"
   },
   "devDependencies": {

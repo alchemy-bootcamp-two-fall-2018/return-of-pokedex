@@ -1,4 +1,5 @@
 <template>
+<transition name="fade">
   <div class="modal" @click="onClose" @keyup.esc="onClose">
     <div class="content" @click.stop="">
       <button class="close" @click="onClose">X</button>
@@ -11,6 +12,7 @@
 
     </div>
   </div>
+</transition>   
 </template>
 
 <script>
@@ -59,6 +61,14 @@ export default {
   position: absolute;
   top: 5px;
   right: 5px;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: all 1s;
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 
 </style>

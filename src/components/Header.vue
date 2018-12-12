@@ -1,7 +1,8 @@
 <template>
     <header class="header">
         <h1>The Pokedex of Doom</h1>
-        <div class="form" v-if="show">
+
+        <div class="form" v-if="show">   
             <label>
                 Type:
                 <select v-model="filter.type">
@@ -38,11 +39,12 @@
                 <option value="-1">Dec</option>
             </select>
             </label>
-        </div>
+            </div>
         <div class="form-button" v-else>
             <button @click="show = true">Search the Pokemons</button>
         </div>
     </header>
+    
 </template>
 
 <script>
@@ -66,5 +68,14 @@ export default {
     background: burlywood;
     margin-bottom: 40px;
     box-shadow: 5px 10px 10px grey;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: all 10s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  /* transform: translateY(-300px);  */
+  margin-top: -360px;
 }
 </style>
