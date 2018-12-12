@@ -1,26 +1,37 @@
 <template>
-    <li @click="handleClick">
-        <h3>{{pokemon.pokemon}}</h3>
-        <img v-bind:src="pokemon.url_image">
-        <div id="stats">
-            <h4>Type 1: {{pokemon.type_1}}</h4>
-            <h4>Type 2: {{pokemon.type_2}}</h4>
-            <h4>ATK: {{pokemon.attack}}</h4>
-            <h4>DEF: {{pokemon.defense}}</h4>
-        </div>   
-    </li>
+    <div>
+        <div id="detail" v-if="show">
+            hello
+        </div>
+        <li @click="handleClick">
+            <h3>{{pokemon.pokemon}}</h3>
+            <img v-bind:src="pokemon.url_image">
+            <div id="stats">
+                <h4>Type 1: {{pokemon.type_1}}</h4>
+                <h4>Type 2: {{pokemon.type_2}}</h4>
+                <h4>ATK: {{pokemon.attack}}</h4>
+                <h4>DEF: {{pokemon.defense}}</h4>
+            </div>
+        </li>
+    </div>
 </template>
 
 <script>
 export default {
+    data() {
+        return {
+            show: false,
+        }
+    },
     props: {
         pokemon: Object
     },
     methods: {
         handleClick() {
             console.log(this.pokemon.pokemon);
+            this.show = true;
         }
-    }
+    },
 }
 </script>
 
