@@ -73,21 +73,8 @@ export default {
 };
 </script>
 
-<style>
-.pokemonList {
-    margin-top: 40px;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-row-gap: 20px;
-    grid-column-gap: 10px;
-}
-ul {
-    padding: 0px;
-}
-img {
-    width: 200px;
-    height: 200px;
-}
+
+<style lang="postcss" scoped>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

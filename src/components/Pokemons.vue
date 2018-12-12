@@ -18,13 +18,13 @@ export default {
 };
 </script>
 
-<style>
+<style lang="postcss" scoped>
 ul {
     margin-top: 40px;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-row-gap: 20px;
     grid-column-gap: 10px;
-    list-style: none;
+    padding: 0px;
 }
 </style>

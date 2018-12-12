@@ -19,31 +19,35 @@ export default {
 };
 </script>
 
-<style>
-    .pokemon-name {
-        text-transform: capitalize;
-    }
-    .card {
-       background: #001f3f; 
-       transform-style: preserve-3d;
-       transition: all 1s ease-in-out;
-       position: relative;
-       box-shadow:0px 0px 0px 2px grey inset;
-       margin-bottom:20px;
-    }
-    .card:hover {
-        transform: rotateY(180deg);
-    }
-    .card .side {
-        backface-visibility: hidden;
-    }
-    .card .info {
-        transform: rotateY(180deg);
-    }
-    .info {
-        justify-content: center;
-        position: absolute;
-        top: -5px;
-        width: 100%;
-    }
+<style lang="postcss" scoped>
+.pokemon-name {
+    text-transform: capitalize;
+}
+.card {
+    background: #001f3f; 
+    transform-style: preserve-3d;
+    transition: all 1s ease-in-out;
+    position: relative;
+    box-shadow:0px 0px 0px 2px grey inset;
+    margin-bottom:20px;
+}
+.card:hover {
+    transform: rotateY(180deg);
+}
+.card .side {
+    backface-visibility: hidden;
+}
+.card .info {
+    transform: rotateY(180deg);
+}
+.info {
+    justify-content: center;
+    position: absolute;
+    top: -5px;
+    width: 100%;
+}
+img {
+    width: 200px;
+    height: 200px;
+}
 </style>
