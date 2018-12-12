@@ -1,7 +1,8 @@
 <template>
+<transition name="fade">
   <div class="modal" @click="onClose" @keyup.esc="onClose">
-    <button class="close" @click="onClose">X</button>
     <div class="content" @click.stop="">
+    <button class="close" @click="onClose">X</button>
              <h2>{{pokemon.pokemon}}</h2>
             <img class="modal-image" v-bind:src="pokemon.url_image">
             <h4>Type 1: {{pokemon.type_1}}</h4>
@@ -10,6 +11,7 @@
             <h4>Defense: {{pokemon.defense}}</h4>
     </div>
   </div>
+  </transition>
 </template>
 
 <script>
@@ -52,7 +54,7 @@ export default {
   padding: 40px;
 }
 .close {
-  position:fixed;
+  position: absolute;
   top: 5px;
   right: 5px;
   border: 1px solid black;
@@ -60,5 +62,11 @@ export default {
 .modal-image {
   width: 200px;
   height: 200px;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: all 1s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }
 </style>

@@ -1,6 +1,8 @@
 <template>
     <header>
         <div class="form" v-if="show">
+        <transition name="fade">
+        </transition>
         <label>
             Name:
             <input type="text" v-model="filter.name">
@@ -39,7 +41,7 @@
         </label> 
         </div>
         <div class="form-button" v-else>
-            <button @click="show = true"> Show Form </button>   
+            <button @click="show = true"> Sort through the Pokedex </button>   
         </div>
     </header>
 </template>
