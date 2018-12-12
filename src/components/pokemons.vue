@@ -20,6 +20,7 @@ import Pokemon from './pokemonDetail.vue';
 export default {
     props: {
         pokemons: Array, 
+        
         onSelect: Function
     }, 
     components: {
