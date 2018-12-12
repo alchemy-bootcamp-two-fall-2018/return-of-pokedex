@@ -9,7 +9,6 @@
     :pokemon="this.selected"
     />
 
-
     <Pokemons 
     v-bind:pokemons="sorted" 
     :onSelect="handleSelect"
@@ -86,6 +85,13 @@ export default {
 </script>
 
 <style>
+/* .fadeSize-enter-active{
+    size: 0%
+}
+.fadeSize-enter-to {
+    size:100;
+} */
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
