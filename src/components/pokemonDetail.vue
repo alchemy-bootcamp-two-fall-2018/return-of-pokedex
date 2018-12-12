@@ -8,7 +8,6 @@
             <h5>Defense: {{pokemon.defense}}</h5>
             <h5>Generation: {{pokemon.generation_id}} </h5>
             </div>
-
         </div>
     </li>
 </template>
@@ -16,7 +15,8 @@
 <script>
 export default {
     props: {
-        pokemon: Object
+        pokemon: Object, 
+        
     }
 
 };
@@ -46,8 +46,8 @@ img {
     bottom: 0%;
     width: 100%;
 }
-.stats {
-    flex-wrap: wrap;
+.info:hover {
+    font-size: 40px;
 }
 
 h2 {

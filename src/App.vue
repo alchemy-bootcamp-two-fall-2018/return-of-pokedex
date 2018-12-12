@@ -5,9 +5,15 @@
     v-bind:filter="filter"
     v-bind:sort="sort"
     />
+    <pokemonView
+    :pokemon="this.selected"
+    />
 
 
-    <Pokemons v-bind:pokemons="sorted"/>
+    <Pokemons 
+    v-bind:pokemons="sorted" 
+    :onSelect="handleSelect"
+    />
 
   </div>
 </template>
@@ -16,6 +22,7 @@
 import Header from './components/Header.vue';
 import PokemonApi from '../pokemonApi';
 import Pokemons from './components/pokemons.vue';
+import PokemonView from './components/pokemonView.vue';
 
 export default {
  
@@ -28,6 +35,8 @@ export default {
                 attack:'',
                 defense:''
             },
+            selected: null,
+            
             sort: {
                 field: 'name',
                 direction: 1,
@@ -36,7 +45,8 @@ export default {
     },
     components: {
         Header,
-        Pokemons
+        Pokemons, 
+        PokemonView
     },
     computed: {
         filtered(){
@@ -63,6 +73,12 @@ export default {
                 }
                 return 0;
             });
+        }
+    },
+    methods:{
+        handleSelect(pokemon){
+            this.selected = pokemon;
+            console.log(this.selected);
         }
     }
 };
