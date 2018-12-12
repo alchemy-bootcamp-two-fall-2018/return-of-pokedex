@@ -1,5 +1,5 @@
 <template>
-    <li>
+    <li @click="handleClick">
         <h3>{{pokemon.pokemon}}</h3>
         <img v-bind:src="pokemon.url_image">
         <div id="stats">
@@ -12,15 +12,19 @@
 </template>
 
 <script>
-import pokedex from '../../pokedex';
 export default {
     props: {
         pokemon: Object
+    },
+    methods: {
+        handleClick() {
+            console.log(this.pokemon.pokemon);
+        }
     }
 }
 </script>
 
-<style>
+<style scoped>
     img {
         width: 100%;
     }
