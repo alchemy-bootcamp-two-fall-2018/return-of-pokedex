@@ -1,9 +1,14 @@
 <template>
-    <ul>
-        <Pokemon v-for="pokemon in pokemons"
-        v-bind:key="pokemon.pokemon"
-        v-bind:pokemon="pokemon"/>
-    </ul>
+    <section>
+        <ul>
+            <Pokemon v-for="pokemon in pokemons"
+            v-bind:key="pokemon.pokemon"
+            v-bind:pokemon="pokemon"
+            v-on:click.native="onSelect(pokemon)"
+            v-bind:class="{ pokemon: true, selected: pokemon === selected }"
+            />
+        </ul>
+    </section>
 </template>
 
 <script>
@@ -11,7 +16,9 @@ import Pokemon from './Pokemon.vue';
 
 export default {
     props: {
-        pokemons: Array
+        pokemons: Array,
+        onSelect: Function,
+        selected: Object
     },
     components: {
         Pokemon
