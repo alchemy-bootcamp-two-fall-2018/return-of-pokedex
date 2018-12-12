@@ -45,7 +45,7 @@ img {
   left: 0;
   width: 100px;
   height: 100px;
-  z-index: -1;
+  z-index: 4;
   object-fit: cover;
   display: block;
   margin-left: auto; 
