@@ -32,7 +32,7 @@ export default {
             setTimeout(function() {
                 Velocity(
                     el,
-                    { opacity: 1, height: '250px' },
+                    { opacity: 1, height: '320px' },
                     { complete: done }
                 );
             }, delay);
@@ -53,7 +53,7 @@ export default {
 <style scoped>
 ul {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   list-style-type: none;
   margin: 0;
   padding: 0;

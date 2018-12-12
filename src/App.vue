@@ -84,4 +84,7 @@ export default {
 font-size: 20pt;
 font-family: 'Fredoka One', cursive;
 }
+body {
+    background-color: rgb(242, 129, 85);
+}
 </style>

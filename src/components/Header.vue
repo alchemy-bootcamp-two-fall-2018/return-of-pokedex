@@ -73,16 +73,17 @@ section {
   background: #aaa;
   padding: 10px;
 }
-label {
+/* label {
     display: flex;
     padding: 3px;
-}
+} */
 span {
       display: inline-block;
       width: 90px;
 }
 textarea, input, select {
       width: 200px;
+      border: 1pt black solid;
 }
 textarea {
       height: 75px;
