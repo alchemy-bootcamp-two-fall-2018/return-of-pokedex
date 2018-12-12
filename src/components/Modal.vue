@@ -37,6 +37,9 @@ export default {
 </script>
 
 <style scoped>
+.pokemon-name {
+    text-transform: capitalize;
+}
 .modal {
   position: fixed;
   top: 0; left: 0;

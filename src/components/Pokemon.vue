@@ -28,9 +28,6 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.pokemon-name {
-    text-transform: capitalize;
-}
 .card {
     background: #001f3f; 
     position: relative;

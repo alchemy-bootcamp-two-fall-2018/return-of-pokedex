@@ -45,8 +45,8 @@
         <option value="type_2">Type 2</option>
         <option value="hp">Hit Points</option>
         <option value="defense">Defense</option>
-
       </select>
+
       <select v-model="sort.direction">
         <option value="1">Asc</option>
         <option value="-1">Desc</option>
@@ -68,23 +68,23 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="postcss" scoped>
-  h3 {
-    margin-top: 40px;
-  }
+h3 {
+  margin-top: 40px;
+}
 
-  h1 {
-    padding-bottom: 40px;
-  }
+h1 {
+  padding-bottom: 40px;
+}
 
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
+ul {
+  list-style-type: none;
+  padding: 0;
+}
 
-  li {
-    display: inline-block;
-    margin: 0 10px;
-  }
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
 
 
 </style>
