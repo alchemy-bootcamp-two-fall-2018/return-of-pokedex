@@ -6,13 +6,14 @@
             :types="pokemonTypes"/>
             
     <Pokemons :pokemons="sortedPokemons"/>
+    
   </div>
 </template>
 
 <script>
-import Header from './components/Header.vue';
+import Header from './components/Header';
 import Pokedex from '../pokedex.js';
-import Pokemons from './components/Pokemons.vue';
+import Pokemons from './components/Pokemons';
 
 export default {
     name: 'app',
@@ -34,6 +35,7 @@ export default {
                 field: 'pokemon',
                 direction: 1
             },
+            show: false
         };
     },
     computed: {

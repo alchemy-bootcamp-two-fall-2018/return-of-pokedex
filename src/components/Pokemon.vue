@@ -1,21 +1,29 @@
 <template>
   <li class="card">
     <img :src="pokemon.url_image" class="side" />
-    <div class="info" :style="{ color: pokemon.color_1 }">
-      <h3 class="pokemon-name">{{ pokemon.pokemon }}</h3>
-      <p>Type 1: {{ pokemon.type_1 }}</p>
-      <p>Type 2: {{ pokemon.type_2 }}</p>
-      <p>Hit Points: {{ pokemon.hp }}</p>
-      <p>Defense: {{ pokemon.defense }}</p>
-    </div>
+    <button @click="show = !show">More Info</button>
+    <transition name="alert-in" enter-active-class="animated flipInX" leave-active-class="animated flipOutX">
+        <Modal v-if="show" :onClose="() => show = false" :pokemon="pokemon">
+        </Modal>
+    </transition>
   </li>
 </template>
 
 <script>
+import Modal from './Modal';
 export default {
     props: {
-        pokemon: Object
+        pokemon: Object,
+    },
+    components: {
+        Modal
+    },
+    data() {
+        return {
+            show: false,
+        };
     }
+
 };
 </script>
 
@@ -25,26 +33,9 @@ export default {
 }
 .card {
     background: #001f3f; 
-    transform-style: preserve-3d;
-    transition: all 1s ease-in-out;
     position: relative;
     box-shadow:0px 0px 0px 2px grey inset;
     margin-bottom:20px;
-}
-.card:hover {
-    transform: rotateY(180deg);
-}
-.card .side {
-    backface-visibility: hidden;
-}
-.card .info {
-    transform: rotateY(180deg);
-}
-.info {
-    justify-content: center;
-    position: absolute;
-    top: -5px;
-    width: 100%;
 }
 img {
     width: 200px;
