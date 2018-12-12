@@ -1,9 +1,9 @@
 <template>
-  <ul>
+    <transition-group name="flip-list" tag="ul">
       <Pokemon v-for="pokemon in pokemons"
         v-bind:key="pokemon.pokemon"
         v-bind:pokemon="pokemon"/>
-  </ul>      
+    </transition-group>        
 </template>
 
 <script>
@@ -21,7 +21,7 @@ export default {
 };
 </script>
       
-<style scoped>
+<style scoped lang="postcss">
 ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -31,6 +31,10 @@ ul {
   grid-row-gap: 3px;
   background-color: silver;
 
+}
+
+.flip-list-move {
+  transition: transform 1s;
 }
       
 </style>
