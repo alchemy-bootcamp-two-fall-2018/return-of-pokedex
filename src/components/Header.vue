@@ -1,7 +1,6 @@
 <template>
     <header class="header">
         <h1 class="title">The Pokedex of Doom</h1>
-
         <div class="form" v-if="show">   
             <label>
                 Type:
@@ -68,6 +67,7 @@ export default {
     background: #006388;
     margin-bottom: 40px;
     box-shadow: 5px 10px 10px grey;
+    color: white;
 }
 
 .title {

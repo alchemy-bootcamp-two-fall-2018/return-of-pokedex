@@ -1,7 +1,7 @@
 <template>
     <li class="grid">
         <div id="card">
-            <h2>{{pokemon.pokemon}}</h2>
+            <h2 class="card-title">{{pokemon.pokemon}}</h2>
             <img v-bind:src="pokemon.url_image">
             <h4>Type 1: {{pokemon.type_1}}</h4>
             <h4>Type 2: {{pokemon.type_2}}</h4>
@@ -43,12 +43,20 @@ export default {
         border: 1px solid black;
         box-shadow: 5px 10px 10px grey;
         padding: 30px;
-        background: rgb(219, 214, 208);
+        background: #85004E;
     }
 
     h4 {
         padding: 0px;
         margin: 0px;
+    }
+
+    .card-title {
+        color:#D1FF70;
+    }
+
+    .grid {
+        color: white;
     }
 
 </style>

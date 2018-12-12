@@ -3,12 +3,12 @@
   <div class="modal" @click="onClose" @keyup.esc="onClose">
     <div class="content" @click.stop="">
       <button class="close" @click="onClose">X</button>
-             <h2>{{pokemon.pokemon}}</h2>
-            <img v-bind:src="pokemon.url_image">
-            <h4>Type 1: {{pokemon.type_1}}</h4>
-            <h4>Type 2: {{pokemon.type_2}}</h4>
-            <h4>Attack: {{pokemon.attack}}</h4>
-            <h4>Defense: {{pokemon.defense}}</h4>
+             <h2 class=modal-title>{{pokemon.pokemon}}</h2>
+            <img class="modal-img" v-bind:src="pokemon.url_image">
+            <h4 class="black">Type 1: {{pokemon.type_1}}</h4>
+            <h4 class="black">Type 2: {{pokemon.type_2}}</h4>
+            <h4 class="black">Attack: {{pokemon.attack}}</h4>
+            <h4 class="black">Defense: {{pokemon.defense}}</h4>
 
     </div>
   </div>
@@ -40,6 +40,23 @@ export default {
 
 <style>
 
+.black {
+    color: black;
+}
+
+.modal-img {
+    width: 70%;
+}
+
+.modal-title {
+    font-size: 3.5em;
+    color: #D1FF70;
+    text-shadow: 2px 2px black;
+    margin: 0;
+    padding: 0;
+    
+}
+
 .modal {
   position: fixed;
   top: 0; left: 0;
@@ -48,7 +65,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(214, 179, 19, 0.5);
+  background-color: rgba(118, 217, 255, 0.5);
 }
 
 .content {
@@ -65,12 +82,12 @@ export default {
 
 .fade-enter-active, .fade-leave-active {
   transition: all 1s;
-  background: rgba(214, 179, 19, 0.5);
+  background: rgba(118, 217, 255, 0.5);
 }
 
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
-  background: rgba(214, 179, 19, 0.5);
+  background: rgba(118, 217, 255, 0.5);
 }
 
 </style>

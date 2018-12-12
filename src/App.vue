@@ -76,7 +76,7 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Freckle+Face');
+@import url('https://fonts.googleapis.com/css?family=Baloo+Da');
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -84,6 +84,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   background: #FFA4D9;
-  font-family: 'Freckle Face', cursive;
+  font-family: 'Baloo Da', cursive;
 }
 </style>

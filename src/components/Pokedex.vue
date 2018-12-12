@@ -34,7 +34,7 @@ export default {
         /* eslint-disable-next-line */  
         Velocity(
           el,
-          { opacity: 1, height: '250px' },
+          { opacity: 1, height: '300px' },
           { complete: done }
         );
       }, delay);
