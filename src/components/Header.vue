@@ -1,5 +1,6 @@
 <template>
     <header>
+        <div class="form" v-if="show">
         <label>
             Name:
             <input type="text" v-model="filter.name">
@@ -35,7 +36,11 @@
                 <option value="weight"> Weight </option>
                 <option value="attack"> Attack </option>
             </select>
-        </label>    
+        </label> 
+        </div>
+        <div class="form-button" v-else>
+            <button @click="show = true"> Show Form </button>   
+        </div>
     </header>
 </template>
 
@@ -46,11 +51,35 @@ export default {
         types: Array,
         abilities: Array, 
         sort: Object
+    },
+    data() {
+        return {
+            show: false
+        };
     }
 }; 
 </script>
 <style>
 header {
     text-align: center;
+}
+
+section {
+  background: #aaa;
+  padding: 10px;
+}
+label {
+    display: flex;
+    padding: 3px;
+}
+span {
+      display: inline-block;
+      width: 90px;
+}
+textarea, input, select {
+      width: 200px;
+}
+textarea {
+      height: 75px;
 }
 </style>
