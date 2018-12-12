@@ -11,7 +11,7 @@
        </label>
 
        <label>
-           Type:
+           Type 1:
            <select v-model="filter.type">
                <option value="">All</option>
                <option v-for="type in types"
@@ -21,8 +21,11 @@
                </option>
            </select>
        </label>
-
-        <label>
+       <!-- <label>
+           Type 1:
+           <input v-model="filter.type1" type="text">
+       </label> -->
+        <!-- <label>
             Type 1:
             <input type="text"
                 v-model.lazy="filter.type1">
@@ -32,19 +35,15 @@
             Type 2:
             <input type="text"
                 v-model.lazy="filter.type2">
-        </label>
-        <label>
-            Attack:
-            <input type="number"
-                v-model.number="filter.attack">
-        </label>
-        <label>
-            Sort By Name:
+        </label> -->
+
+        <label class = sortier>
+            Sort By:
             <select v-model="sort.field">
-                <option value="all"></option>
-                <option value="pokemon"></option>
-                <option value="type_1"></option>
-                <option value="attack"></option>
+                <option value="all">All</option>
+                <option value="pokemon">Pokemon</option>
+                <option value="type_1">Type 1</option>
+                <option value="attack">Attack</option>
             </select>
         </label>
     </header>
@@ -75,4 +74,7 @@ header {
     padding: 10px;
     display: flex;
 }
+/* .sortier {
+    width: 20px;
+} */
 </style>
