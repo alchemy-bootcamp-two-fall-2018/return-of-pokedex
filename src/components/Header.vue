@@ -37,14 +37,14 @@
             Attack:
             <input type="number"
                 v-model.number="filter.attack">
-        </label> -->
+        </label>
         <label>
             Sort By Name:
             <select v-model="sort.field">
-                <options value="all"></options>
-                <options value="pokemon"></options>
-                <options value="type_1"></options>
-                <options value="attack"></options>
+                <option value="all"></option>
+                <option value="pokemon"></option>
+                <option value="type_1"></option>
+                <option value="attack"></option>
             </select>
         </label>
     </header>
@@ -56,7 +56,8 @@ import pokemonApi from '../services/pokemonApi.js';
 export default {
     data() {
         return {
-            pokemonz: pokemonApi.getPokemons()
+            // was pokemonz
+            pokemons: pokemonApi.getPokemons(),
             types: pokemonApi.getTypes()
         };
     },
