@@ -45,7 +45,7 @@ export default {
     },
     filteredPokemons() {
       return this.pokemons.filter(pokemon => {
-        const hasName = !this.filter.pokemon || pokemon.pokemon.includes(this.filter.name);
+        const hasName = !this.filter.pokemon || pokemon.pokemon.includes(this.filter.pokemon);
         const hasType_1 = !this.filter.type_1 || pokemon.type_1 === this.filter.type_1;
         const hasType_2 = !this.filter.type_2 || pokemon.type_2 === this.filter.type_2;
         const hasAttack = !this.filter.attack || pokemon.attack >= this.filter.attack;
