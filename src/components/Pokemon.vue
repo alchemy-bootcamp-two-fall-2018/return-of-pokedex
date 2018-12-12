@@ -1,8 +1,9 @@
 <template>
     <div>
-        <div id="detail" v-if="show">
-            hello
-        </div>
+        <Modal v-if="show"
+        :onClose="onClose"
+        :pokemon="pokemon"
+        />
         <li @click="handleClick">
             <h3>{{pokemon.pokemon}}</h3>
             <img v-bind:src="pokemon.url_image">
@@ -17,21 +18,28 @@
 </template>
 
 <script>
+import Modal from './Modal';
 export default {
     data() {
         return {
-            show: false,
+            show: false
         }
     },
     props: {
-        pokemon: Object
+        pokemon: Object,
     },
     methods: {
         handleClick() {
-            console.log(this.pokemon.pokemon);
+            console.log(this.pokemon);
             this.show = true;
+        },
+        onClose() {
+            this.show = false;
         }
     },
+    components: {
+        Modal
+    }
 }
 </script>
 
@@ -48,5 +56,11 @@ export default {
         display: flex;
         flex-direction: column;
         text-align: center;
+    }
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .5s;
+    }   
+    .fade-enter, .fade-leave-to {
+        opacity: 0;
     }
 </style>

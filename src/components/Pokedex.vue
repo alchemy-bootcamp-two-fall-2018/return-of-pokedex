@@ -3,7 +3,8 @@
         <transition-group name="flip-list" tag="ul">
             <Pokemon v-for="pokemon in pokemons"
             v-bind:key="pokemon.id"
-            v-bind:pokemon="pokemon"/>
+            v-bind:pokemon="pokemon"
+            />
         </transition-group>
     </ul>
 
