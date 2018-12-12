@@ -8,13 +8,28 @@
             <h4>Attack: {{pokemon.attack}}</h4>
             <h4>Defense: {{pokemon.defense}}</h4>
         </div>
+        <span>
+            <button @click="show = true">Details</button>
+            <Modal :pokemon="pokemon" v-if="show" :onClose="() => show = false">    
+            </Modal>
+        </span>
     </li>
 </template>
 
 <script>
+import Modal from './Modal';
+
 export default {
   props: {
     pokemon: Object
+  },
+  components: {
+    Modal
+  },
+  data() {
+    return {
+      show: false
+    };
   }
 };
 </script>
