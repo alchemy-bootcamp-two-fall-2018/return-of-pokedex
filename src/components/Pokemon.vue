@@ -38,21 +38,30 @@ export default {
 <style scoped lang="postcss">
   li {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     height: 350px;
     width: 350px;
     border: 5px solid;
     background: black;
     margin: 0px 10px;
+    &:hover {
+      img {
+        transform: scale(1.2);
+      }
+    }
   }
-  img:hover {
-    transform: scale(1.3);
-  }
+  /* button {
+
+  } */
   img {
-    width: 75%;
-    height: 75%;
+    width: 60%;
+    height: 60%;
     z-index: 1;
     margin-top: -20px;
-    transition: 500ms;
+    transition: 300ms;
+    
   }
   h3 {
     color: white;
@@ -60,11 +69,10 @@ export default {
   }
  
  .fade-enter-active, .fade-leave-active {
-  opacity: 1;
-  transition: opacity .5s ease-in-out;
-}
-.fade-enter, .fade-leave-active {
-  opacity: 0
-}
-  
+    opacity: 1;
+    transition: opacity .5s ease-in-out;
+  }
+  .fade-enter, .fade-leave-active {
+    opacity: 0
+  }
 </style>
