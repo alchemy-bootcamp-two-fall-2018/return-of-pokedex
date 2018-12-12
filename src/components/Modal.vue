@@ -45,7 +45,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #name {
     font-size: 25px;
     background-color: rgb(85, 0, 0);
