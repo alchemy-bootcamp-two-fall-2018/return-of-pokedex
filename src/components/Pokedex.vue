@@ -26,7 +26,7 @@ export default {
         grid-column-gap: 15px;
         grid-row-gap: 15px;
         list-style-type: none;
-        margin: 0;
+        margin: 0px 20px;
         padding: 0;
     };
 
