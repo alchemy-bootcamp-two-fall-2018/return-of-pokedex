@@ -10,7 +10,9 @@
         Type 1:
         <select v-model="filter.type_1">
           <option value="">Any</option>
-          <option v-for="type in types" v-bind:key="type" v-bind:value="type">
+          <option v-for="type in types" 
+                  :key="type" 
+                  :value="type">
             {{type}}
           </option>
         </select>
@@ -19,7 +21,9 @@
         Type 2:
         <select v-model="filter.type_2">
           <option value="">Any</option>
-          <option v-for="typeTwo in types" v-bind:key="typeTwo" v-bind:value="typeTwo">
+          <option v-for="typeTwo in types" 
+                  :key="typeTwo" 
+                  :value="typeTwo">
             {{typeTwo}}
           </option>
         </select>

@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <Header msg="Return of PokeDex"
-            v-bind:sort="sort" 
-            v-bind:filter="filter" 
-            v-bind:types="pokemonTypes"/>
+            :sort="sort" 
+            :filter="filter" 
+            :types="pokemonTypes"/>
             
-    <Pokemons v-bind:pokemons="sortedPokemons"/>
+    <Pokemons :pokemons="sortedPokemons"/>
   </div>
 </template>
 

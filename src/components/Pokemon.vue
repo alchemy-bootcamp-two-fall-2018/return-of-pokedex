@@ -1,7 +1,7 @@
 <template>
   <li class="card">
-    <img v-bind:src="pokemon.url_image" class="side" />
-    <div class="info" v-bind:style="{ color: pokemon.color_1 }">
+    <img :src="pokemon.url_image" class="side" />
+    <div class="info" :style="{ color: pokemon.color_1 }">
       <h3 class="pokemon-name">{{ pokemon.pokemon }}</h3>
       <p>Type 1: {{ pokemon.type_1 }}</p>
       <p>Type 2: {{ pokemon.type_2 }}</p>

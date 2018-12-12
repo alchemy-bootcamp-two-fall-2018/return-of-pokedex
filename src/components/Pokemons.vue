@@ -1,8 +1,8 @@
 <template>
     <ul>
     <Pokemon v-for="pokemon in pokemons"
-      v-bind:key="pokemon.name"
-      v-bind:pokemon="pokemon"/>
+            :key="pokemon.name"
+            :pokemon="pokemon"/>
   </ul>
 </template>
 
