@@ -1,42 +1,47 @@
 <template>
     <header class="header">
         <h1>The Pokedex of Doom</h1>
-        <label>
-            Type:
-            <select v-model="filter.type">
-                <option value="">All</option>
-                <option
-                v-for="type in types"
-                v-bind:key="type"
-                v-bind:value="type">
-                {{type}}
-                </option>
+        <div class="form" v-if="show">
+            <label>
+                Type:
+                <select v-model="filter.type">
+                    <option value="">All</option>
+                    <option
+                    v-for="type in types"
+                    v-bind:key="type"
+                    v-bind:value="type">
+                    {{type}}
+                    </option>
+                </select>
+            </label>
+            <label>
+                Name:
+                <input 
+                    v-model="filter.name" 
+            >
+            </label>
+            <label>
+                Attack:
+                <input type="number" 
+                    v-model.number="filter.attack" 
+            >
+            </label>
+            <label>
+            Sort By:
+            <select v-model="sort.field">
+                <option value="pokemon">Name</option>
+                <option value="type">Type</option>
+                <option value="attack">Attack</option>
             </select>
-        </label>
-        <label>
-            Name:
-            <input 
-                v-model="filter.name" 
-        >
-        </label>
-        <label>
-            Attack:
-            <input type="number" 
-                v-model.number="filter.attack" 
-        >
-        </label>
-        <label>
-        Sort By:
-        <select v-model="sort.field">
-            <option value="pokemon">Name</option>
-            <option value="type">Type</option>
-            <option value="attack">Attack</option>
-        </select>
-        <select v-model="sort.direction">
-            <option value="1">Asc</option>
-            <option value="-1">Dec</option>
-        </select>
-        </label>
+            <select v-model="sort.direction">
+                <option value="1">Asc</option>
+                <option value="-1">Dec</option>
+            </select>
+            </label>
+        </div>
+        <div class="form-button" v-else>
+            <button @click="show = true">Search the Pokemons</button>
+        </div>
     </header>
 </template>
 
@@ -46,6 +51,11 @@ export default {
     filter: Object,
     types: Array,
     sort: Object
+  },
+  data() {
+    return {
+      show: false
+    };
   }
 };
 </script>

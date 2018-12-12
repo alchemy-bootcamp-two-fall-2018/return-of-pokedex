@@ -22,10 +22,8 @@ export default {
     onClose: Function
   },
   created() {
-    console.log('Modal created');
     this.documentListener = event => {
       if(event.keyCode === 27) {
-        console.log('closing');
         this.onClose();
       }
     };
