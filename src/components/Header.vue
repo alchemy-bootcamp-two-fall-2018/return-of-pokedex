@@ -14,24 +14,29 @@
             </select>
         </label>
         <label>
-
-        Attack:
-        <input type="number" 
-            v-model.number="filter.attack" 
+            Name:
+            <input 
+                v-model="filter.name" 
         >
-    </label>
-    <label>
-      Sort By:
-      <select v-model="sort.field">
-        <option value="pokemon">Name</option>
-        <option value="type">Type</option>
-        <option value="attack">Attack</option>
-      </select>
-      <select v-model="sort.direction">
-        <option value="1">Asc</option>
-        <option value="-1">Dec</option>
-      </select>
-    </label>
+        </label>
+        <label>
+            Attack:
+            <input type="number" 
+                v-model.number="filter.attack" 
+        >
+        </label>
+        <label>
+        Sort By:
+        <select v-model="sort.field">
+            <option value="pokemon">Name</option>
+            <option value="type">Type</option>
+            <option value="attack">Attack</option>
+        </select>
+        <select v-model="sort.direction">
+            <option value="1">Asc</option>
+            <option value="-1">Dec</option>
+        </select>
+        </label>
     </header>
 </template>
 
