@@ -35,7 +35,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="postcss">
   li {
     position: relative;
     height: 350px;
@@ -44,12 +44,15 @@ export default {
     background: black;
     margin: 0px 10px;
   }
+  img:hover {
+    transform: scale(1.3);
+  }
   img {
     width: 75%;
     height: 75%;
     z-index: 1;
-    object-fit: cover;
     margin-top: -20px;
+    transition: 500ms;
   }
   h3 {
     color: white;
