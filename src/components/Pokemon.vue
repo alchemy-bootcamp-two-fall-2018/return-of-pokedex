@@ -1,5 +1,6 @@
+<!--this component renders the data-->
 <template>
-    <li>
+    <li v-on:click="onSelect(pokemon)">
         <img v-bind:src='pokemon.url_image'>
         <div class="descriptions">
             <h3 class="name">{{ pokemon.pokemon}}</h3>
@@ -12,7 +13,8 @@
 <script>
 export default {
     props: {
-        pokemon: Object
+        pokemon: Object,
+        onSelect: Function
     }
 };
 </script>
