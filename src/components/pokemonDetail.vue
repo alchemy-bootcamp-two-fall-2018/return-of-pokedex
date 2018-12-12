@@ -6,6 +6,7 @@
             <div class="stats">
             <h5>Attack: {{pokemon.attack}}</h5>
             <h5>Defense: {{pokemon.defense}}</h5>
+            
             <h5>Generation: {{pokemon.generation_id}} </h5>
             </div>
         </div>
