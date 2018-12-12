@@ -13,19 +13,6 @@ export default {
     props: {
         onClose: Function
     },
-    created() {
-        console.log('Modal created');
-        this.documentListener = event => {
-            if(event.keyCode === 27) {
-                console.log('closing');
-                this.onClose();
-            }
-        };
-        document.addEventListener('keyup', this.documentListener);
-    },
-    destroyed() {
-        document.removeEventListener('keyup', this.documentListener);
-    }
 };
 </script>
 
@@ -39,6 +26,7 @@ export default {
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, .5);
+  z-index: 5;
 }
 .content {
   position: relative;
