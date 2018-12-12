@@ -43,6 +43,7 @@ export default {
         border: 1px solid black;
         box-shadow: 5px 10px 10px grey;
         padding: 30px;
+        background: rgb(219, 214, 208);
     }
 
     h4 {

@@ -1,6 +1,6 @@
 <template>
     <header class="header">
-        <h1>The Pokedex of Doom</h1>
+        <h1 class="title">The Pokedex of Doom</h1>
 
         <div class="form" v-if="show">   
             <label>
@@ -65,17 +65,14 @@ export default {
 <style>
 .header {
     padding: 20px;
-    background: burlywood;
+    background: #006388;
     margin-bottom: 40px;
     box-shadow: 5px 10px 10px grey;
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: all 10s;
+.title {
+    color: #D1FF70;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
-  /* transform: translateY(-300px);  */
-  margin-top: -360px;
-}
+
+
 </style>

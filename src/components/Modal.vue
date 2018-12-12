@@ -48,7 +48,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(214, 179, 19, 0.5);
 }
 
 .content {
@@ -65,10 +65,12 @@ export default {
 
 .fade-enter-active, .fade-leave-active {
   transition: all 1s;
+  background: rgba(214, 179, 19, 0.5);
 }
 
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
+  background: rgba(214, 179, 19, 0.5);
 }
 
 </style>
