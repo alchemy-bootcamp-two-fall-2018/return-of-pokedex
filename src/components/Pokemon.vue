@@ -1,6 +1,6 @@
 <template>
-    <div class="info" v-bind:style="{color:pokemon.color_1}">
-    <li>
+    <li class="info" v-bind:style="{color:pokemon.color_1}">
+        <div>
             <img v-bind:src="pokemon.url_image"/>
             <h3> {{ pokemon.pokemon }}</h3>
             <p> type: {{pokemon.type_1}}
@@ -8,14 +8,29 @@
             <p> attack: {{ pokemon.attack}}</p>
             <p> weight: {{ pokemon.weight}}</p>
             <p> speed: {{ pokemon.speed }} </p>
+        </div>
+        <span>
+            <button @click="show = true"> More Details </button>
+            <Modal :pokemon="pokemon" v-if="show" :onClose="() => show = false">
+            </Modal>               
+        </span>
     </li>
-    </div>
 </template>
 
 <script>
+import Modal from '../shared/Modal'; 
+
 export default {
     props: {
         pokemon: Object
+    },
+    components: {
+        Modal
+    },
+    data() {
+        return {      
+            show: false
+        };
     }
 };
 </script>
@@ -39,10 +54,10 @@ img {
 h3, p {
   margin: 0;
 }
-li{
+li {
     border: 1px solid black;
     margin: 10px;
-    background-color: grey; 
+    background-color:grey; 
     text-shadow: 1px 1px 1px black;
 }
 </style>

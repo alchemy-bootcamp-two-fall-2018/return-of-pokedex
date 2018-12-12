@@ -35,7 +35,7 @@
                 <option value="weight"> Weight </option>
                 <option value="attack"> Attack </option>
             </select>
-        </label>
+        </label>    
     </header>
 </template>
 
