@@ -1,19 +1,21 @@
 <template>
-  <li>
-    <h3>{{ pokemon.pokemon }}</h3>
-    <img v-bind:src="pokemon.url_image" />
-    <button @click="show = true">View Details</button>
-    <Modal v-if="show" v-bind:onClose="() => show = false">
-      <div v-if="pokemon">
-        <img v-bind:src="pokemon.url_image" />
-        <h3>{{ pokemon.pokemon }}</h3>
-        <p>Type 1: {{pokemon.type_1}}</p>
-        <p>Type 2: {{pokemon.type_2}}</p> 
-        <p>Attack: {{pokemon.attack}}</p>
-        <p>Defense: {{pokemon.defense}}</p>
-      </div>
-    </Modal>
-  </li>
+    <li>
+      <h3>{{ pokemon.pokemon }}</h3>
+      <img v-bind:src="pokemon.url_image" />
+      <button @click="show = true">View Details</button>
+      <transition name="fade">
+        <Modal v-if="show" v-bind:onClose="() => show = false">
+          <div v-if="pokemon">
+            <img v-bind:src="pokemon.url_image" />
+            <h3>{{ pokemon.pokemon }}</h3>
+            <p>Type 1: {{pokemon.type_1}}</p>
+            <p>Type 2: {{pokemon.type_2}}</p> 
+            <p>Attack: {{pokemon.attack}}</p>
+            <p>Defense: {{pokemon.defense}}</p>
+          </div>
+        </Modal>
+      </transition>
+    </li>
 </template>
 
 <script>
@@ -53,4 +55,13 @@ export default {
     color: white;
     font-size: 1.3em;
   }
+ 
+ .fade-enter-active, .fade-leave-active {
+  opacity: 1;
+  transition: opacity .5s ease-in-out;
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0
+}
+  
 </style>
