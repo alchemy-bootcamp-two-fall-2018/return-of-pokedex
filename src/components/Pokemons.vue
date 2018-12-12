@@ -50,12 +50,12 @@ export default {
     }
 };
 </script>
-<style scoped>
+<style lang="postcss">
 ul {
+  margin-top: 100px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   list-style-type: none;
-  margin: 0;
   padding: 0;
   }
 </style>

@@ -55,6 +55,7 @@ export default {
   color:black;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: white;
+  border-radius: 10pt;
 }
 .close {
   position: absolute;

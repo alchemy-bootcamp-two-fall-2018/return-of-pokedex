@@ -61,31 +61,31 @@ export default {
     }
 }; 
 </script>
-<style>
+
+<style lang="postcss">
+
 header {
     text-align: center;
     background-color: pink;
-    margin-top: 20pt;
-    margin-bottom: 20pt; 
-}
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    top: 0; 
 
-section {
-  background: #aaa;
-  padding: 10px;
+    span {
+        display: inline-block;
+        width: 90px;
+    }
+    textarea, input, select {
+        width: 200px;
+        border: 1pt black solid;
+    }
+    textarea {
+        height: 75px;
+    }
 }
-/* label {
-    display: flex;
-    padding: 3px;
-} */
-span {
-      display: inline-block;
-      width: 90px;
-}
-textarea, input, select {
-      width: 200px;
-      border: 1pt black solid;
-}
-textarea {
-      height: 75px;
+.form-button {
+    padding: 10px 10px 10px 10px; 
+  
 }
 </style>

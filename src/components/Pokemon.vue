@@ -35,11 +35,23 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="postcss">
 li {
   position:relative;
   text-align: center; 
-} 
+    border: 1px solid black;
+    margin: 10px;
+    background-color:grey; 
+    text-shadow: 1px 1px 1px black;
+    border-radius: 10pt;
+    box-shadow: 1pt 5pt 5pt; 
+&:hover {
+    img{
+        transform: scale(1.7);
+        filter: grayscale(0)    
+        }
+}
+}
 img {
   top: 0;
   left: 0;
@@ -50,21 +62,14 @@ img {
   display: block;
   margin-left: auto; 
   margin-right: auto; 
+  transition: 500ms;
+  filter: grayscale(1);
 }
 h3, p {
   margin: 0;
-}
-li {
-    border: 1px solid black;
-    margin: 10px;
-    background-color:grey; 
-    text-shadow: 1px 1px 1px black;
-    border-radius: 10pt;
-    box-shadow: 1pt 5pt 5pt; 
 }
 .detail-button {
     border-radius: 10pt;
     font-size: 10pt 
 }
-
 </style>

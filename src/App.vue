@@ -85,6 +85,7 @@ font-size: 20pt;
 font-family: 'Fredoka One', cursive;
 }
 body {
-    background-color: rgb(242, 129, 85);
+    background-color: rgb(228, 131, 93);
+    background-image: url('https://cdn.vox-cdn.com/thumbor/Yedrks3JgyAsCKhCYzuYHSrqVs0=/313x0:1746x955/1200x800/filters:focal(313x0:1746x955)/cdn.vox-cdn.com/uploads/chorus_image/image/49104733/pokemon-list.0.0.png');    
 }
 </style>
