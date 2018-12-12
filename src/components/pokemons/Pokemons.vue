@@ -3,7 +3,9 @@
 
 <template>
     <div>
-        <PokemonDetail :pokemon="selected"/>
+        <Modal v-if="showModal" :onClose="() => showModal = false">
+            <PokemonDetail :pokemon="selected"/>
+        </Modal>
         <ul>
             <Pokemon v-for="pokemon in pokemons"
                 v-bind:key="pokemon.pokemon"
@@ -16,11 +18,13 @@
 <script>
 import Pokemon from './Pokemon.vue';
 import PokemonDetail from './PokemonDetail.vue';
+import Modal from '../Modal.vue';
 
 export default {
     data() {
         return {
-            selected: null
+            selected: null,
+            showModal: false
         };
     },
     props: {
@@ -28,11 +32,13 @@ export default {
     },    
     components: {
         Pokemon,
-        PokemonDetail
+        PokemonDetail,
+        Modal
     },
     methods: {
         handleSelect(pokemon) {
             this.selected = pokemon;
+            this.showModal = true;
         }
     }
 

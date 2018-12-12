@@ -10,7 +10,7 @@
 
 <script>
 import pokemons from './services/pokedexApi.js';
-import Pokemons from './components/Pokemons.vue';
+import Pokemons from './components/pokemons/Pokemons.vue';
 import Header from './components/Header.vue';
 
 export default {
