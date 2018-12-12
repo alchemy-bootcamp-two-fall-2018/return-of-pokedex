@@ -10,18 +10,13 @@
         v-bind:selected="selected"
         v-bind:onSelect="handleSelect"
     />
-    <Modal>
-      <PokemonDetail v-bind:pokemon="selected"/> 
-    </Modal>
   </div>
 </template>
 
 <script>
 import pokemonApi from './pokemonApi.js';
 import Pokedex from './components/Pokedex.vue';
-import PokemonDetail from './components/PokemonDetail.vue';
 import Header from './components/Header.vue';
-import Modal from './components/Modal.vue';
 
 export default {
   data() {
@@ -37,14 +32,13 @@ export default {
         field: 'name',
         direction: 1
       },
-      selected: null
+      selected: null,
+      show: false
     };
   },
   components: {
     Header,
-    Pokedex,
-    PokemonDetail,
-    Modal
+    Pokedex
   },
   computed: {
     pokemonTypes() {
@@ -86,6 +80,7 @@ export default {
   methods: {
     handleSelect(pokemon) {
       this.selected = pokemon;
+      this.show = true;
       console.log('this is a pokemon', pokemon);
     }
   }
