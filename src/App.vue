@@ -76,3 +76,12 @@ export default {
     }
 };
 </script>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Freckle+Face');
+* {
+font-family: 'Freckle Face', cursive;
+font-size: 20pt;
+}
+</style>

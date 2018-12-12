@@ -46,7 +46,7 @@ export default {
   z-index: 99;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, .5);
+  background-color:rgba(245, 176, 176, 0.5);
 }
 .content {
   position: relative;
@@ -65,8 +65,10 @@ export default {
 }
 .fade-enter-active, .fade-leave-active {
   transition: all 1s;
+  background-color:rgba(245, 176, 176, 0.5);
 }
 .fade-enter, .fade-leave-to {
   opacity: 0;
+  background-color:rgba(245, 176, 176, 0.5);
 }
 </style>
