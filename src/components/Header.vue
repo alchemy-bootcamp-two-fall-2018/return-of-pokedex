@@ -1,5 +1,6 @@
 <template>
     <header>
+        <img src="../assets/pokeball.png">
         <label>
             Type:
             <select v-model="filter.type">
@@ -45,8 +46,11 @@ export default {
 
 <style>
     header {
-        padding: 10px;
+        padding: 15px;
         background: steelblue;
         color: white;
+    }
+    img {
+        width: 60px;
     }
 </style>
