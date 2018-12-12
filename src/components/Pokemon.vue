@@ -10,7 +10,7 @@
             <p> speed: {{ pokemon.speed }} </p>
         </div>
         <span>
-            <button @click="show = true"> More Details </button>
+            <button class="detail-button" @click="show = true"> More Details </button>
             <Modal :pokemon="pokemon" v-if="show" :onClose="() => show = false">
             </Modal>               
         </span>
@@ -59,5 +59,12 @@ li {
     margin: 10px;
     background-color:grey; 
     text-shadow: 1px 1px 1px black;
+    border-radius: 10pt;
+    box-shadow: 1pt 5pt 5pt; 
 }
+.detail-button {
+    border-radius: 10pt;
+    font-size: 10pt 
+}
+
 </style>

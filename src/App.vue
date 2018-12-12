@@ -5,7 +5,6 @@
         v-bind:filter="filter"
         v-bind:types="pokemonTypes"
         v-bind:abilities="pokemonAbility"/>
-        
     <Pokemons v-bind:pokemons="sortedPokemons"/>
   </div>
 </template>
@@ -79,9 +78,10 @@ export default {
 
 <style>
 
-@import url('https://fonts.googleapis.com/css?family=Freckle+Face');
+@import url('https://fonts.googleapis.com/css?family=Freckle+Face|Fredoka+One');
 * {
-font-family: 'Freckle Face', cursive;
+/* font-family: 'Freckle Face', cursive; */
 font-size: 20pt;
+font-family: 'Fredoka One', cursive;
 }
 </style>

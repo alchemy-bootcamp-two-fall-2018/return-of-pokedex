@@ -64,6 +64,9 @@ export default {
 <style>
 header {
     text-align: center;
+    background-color: pink;
+    margin-top: 20pt;
+    margin-bottom: 20pt; 
 }
 
 section {

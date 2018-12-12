@@ -52,6 +52,9 @@ export default {
   position: relative;
   background: white;
   padding: 40px;
+  color:black;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
 }
 .close {
   position: absolute;
