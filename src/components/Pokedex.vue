@@ -10,7 +10,6 @@
 
 <script>
 import Pokemon from './Pokemon.vue';
-// import PokemonDetail from './PokemonDetail.vue';
 
 export default {
   data() {
@@ -26,7 +25,7 @@ export default {
   },
   methods: {
     handleSelect(pokemon) {
-      console.log('hello', pokemon.pokemon);
+      // console.log('hello', pokemon.pokemon);
       this.selected = pokemon;
     }
   }
