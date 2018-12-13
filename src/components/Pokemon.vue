@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="info">
     <li v-on:click="onSelect(pokemon)">
         <img v-bind:src="pokemon.url_image">
         <h3>{{ pokemon.pokemon }}</h3>
