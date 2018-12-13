@@ -83,4 +83,13 @@ li {
   display: inline-block;
   margin: 0 10px;
 }
+
+@media (max-width: 375px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
 </style>
