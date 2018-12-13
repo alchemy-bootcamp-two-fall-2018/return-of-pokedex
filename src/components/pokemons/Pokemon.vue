@@ -20,11 +20,18 @@ export default {
 </script>
 
 <style>
+    body {
+        background-color: lightskyblue;
+    }
     li {
         position: relative;
         height: 200px;
     }
 
+    li:hover {
+        background-color: rgba(105, 39, 94, 0.4);
+        border-radius: 25px;
+    }
     img {
         position: absolute;
         top: 0;

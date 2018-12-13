@@ -71,16 +71,33 @@ export default {
         margin: auto;
         background: yellowgreen;
         color: purple;
-        padding: 10px;
+        padding-bottom: 10px;
         width: 100%;
     }
     h1 {
         text-align: center;
         font-size: 3em
     }
-
     label {
         display: block;
         text-align: center
+    }
+    input {
+        width: 200px;
+        box-sizing: border-box;
+        border-radius: 35px;
+        text-align: center;
+
+    }
+    select {
+        width: 10%;
+        border: none;
+        border-radius: 25px;
+    }
+    .sorter {
+        background-color: purple;
+        color: yellowgreen;
+        font-weight:bolder;
+        font-size: 18px;
     }; 
 </style>

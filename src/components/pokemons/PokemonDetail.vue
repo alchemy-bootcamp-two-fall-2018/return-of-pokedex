@@ -1,10 +1,12 @@
 <template>
   <div v-if="pokemon">
-    <h2>Your Pokemon</h2>
-    {{pokemon.pokemon}}
-    <!-- <img v-bind:src="pokemon.url_image"> -->
-
-
+    
+    <h2>Your Pokemon:</h2>
+    <h2>{{pokemon.pokemon}}</h2>
+    <h3>Types:{{pokemon.type_1}}, {{pokemon.type_2}}</h3>
+    <h3>Weight:{{pokemon.weight}}</h3>
+    <h3>Height:{{pokemon.height}}</h3>
+    
   </div>
 </template>
 
@@ -19,7 +21,7 @@ export default {
 </script>
 
 <style>
-img {
-  
+div {
+  text-align: center;
 }
 </style>

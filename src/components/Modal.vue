@@ -1,4 +1,3 @@
-
 <template>
   <div class="modal" @click="onClose">
     <div class="content" @click.stop="">
@@ -11,7 +10,8 @@
 <script>
 export default {
     props: {
-        onClose: Function
+        onClose: Function,
+        pokemon: Object
     }
 };
 </script>
@@ -25,14 +25,16 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image:url(https://static.tumblr.com/bfd42c6e12c4a48a0630ca3b0fcd1d15/vt0qhql/KSbnz4jg0/tumblr_static_tumblr_static_filename_640.jpg);
+  background-image: url(https://i.imgur.com/eVcYPSa.png);
   /* background-color: rgba(0, 0, 0, .5); */
   z-index: 5;
 }
 .content {
   position: relative;
-  background: white;
+  background: rgb(192, 255, 216);
   padding: 40px;
+  border-radius: 45px;
+  /* background-image: url(pokemon.url_image); */
 }
 .close {
   position: absolute;
