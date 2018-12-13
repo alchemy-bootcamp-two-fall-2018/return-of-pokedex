@@ -41,33 +41,28 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 350px;
-    width: 350px;
-    border: 5px solid;
+    justify-content: space-evenly;
+    border: 2px solid navy;
+    box-shadow: 4px 4px 4px black;
     background: black;
     margin: 0px 10px;
+    img {
+      width: 50%;
+      height: 50%;
+      z-index: 1;
+      margin-top: -20px;
+      transition: 300ms;
+    }
     &:hover {
       img {
         transform: scale(1.2);
       }
     }
   }
-  /* button {
-
-  } */
-  img {
-    width: 60%;
-    height: 60%;
-    z-index: 1;
-    margin-top: -20px;
-    transition: 300ms;
-    
-  }
   h3 {
     color: white;
     font-size: 1.3em;
   }
- 
  .fade-enter-active, .fade-leave-active {
     opacity: 1;
     transition: opacity .5s ease-in-out;

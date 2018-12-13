@@ -28,7 +28,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped lang="postcss">
   .modal {
     position: fixed;
     top: 0; left: 0;
@@ -38,19 +38,21 @@ export default {
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, .5);
-    z-index: 1;
+    z-index: 10;
   }
-
   .content {
     position: relative;
     background: white;
-    padding: 40px;
+    padding: 20px;
     z-index: 2;
+    border: 10px solid darkgray;
+    margin: 0px;
+    width: 50%;
   }
-  
   .close {
     position: absolute;
     top: 5px;
     right: 5px;
+    background: red;
   }
 </style>

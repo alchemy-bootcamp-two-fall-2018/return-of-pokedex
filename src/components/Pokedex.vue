@@ -1,21 +1,21 @@
 <template>
-    <section>
-        <transition-group
-          name="staggered-fade"
-          tag="ul"
-          v-bind:css="false"
-          v-on:before-enter="beforeEnter"
-          v-on:enter="enter"
-          v-on:leave="leave"
-        >
-            <Pokemon v-for="pokemon in pokemons"
-            v-bind:key="pokemon.pokemon"
-            v-bind:pokemon="pokemon"
-            v-on:click.native="onSelect(pokemon), show = true"
-            v-bind:class="{ pokemon: true, selected: pokemon === selected }"
-            />
-        </transition-group>
-    </section>
+  <section>
+    <transition-group
+      name="staggered-fade"
+      tag="ul"
+      v-bind:css="false"
+      v-on:before-enter="beforeEnter"
+      v-on:enter="enter"
+      v-on:leave="leave"
+    >
+      <Pokemon v-for="pokemon in pokemons"
+        v-bind:key="pokemon.pokemon"
+        v-bind:pokemon="pokemon"
+        v-on:click.native="onSelect(pokemon), show = true"
+        v-bind:class="{ pokemon: true, selected: pokemon === selected }"
+      />
+    </transition-group>
+  </section>
 </template>
 
 <script>
@@ -63,13 +63,13 @@ export default {
 };
 </script>
 
-<style>
+<style scoped lang="postcss">
   ul {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
-      grid-column-gap: 35px;
-      grid-row-gap: 15px;
+      grid-template-columns: repeat(4, 1fr);
       list-style-type: none;
       padding: 0;
+      grid-column-gap: 10px;
+      grid-row-gap: 10px;
   };
 </style>
