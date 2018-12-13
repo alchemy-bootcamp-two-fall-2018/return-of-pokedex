@@ -1,15 +1,17 @@
 <template>
-    <div class="modal" @click="onClose">
-       <div class="content" @click.stop="">
-           <button class="close" @click="onClose"> X </button>
-            <img :src="pokemon.url_image"/>
-            <h3>{{pokemon.pokemon}}</h3>
-            <p>Type 1: {{pokemon.type_1}}</p>
-            <p>Type 2: {{pokemon.type_2}}</p>
-            <p>Attack: {{pokemon.attack}}</p>
-            <p>Defense:{{pokemon.defense}}</p>
+    <transition name="fade">
+        <div class="modal" @click="onClose">
+        <div class="content" @click.stop="">
+            <button class="close" @click="onClose"> X </button>
+                <img :src="pokemon.url_image"/>
+                <h3>{{pokemon.pokemon}}</h3>
+                <p>Type 1: {{pokemon.type_1}}</p>
+                <p>Type 2: {{pokemon.type_2}}</p>
+                <p>Attack: {{pokemon.attack}}</p>
+                <p>Defense:{{pokemon.defense}}</p>
+            </div>
         </div>
-    </div>
+    </transition>
 </template>
 
 <script>
@@ -60,5 +62,13 @@ img {
   left: 0;
   width: 150px;
   height: 100%;
+}
+.fade-enter-active, .fade-leave-active {
+    transition: all 1s;
+    background-color: rgba(0, 0, 0, .5);
+}
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+    background-color: rgba(0, 0, 0, .5);
 }
 </style>

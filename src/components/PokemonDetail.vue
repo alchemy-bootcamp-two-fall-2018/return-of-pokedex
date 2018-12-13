@@ -30,13 +30,13 @@ export default {
 </script>
 
 <style scoped>
+
 li {
   position: relative;
   height: 400px;
-  /* min-width: 150px; */
 }
+
 img {
-  /* position: absolute; */
   top: 0;
   left: 0;
   width: 150px;
