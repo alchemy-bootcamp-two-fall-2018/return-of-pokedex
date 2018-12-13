@@ -12,7 +12,8 @@
 <script>
 import pokemons from '../pokedex.js'; 
 import Pokemons from './components/Pokemons.vue'; 
-import Header from './components/Header.vue'; 
+import Header from './components/Header.vue';
+
 
 export default {
     data() {

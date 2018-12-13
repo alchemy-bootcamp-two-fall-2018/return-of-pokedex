@@ -38,6 +38,7 @@ export default {
 
 <style>
 .modal {
+  margin-top: 20pt;
   position: fixed;
   top: 0; left: 0;
   height: 100%;

@@ -7,6 +7,8 @@
     v-on:enter="enter"
     v-on:leave="leave"
     >
+    
+
     <Pokemon v-for="pokemon in pokemons"
      v-bind:key="pokemon.pokemon"
     v-bind:pokemon="pokemon"/>
@@ -15,12 +17,14 @@
 <script>
 import Pokemon from './Pokemon.vue'; 
 
+
 export default {
     props: {
         pokemons: Array
     },
     components: {
-        Pokemon
+        Pokemon,
+    
     },
     methods: {
         beforeEnter: function(el) {
@@ -36,6 +40,7 @@ export default {
                     { complete: done }
                 );
             }, delay);
+        
         },
         leave: function(el, done) {
             var delay = el.dataset.index * 150;
@@ -46,6 +51,7 @@ export default {
                     { complete: done }
                 );
             }, delay);
+        
         }
     }
 };
