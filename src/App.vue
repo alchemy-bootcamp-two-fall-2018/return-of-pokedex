@@ -1,16 +1,16 @@
 <template>
-  <div id="app">
-    <Header
-        v-bind:filter="filter"
-        v-bind:sort="sort"
-        v-bind:types="pokemonTypes"/>
-    <Pokemons v-bind:pokemons="sortedPokemons"/>    <!--used to be filteredPokemons-->
-  </div>
+    <div id="app">
+        <Header
+            v-bind:filter="filter"
+            v-bind:sort="sort"
+            v-bind:types="pokemonTypes"/>
+        <Pokemons v-bind:pokemons="sortedPokemons"/>    <!--used to be filteredPokemons-->
+    </div>
 </template>
 
 <script>
 import pokemons from './services/pokedexApi.js';
-import Pokemons from './components/Pokemons.vue';
+import Pokemons from './components/pokemons/Pokemons.vue';
 import Header from './components/Header.vue';
 
 export default {
@@ -29,12 +29,10 @@ export default {
             }
         };
     },
-    
     components: { 
         Header,
         Pokemons
     },
-
     computed: {
         pokemonTypes() {
             const types = [];
@@ -48,7 +46,6 @@ export default {
             });
             return types;
         },
-
         filteredPokemons() {
             return this.pokemons.filter(pokemon => {
                 const hasName = !this.filter.pokemon || pokemon.pokemon.includes(this.filter.pokemon);
@@ -58,7 +55,6 @@ export default {
                 return hasName && hasWeight && hasHeight && hasTypes;
             });
         },
-
         sortedPokemons() {
             const field = this.sort.field;
             const direction = this.sort.direction;
@@ -77,6 +73,3 @@ export default {
 };
 </script>
 
-<style>
-
-</style>
