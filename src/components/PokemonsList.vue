@@ -3,12 +3,12 @@
         name="staggered-fade"
         tag="ul"
         :css="false"
-        :before-enter="beforeEnter"
-        :enter="enter"
-        :leave="leave"
+        v-on:before-enter="beforeEnter"
+        v-on:enter="enter"
+        v-on:leave="leave"
     >
         <Pokemon v-for="pokemon in pokemons"
-            :key="pokemon.pokemon"
+            v-bind:key="pokemon.pokemon"
             :pokemon="pokemon"
             :selected="selected"
             :onSelect="handleSelect"/>
