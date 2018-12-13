@@ -41,6 +41,7 @@ export default {
 
 .black {
     color: black;
+    letter-spacing: 2px;
 }
 
 .modal-img {
@@ -53,6 +54,7 @@ h2 {
     text-shadow: 2px 2px black;
     margin: 0;
     padding: 0;
+    letter-spacing: 2px
 }
 
 .modal {
@@ -71,6 +73,7 @@ h2 {
   background: #FFA4D9;
   padding: 40px;
   border-radius: 25px;
+  border: 1px solid black;
 }
 
 .close {

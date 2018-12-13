@@ -38,6 +38,7 @@
                 <option value="-1">Dec</option>
             </select>
             </label>
+            <button class=close-button @click="show = false">X</button>
             </div>
         <div class="form-button" v-else>
             <button @click="show = true">Search the Pokemons</button>
@@ -71,9 +72,16 @@ export default {
 }
 
 .title {
-    font-size: 2.5em;
+    font-size: 3em;
     color: #D1FF70;
     text-shadow: 4px 4px black;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    letter-spacing: 4px;
+}
+
+.close-button {
+    margin-left: 20px;
 }
 
 

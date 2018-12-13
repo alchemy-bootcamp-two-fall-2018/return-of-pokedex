@@ -44,7 +44,7 @@ export default {
         background: #85004E;
         &:hover {
           img {
-            transform: scale(1.3);
+            transform: scale(1.2);
             }
         }
     }
@@ -54,6 +54,7 @@ export default {
     }
 
     h4 {
+        letter-spacing: 1px;
         padding: 0px;
         margin: 0px;
     }
