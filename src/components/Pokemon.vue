@@ -1,19 +1,35 @@
 <template>
     <li>
+        <h3>{{ pokemon.pokemon }}</h3>
         <img v-bind:src="pokemon.url_image" />
-        <div class="info" v-bind:style="{ color: pokemon.color_1 }">
-            <h3>{{ pokemon.pokemon }}</h3>
-            <p>Type 1: {{pokemon.type_1}}</p>
-            <p>Type 2: {{pokemon.type_2}}</p> 
-            <p>Attack: {{pokemon.attack}}</p>
-        </div>
+        <button @click="show = true">View Details</button>
+        <transition name="fade">
+            <Modal v-if="show" v-bind:onClose="() => show = false">
+                <div v-if="pokemon">
+                    <img v-bind:src="pokemon.url_image" />
+                <div class="info" v-bind:style="{ color: pokemon.color_1 }">
+                <h3>{{ pokemon.pokemon }}</h3>
+                    <p>Type 1: {{pokemon.type_1}}</p>
+                    <p>Type 2: {{pokemon.type_2}}</p> 
+                    <p>Attack: {{pokemon.attack}}</p>
+                </div>
+        </transition>
     </li>
 </template>
 
 <script>
+import Modal from './Modal.vue';
 export default {
+    data() {
+        return {
+            show: false;
+        };
+    },
     props: {
         pokemon: Object
+    },
+    components: {
+        Modal
     }
 };
 </script>
