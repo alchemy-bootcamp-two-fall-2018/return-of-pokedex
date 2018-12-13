@@ -18,18 +18,6 @@
             :poke="pok"
             :onChoose="handleChoose"
             :deets="deets"/>
-
-        <!-- <div
-            v-for="poke in pokemons"
-            :key="poke.pokemon"
-            @click="handleChoose(poke.id)"
-            >
-            <p>Type: {{poke.type_1}}</p>
-            <p>Egg Group: {{poke.egg_group_1}}</p>
-            <p>Weight: {{poke.weight}}</p>
-            <p>Height: {{poke.height}}</p>
-        </div> -->
-
       </transition-group>
   </div>
 </template>
@@ -132,9 +120,4 @@ export default {
   margin-top: 60px;
 }
 
-.deets {
-    display: inline-block;
-    padding: 2%;
-    margin: 1%;
-}
 </style>
