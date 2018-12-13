@@ -42,9 +42,8 @@ export default {
                 return hasAttack && hasName && hasType;
             });
         },
-
         sortedPokemon() {
-            const field = this.sort.field; //was sort.pokemon
+            const field = this.sort.field;
             const direction = this.sort.direction;
             return this.filtered.slice().sort((a, b) => {
                 if(a[field] > b[field]) {

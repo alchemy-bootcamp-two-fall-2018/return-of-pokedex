@@ -1,5 +1,5 @@
 <template>
-    <li class="imageli">
+    <li class="imageli" @click="handleSelect">
         <img v-bind:src="pokemon.url_image" />
         <div class="info">
             <h3>{{ pokemon.pokemon }}</h3>
@@ -12,14 +12,23 @@
 
 <script>
 export default {
+    data() {
+        return {
+            selected: null
+        };
+    },
     props: {
         pokemon: Object
+    },
+    methods: {
+        handleSelect(pokemon) {
+            selected = pokemon
+        }
     }
 };
 </script>
 
 <style scoped>
-
 img {
     width: 50%;
     height: 50%;

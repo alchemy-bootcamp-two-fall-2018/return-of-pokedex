@@ -8,8 +8,10 @@
         v-on:leave="leave"
     >
         <Pokemon v-for="pokemon in pokedex"
+    
             v-bind:key="pokemon.pokemon"
-            v-bind:pokemon="pokemon"/>
+            v-bind:pokemon="pokemon"
+            />
     </transition-group>
 </template>
 

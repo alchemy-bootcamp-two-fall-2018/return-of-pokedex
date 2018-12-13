@@ -40,7 +40,6 @@ import pokemonApi from '../services/pokemonApi.js';
 export default {
     data() {
         return {
-            // was pokemonz
             pokemons: pokemonApi.getPokemons(),
             types: pokemonApi.getTypes()
         };
@@ -61,6 +60,4 @@ header {
     color: #f1f2d8;
     height: 10em;
 }
-/* display: flex and justify-content, align-items added later
-} */
 </style>
