@@ -6,7 +6,7 @@
       <transition name="fade">
         <Modal v-if="show" v-bind:onClose="() => show = false">
           <div v-if="pokemon">
-            <img v-bind:src="pokemon.url_image" />
+            <img class="pics" v-bind:src="pokemon.url_image" />
             <h3>{{ pokemon.pokemon }}</h3>
             <p>Type 1: {{pokemon.type_1}}</p>
             <p>Type 2: {{pokemon.type_2}}</p> 
@@ -46,6 +46,11 @@ export default {
     box-shadow: 4px 4px 4px black;
     background: black;
     margin: 0px 10px;
+    h3 {
+      color: white;
+      font-size: 1.3em;
+      margin-top: 3px;
+    }
     img {
       width: 50%;
       height: 50%;
@@ -58,10 +63,9 @@ export default {
         transform: scale(1.2);
       }
     }
-  }
-  h3 {
-    color: white;
-    font-size: 1.3em;
+    button {
+      margin-bottom: 5px;
+    }
   }
  .fade-enter-active, .fade-leave-active {
     opacity: 1;
@@ -69,5 +73,9 @@ export default {
   }
   .fade-enter, .fade-leave-active {
     opacity: 0
+  }
+  .pics {
+    margin-top: 10px;
+    margin-bottom: -40px;
   }
 </style>
