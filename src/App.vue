@@ -29,12 +29,10 @@ export default {
             }
         };
     },
-    
     components: { 
         Header,
         Pokemons
     },
-
     computed: {
         pokemonTypes() {
             const types = [];
@@ -48,7 +46,6 @@ export default {
             });
             return types;
         },
-
         filteredPokemons() {
             return this.pokemons.filter(pokemon => {
                 const hasName = !this.filter.pokemon || pokemon.pokemon.includes(this.filter.pokemon);
@@ -58,7 +55,6 @@ export default {
                 return hasName && hasWeight && hasHeight && hasTypes;
             });
         },
-
         sortedPokemons() {
             const field = this.sort.field;
             const direction = this.sort.direction;
@@ -77,6 +73,3 @@ export default {
 };
 </script>
 
-<style>
-
-</style>

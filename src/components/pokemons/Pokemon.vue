@@ -1,4 +1,3 @@
-<!--this component renders the data-->
 <template>
     <li v-on:click="onSelect(pokemon)">
         <img v-bind:src='pokemon.url_image'>
@@ -20,37 +19,35 @@ export default {
 </script>
 
 <style>
-    body {
-        background-color: lightskyblue;
-    }
-    li {
-        position: relative;
-        height: 200px;
-    }
-
-    li:hover {
-        background-color: rgba(105, 39, 94, 0.4);
-        border-radius: 25px;
-    }
-    img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        object-fit: cover;
-        border: 1px solid black;
-    }
-
-    .descriptions {
-        margin: auto;
-        width: 50%;
-        border: 1px solid black;
-        border-radius: 15px; 
-        background-color: rgba(199, 216, 126, .4);
-        line-height: 50%;
-        text-align: center;
-        font-weight: bold;
-    }
+body {
+    background-color: lightskyblue;
+}
+li {
+    position: relative;
+    height: 200px;
+}
+li:hover {
+    background-color: rgba(105, 39, 94, 0.4);
+    border-radius: 25px;
+}
+img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    border: 1px solid black;
+}
+.descriptions {
+    margin: auto;
+    width: 50%;
+    border: 1px solid black;
+    border-radius: 15px; 
+    background-color: rgba(215, 236, 122, 0.6);
+    line-height: 50%;
+    text-align: center;
+    font-weight: bold;
+}
 </style>

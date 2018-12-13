@@ -32,13 +32,14 @@
                     <option value="">All</option>
                     <option 
                         v-for="type in types"
-                        v-bind:key="type"
-                        v-bind:value="type">
+                        :key="type"
+                        :value="type">
                         {{type}}
                     </option>
                 </select>
             </label>
         </fieldset>
+
         <div class="sorter">
             <label>
                 Sort By:
@@ -87,7 +88,6 @@ export default {
         box-sizing: border-box;
         border-radius: 35px;
         text-align: center;
-
     }
     select {
         width: 10%;

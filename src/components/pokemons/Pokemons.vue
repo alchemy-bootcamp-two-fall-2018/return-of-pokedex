@@ -1,6 +1,3 @@
-<!-- this page renders the grid -->
-<!-- parent component -->
-
 <template>
     <div>
         <transition name="bounce">
@@ -12,7 +9,7 @@
         <transition-group
             name="staggered-fade"
             tag="ul"
-            v-bind:css="false"
+            :css="false"
             v-on:before-enter="beforeEnter"
             v-on:enter="enter"
             v-on:leave="leave"
@@ -21,9 +18,7 @@
                 :key="pokemon.pokemon"
                 :pokemon="pokemon"
                 :onSelect="handleSelect"/>
-        
-        </transition-group>
-        
+        </transition-group>   
     </div>
 </template>
 
@@ -83,20 +78,20 @@ export default {
 </script>
 
 <style>
-    ul {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-    }
-    .bounce-enter-active {
-        animation: bounce-in .5s;
-    }
-    .bounce-leave-active {
-        animation: bounce-in .5s reverse;
-    }
-    @keyframes bounce-in {
+ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.bounce-enter-active {
+    animation: bounce-in 1s;
+}
+.bounce-leave-active {
+    animation: bounce-in 1s reverse;
+}
+@keyframes bounce-in {
     0% {
         transform: scale(0);
     }

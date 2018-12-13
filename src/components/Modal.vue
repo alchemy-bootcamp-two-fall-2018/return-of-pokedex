@@ -1,7 +1,7 @@
 <template>
   <div class="modal" @click="onClose">
     <div class="content" @click.stop="">
-      <button class="close" @click="onClose">X</button>
+      <button class="close" @click="onClose">⇦</button>
       <slot></slot>
     </div>
   </div>
