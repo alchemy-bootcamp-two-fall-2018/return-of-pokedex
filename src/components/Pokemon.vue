@@ -1,10 +1,12 @@
 <template>
     <div>
-        <Modal 
-        v-if="show"
-        :onClose="onClose"
-        :pokemon="pokemon"
-        />
+        <transition name="fade">
+            <Modal 
+            v-if="show"
+            :onClose="onClose"
+            :pokemon="pokemon"
+            />
+        </transition>
         <li @click="handleClick" :style=" { background: pokemon.color_1 }">
             <img v-bind:src="pokemon.url_image">
             <h3>{{pokemon.pokemon}}</h3>
@@ -59,5 +61,11 @@ export default {
     h3 {
         background-color: antiquewhite;
         border: 4px outset gray;
+    }
+    .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+    }
+    .fade-enter, .fade-leave-to{
+    opacity: 0;
     }
 </style>
