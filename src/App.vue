@@ -8,7 +8,6 @@
    
     <PokemonsList :pokemons="sortedPokemon"/>
   </div>
-
 </template>
 
 <script>

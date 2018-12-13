@@ -2,14 +2,14 @@
     <transition-group 
         name="staggered-fade"
         tag="ul"
-        v-bind:css="false"
-        v-on:before-enter="beforeEnter"
-        v-on:enter="enter"
-        v-on:leave="leave"
+        :css="false"
+        :before-enter="beforeEnter"
+        :enter="enter"
+        :leave="leave"
     >
         <Pokemon v-for="pokemon in pokemons"
-            v-bind:key="pokemon.pokemon"
-            v-bind:pokemon="pokemon"
+            :key="pokemon.pokemon"
+            :pokemon="pokemon"
             :selected="selected"
             :onSelect="handleSelect"/>
     </transition-group>
@@ -43,7 +43,7 @@ export default {
                 //eslint-disable-next-line
                 Velocity(
                     el,
-                    { opacity: 1, height: '375px' },
+                    { opacity: 1, height: '250px' },
                     { complete: done }
                 );
             }, delay, 3000);
@@ -79,6 +79,6 @@ li {
     border: solid red;
     background:black;
     min-width: 175px;
-    height: 375px;
+    height: 250px;
 }
 </style>

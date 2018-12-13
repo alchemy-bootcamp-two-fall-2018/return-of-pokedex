@@ -19,7 +19,6 @@ export default {
         pokemon: Object
     },
     created(){
-        console.log('Modal Created');
         this.documentListener = event => {
             if(event.keyCode === 27){
                 this.onClose();
@@ -43,11 +42,12 @@ export default {
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, .5);
+  color: black;
   z-index: 1;
 }
 .content {
   position: relative;
-  background: white;
+  background: lightgray;
   padding: 40px;
 }
 .close {
