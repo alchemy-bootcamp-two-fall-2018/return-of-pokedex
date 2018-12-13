@@ -1,6 +1,8 @@
 <template>
   <header>
       <h1>Pokedex Zombie Rises Again!</h1>
+      <section class="filter"> 
+        <p class="title">Pokedex Hunter</p>
     <label>
       Type:
       <select v-model="filter.type">
@@ -30,35 +32,48 @@
         <option value="attack">Attack</option>
       </select>
     </label>
+    <label>
+      <select v-model="sort.direction">
+        <option value="1">Ascending Order</option>
+        <option value="-1">Descending Order</option>
+      </select>
+    </label>
+    </section>
   </header>
 </template>
 
 <script>
 export default {
-    props: {
-        filter: Object,
-        types: Array,
-        sort: Object
-    }
+  props: {
+    filter: Object,
+    types: Array,
+    sort: Object
+  }
 };
 </script>
 
-<style scoped>
-header {
-    background: rgb(241, 241, 11);
-    color: rgb(199, 40, 40);
+<style lang="postcss" scoped>
+.header {
+    display: flex;
+    flex-direction: column;
+    background: rgb(226, 241, 11);
+    color: rgb(164, 199, 40);
     padding: 20px;
     margin-bottom: 10px;
     margin-top: 10px;
     padding-top: 10px;
 }
-h1 {
-        font-size: 5em;
-        padding: 10px;
-        margin: 0px;
-    }
-    html {
-        margin: 0px;
-        padding: 0px;
-    }
+.filter {
+  background: rgb(238, 234, 22);
+  color: red;
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-top: 0px;
+  padding-top: 5px;  
+}
+label {
+  padding: 10px;
+  margin: 5px;
+}
+    
 </style>

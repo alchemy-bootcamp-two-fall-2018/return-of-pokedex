@@ -5,11 +5,13 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "test": "npm run lint"
-
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "autoprefixer": "^9.4.2",
+    "postcss": "^7.0.6",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-nested": "^4.1.0",
     "vue": "^2.5.17"
   },
   "devDependencies": {
