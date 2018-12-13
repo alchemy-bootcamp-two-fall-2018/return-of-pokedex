@@ -12,24 +12,23 @@
         @enter="enter"
         @leave="leave">
 
-        <Tile v-show="!deets"
+        <Tile
             v-for="pok in pokemons"
             :key="pok.id"
             :poke="pok"
             :onChoose="handleChoose"
             :deets="deets"/>
 
-        <div v-show="deets"
+        <!-- <div
             v-for="poke in pokemons"
             :key="poke.pokemon"
             @click="handleChoose(poke.id)"
-            class="deets"
             >
             <p>Type: {{poke.type_1}}</p>
             <p>Egg Group: {{poke.egg_group_1}}</p>
             <p>Weight: {{poke.weight}}</p>
             <p>Height: {{poke.height}}</p>
-        </div>
+        </div> -->
 
       </transition-group>
   </div>
@@ -49,7 +48,7 @@ export default {
     data() {
         return {
             pokemons,
-            deets: false
+            deets: -1
         };
     },
     components: {
@@ -90,8 +89,7 @@ export default {
             }
         },
         handleChoose(id) {
-            console.log(id);
-            this.deets = !this.deets;
+            this.deets = id;
         },
         beforeEnter: function(el) {
             el.style.opacity = 0;
