@@ -1,15 +1,15 @@
 <template>
   <div class="modal" @click="onClose" @keyup.esc="onClose">
     <div class="content" @click.stop="">
-    <button class="close" @click="onClose">X</button>
-    <div class="info" :style="{ color: pokemon.color_1 }">
-    <img :src="pokemon.url_image" class="side" />
-      <h3 class="pokemon-name">{{ pokemon.pokemon }}</h3>
-      <p>Type 1: {{ pokemon.type_1 }}</p>
-      <p>Type 2: {{ pokemon.type_2 }}</p>
-      <p>Hit Points: {{ pokemon.hp }}</p>
-      <p>Defense: {{ pokemon.defense }}</p>
-    </div>
+        <button class="close" @click="onClose">X</button>
+        <div class="info" :style="{ color: pokemon.color_1 }">
+            <img :src="pokemon.url_image" class="side" />
+            <h3 class="pokemon-name">{{ pokemon.pokemon }}</h3>
+            <p>Type 1: {{ pokemon.type_1 }}</p>
+            <p>Type 2: {{ pokemon.type_2 }}</p>
+            <p>Hit Points: {{ pokemon.hp }}</p>
+            <p>Defense: {{ pokemon.defense }}</p>
+        </div>
     </div>
   </div>
 </template>

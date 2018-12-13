@@ -30,7 +30,6 @@ export default {
 <style lang="postcss" scoped>
 .card {
     background: #001f3f; 
-    position: relative;
     box-shadow:0px 0px 0px 2px grey inset;
     margin-bottom:20px;
 }
@@ -40,5 +39,11 @@ img {
 }
 li {
     list-style-type: none;
+}
+@media (max-width: 375px) {
+  img {
+    width: 150px;
+    height: 150px;
+  }
 }
 </style>

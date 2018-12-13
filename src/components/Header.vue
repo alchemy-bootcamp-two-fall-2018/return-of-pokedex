@@ -1,5 +1,4 @@
 <template>
-
   <header>
     <h1>{{ msg }}</h1>
       <label>
@@ -54,7 +53,6 @@
     </label>
   </header>
 </template>
-
 <script>
 export default {
     props: {
@@ -85,6 +83,4 @@ li {
   display: inline-block;
   margin: 0 10px;
 }
-
-
 </style>

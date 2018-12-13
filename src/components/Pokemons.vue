@@ -64,4 +64,10 @@ ul {
     grid-column-gap: 10px;
     padding: 0px;
 }
+@media (max-width: 375px) {
+  ul {
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 5px;
+  }
+}
 </style>
