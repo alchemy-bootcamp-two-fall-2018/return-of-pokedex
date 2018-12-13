@@ -58,6 +58,7 @@ export default {
 header {
   background: steelblue;
   color: white;
-  padding: 10px
+  padding: 10px;
+  font-weight: bolder;
 }
 </style>
