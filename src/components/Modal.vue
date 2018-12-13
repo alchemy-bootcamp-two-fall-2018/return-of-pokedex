@@ -1,5 +1,5 @@
 <template>
-    <div class="modal" @click="onClose">
+  <div class="modal" @click="onClose">
     <div class="content" @click.stop="">
       <button class="close" @click="onClose">X</button>
       <slot></slot>
@@ -14,7 +14,8 @@ export default {
     }
 };  
 </script>
-<style>
+
+<style scoped lang="postcss">
 div.modal {
   position: fixed;
   top: 0; left: 0;
@@ -40,7 +41,7 @@ form {
 }
 button {
   border: 2px solid black;
-  border-radius: 10px;
+  border-radius: 5px;
   margin: 10px;
   font-size: 0.75em;
   background-color:rgba(175, 22, 22, 0.851);

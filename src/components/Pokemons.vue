@@ -72,7 +72,6 @@ export default {
         handleSelect(pokemon) {
             this.selected = pokemon;
             this.showModal = true;
-            console.log('Was clicked') ;  
         }
     }
 };
@@ -90,10 +89,6 @@ ul {
 
 }
 
-/* .flip-list-move {
-  transition: transform 1s;
-} */
-
 .slide-fade-enter-active {
   transition: all .3s ease;
 }
@@ -101,10 +96,9 @@ ul {
   transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
 .slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active below version 2.1.8 */ {
+{
   transform: translateX(10px);
   opacity: 0;
-}
-      
+}      
 </style>
       

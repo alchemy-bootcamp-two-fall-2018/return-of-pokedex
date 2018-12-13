@@ -14,10 +14,18 @@ export default {
     props: {
         pokemon:Object
     }
-
 };
 </script>
 
-<style>
-
+<style scoped lang="postcss">
+img {
+  height: 50%;
+  width: 50%;
+}
+p {
+  font-size: 1.25em;
+  font-weight: bolder;
+  background-color: cadetblue;
+  border-radius: 7px;
+}
 </style>
