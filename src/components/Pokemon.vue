@@ -42,7 +42,7 @@ export default {
         width: 100%;
     }
     li {
-        border: 1px solid darkgreen;
+        border: 2px solid navy;
         margin: 5px;
         padding: 1vw;
         width: 200px;
@@ -50,6 +50,11 @@ export default {
         flex-direction: column;
         text-align: center;
         border-radius: 10px;
+        box-shadow: 2px 2px 2px;
+    }
+    li:hover {
+        border-color: orange;
+        box-shadow: 8px 8px 8px;
     }
     h3 {
         background-color: antiquewhite;
