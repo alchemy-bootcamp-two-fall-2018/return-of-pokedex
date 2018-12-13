@@ -7,15 +7,24 @@
             :pokemon="pokemon"
             />
         </transition>
-        <li @click="handleClick" :style=" { background: pokemon.color_1 }">
-            <img v-bind:src="pokemon.url_image">
-            <h3>{{pokemon.pokemon}}</h3>
-        </li>
+            <li @click="handleClick" :style=" { background: pokemon.color_1 }">
+                <img v-bind:src="pokemon.url_image">
+                <h3>{{pokemon.pokemon}}</h3>
+            </li>
     </div>
 </template>
 
 <script>
 import Modal from './Modal';
+
+function wait(ms){
+   var start = new Date().getTime();
+   var end = start;
+   while(end < start + ms) {
+     end = new Date().getTime();
+  }
+}
+
 export default {
     data() {
         return {
@@ -31,6 +40,11 @@ export default {
         },
         onClose() {
             this.show = false;
+        },
+        dance() {
+            this.dance = true;
+            wait(3000);
+            this.dance = false;
         }
     },
     components: {
