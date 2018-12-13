@@ -29,7 +29,7 @@ export default {
 
 <style>
     .card {
-    background: #001f3f; 
+    background: #54967d; 
 
     box-shadow:0px 0px 0px 2px grey inset;
     margin-bottom:20px;
