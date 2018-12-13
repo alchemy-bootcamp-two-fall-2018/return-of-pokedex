@@ -6,7 +6,7 @@
         </li>
 
         <transition name="slide-fade">
-            <li v-if="deets === poke.id">
+            <li v-if="deets === poke.id" class="info">
                 <p>Name: {{poke.pokemon}}</p>
                 <p>Type: {{poke.type_1}}</p>
                 <p>Egg Group: {{poke.egg_group_1}}</p>
@@ -30,19 +30,42 @@ export default {
 <style scoped lang="postcss">
 @import '../styles.css';
 
+li {
+  position: relative;
+  height: $card-size;
+  overflow: hidden;
+  &:hover {
+    img {
+      transform: scale(1.3);
+      filter: grayscale(0);
+    }
+    .info {
+      bottom: 0;
+    }
+  }
+}
 img {
-    width: 100px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+  transition: 500ms;
+  filter: grayscale(1);
+}
+.info {
+  transition: 500ms;
+  position: fixed;
+  bottom: -100px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 5px;
+  color: $teal;
+}
+h4, p {
+  margin: 0;
 }
 
-li {
-    list-style: none;
-    display: inline-block;
-    padding: 2%;
-    margin: 1%;
-    height: 150px;
-    width: 150px;
-    /* border: 1px solid red; */
-}
 .list-enter-active, .list-leave-active {
     transition: all 1s;
 }

@@ -110,14 +110,21 @@ export default {
 
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped lang="postcss">
+@import './styles.css';
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($card-size, 1fr));
+  list-style-type: none;
+  margin: 1%;
+  padding: 0;
+  /* height: calc(100vh - 150px); */
+  width: 50vw;
+  overflow-y: auto;
 }
 
+li {
+  display: flex;
+}
 </style>
