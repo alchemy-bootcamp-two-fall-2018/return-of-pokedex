@@ -1,18 +1,13 @@
 <template>
     <div>
-        <Modal v-if="show"
+        <Modal 
+        v-if="show"
         :onClose="onClose"
         :pokemon="pokemon"
         />
-        <li @click="handleClick">
-            <h3>{{pokemon.pokemon}}</h3>
+        <li @click="handleClick" :style=" { background: pokemon.color_1 }">
             <img v-bind:src="pokemon.url_image">
-            <div id="stats">
-                <h4>Type 1: {{pokemon.type_1}}</h4>
-                <h4>Type 2: {{pokemon.type_2}}</h4>
-                <h4>ATK: {{pokemon.attack}}</h4>
-                <h4>DEF: {{pokemon.defense}}</h4>
-            </div>
+            <h3>{{pokemon.pokemon}}</h3>
         </li>
     </div>
 </template>
@@ -30,7 +25,6 @@ export default {
     },
     methods: {
         handleClick() {
-            console.log(this.pokemon);
             this.show = true;
         },
         onClose() {
@@ -48,7 +42,6 @@ export default {
         width: 100%;
     }
     li {
-        background: rgba(224,213,213, 0.7);
         border: 1px solid darkgreen;
         margin: 5px;
         padding: 1vw;
@@ -56,11 +49,10 @@ export default {
         display: flex;
         flex-direction: column;
         text-align: center;
+        border-radius: 10px;
     }
-    .fade-enter-active, .fade-leave-active {
-        transition: opacity .5s;
-    }   
-    .fade-enter, .fade-leave-to {
-        opacity: 0;
+    h3 {
+        background-color: antiquewhite;
+        border: 4px outset gray;
     }
 </style>

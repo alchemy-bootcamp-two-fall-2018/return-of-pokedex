@@ -29,7 +29,7 @@ export default {
         grid-template-columns: repeat(4, 1fr);
     }
     .flip-list-move {
-        transition: transform 1s;
+        transition: transform 2s;
     }
     
 </style>
