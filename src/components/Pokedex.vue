@@ -1,6 +1,6 @@
 <template>
-    <transition-group n
-    ame="flip-list" 
+    <transition-group 
+    name="flip-list" 
     tag="ul"
     v-bind:css="false"
     v-on:before-enter="beforeEnter"
@@ -60,17 +60,13 @@ export default {
 };
 </script>
 
-<style scoped lang="postcss">
+<style lang="postcss" scoped>
     ul {
+            margin-top: 40px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            grid-column-gap: 15px;
-            grid-row-gap: 15px;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            height: calc(100vh - 150px);
-            width: 50vw;
-            overflow-y: auto;
-        };
+            grid-template-columns: repeat(6, 1fr);
+            grid-row-gap: 20px;
+            grid-column-gap: 10px;
+            padding: 0px;
+        }
 </style>

@@ -1,47 +1,68 @@
 <template>
-    <li>
-        <img v-bind:src="pokemon.url_image" />
-        <div v-bind:style="{ color:pokemon.color_1}" class="info">
-            <h3>{{ pokemon.pokemon }}</h3>
-            <p>type 1: {{ pokemon.type_1 }}</p>
-            <p>type 2: {{ pokemon.type_2 }}</p>
-            <p>attack: {{ pokemon.attack }}</p>
-            <p>defense: {{ pokemon.defense }}</p>
-        </div>
+    <li class="card">
+        
+        <img v-bind:src="pokemon.url_image" class="side"/>
+        <button @click="show = true">View Details</button>
+        <transition name="fade">
+            <Modal v-if="show" v-bind:onClose="() => show = false" :pokemon="pokemon">
+            </Modal>
+        </transition>
     </li>
 </template>
 
 <script>
+import Modal from './Modal.vue';
 export default {
     props: {
         pokemon: Object
+    },
+    components: {
+        Modal
+    },
+    data() {
+        return {
+            show: false
+        };
     }
 };
 </script>
 
 <style>
-    li {
-        position: relative;
-        height: 420px;
-        border: 2px solid black;
-        background: black;
+    .card {
+    background: #001f3f; 
+
+    box-shadow:0px 0px 0px 2px grey inset;
+    margin-bottom:20px;
     }
+    
     img {
-        position: absolute;
+        
         top: 0;
         left: 30px;
-        width: 80%;
-        height: 70%;
-        z-index: 1;
-        object-fit: cover;
+        width: 200px;
+        height: 200px;
     }
-    .info {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: 130px;
-        background: rgba(255, 255, 255);
-        line-height: 0.4em;
-        font-size: 1em;
+    li {
+        list-style-type: none;
     }
+
+    @media (max-width: 375px) {
+        img {
+            width: 150px;
+            height: 150px;
+        }
+    }
+    h3 {
+        color: white;
+        font-size: 1.3em;
+    }
+
+    fade-enter-active, .fade-leave-active {
+    opacity: 1;
+    transition: opacity .5s ease-in-out;
+    }
+    .fade-enter, .fade-leave-active {
+    opacity: 0
+    }
+    
 </style>
