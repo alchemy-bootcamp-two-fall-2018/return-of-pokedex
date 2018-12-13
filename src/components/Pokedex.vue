@@ -27,6 +27,9 @@ export default {
         list-style-type: none;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+        margin-left: 30px;
+        grid-column-gap: 25px;
+        grid-row-gap: 15px;
     }
     .flip-list-move {
         transition: transform 2s;

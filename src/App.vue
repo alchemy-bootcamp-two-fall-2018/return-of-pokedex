@@ -72,4 +72,9 @@ export default {
 body {
   margin: 0;
 }
+#app {
+  display: flex;
+  flex-flow: column;
+}
+
 </style>
