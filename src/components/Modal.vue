@@ -46,6 +46,8 @@ export default {
 
 .modal-img {
     width: 70%;
+    -webkit-filter: drop-shadow(20px 20px 20px black);
+    filter: drop-shadow(20px 20px 20px black);
 }
 
 h2 {

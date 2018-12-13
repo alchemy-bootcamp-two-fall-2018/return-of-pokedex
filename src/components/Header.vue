@@ -67,7 +67,7 @@ export default {
     padding: 20px;
     background: #006388;
     margin-bottom: 40px;
-    box-shadow: 5px 10px 10px grey;
+    box-shadow: 5px 10px 10px black;
     color: white;
 }
 

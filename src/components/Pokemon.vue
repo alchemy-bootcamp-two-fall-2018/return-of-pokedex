@@ -39,7 +39,7 @@ export default {
     li {
         text-align: center;
         border: 1px solid black;
-        box-shadow: 5px 10px 10px grey;
+        box-shadow: 5px 10px 10px black;
         padding: 30px;
         background: #85004E;
         &:hover {
@@ -51,6 +51,8 @@ export default {
 
     img {
         width: 100px;
+        -webkit-filter: drop-shadow(10px 10px 10px black);
+        filter: drop-shadow(10px 10px 10px black);
     }
 
     h4 {
@@ -61,6 +63,7 @@ export default {
 
     .card-title {
         color:#D1FF70;
+        text-shadow: 2px 2px black;
     }
 
     .grid {
