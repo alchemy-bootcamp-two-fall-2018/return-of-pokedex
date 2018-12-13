@@ -2,8 +2,22 @@
   <div id="app">
       <PokeFilter v-bind:onSearch="handleTextSearch"/>
       <NumFilter v-bind:onNum="handleNumSearch"/>
-      <PokeSort v-bind:onSort="handleSort" />
-      <Tile v-bind:pokemons="pokemons"/>
+      <PokeSort v-bind:onSort="handleSort"/>
+
+      <transition-group
+        name="list"
+        tag="ul"
+        :css="false"
+        @before-enter="beforeEnter"
+        @enter="enter"
+        @leave="leave">
+
+        <Tile v-for="pok in pokemons"
+            :key="pok.id"
+            :poke="pok"
+            :onChoose="handleChoose"/>
+
+      </transition-group>
   </div>
 </template>
 
@@ -59,6 +73,35 @@ export default {
             } else {
                 this.pokemons = pokemons;
             }
+        },
+        handleChoose(id) {
+            console.log(id);
+        },
+        beforeEnter: function(el) {
+            el.style.opacity = 0;
+            el.style.height = 0;
+        },
+        enter: function(el, done) {
+            var delay = el.dataset.index * 150;
+            setTimeout(function() {
+                /* eslint-disable-next-line */
+                Velocity(
+                    el,
+                    { opacity: 1, height: '1.6em' },
+                    { complete: done }
+                );
+            }, delay);
+        },
+        leave: function(el, done) {
+            var delay = el.dataset.index * 150;
+            setTimeout(function() {
+                /* eslint-disable-next-line */
+                Velocity(
+                    el,
+                    { opacity: 0, height: 100 },
+                    { complete: done }
+                );
+            }, delay);
         }
     }
 };
