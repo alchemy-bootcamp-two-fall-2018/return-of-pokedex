@@ -4,10 +4,11 @@
 <template>
     <div>
         <transition name="bounce">
-        <Modal v-if="showModal" :onClose="() => showModal = false">
-            <PokemonDetail :pokemon="selected"/>
-        </Modal>
+            <Modal v-if="showModal" :onClose="() => showModal = false">
+                <PokemonDetail :pokemon="selected"/>
+            </Modal>
         </transition>
+
         <transition-group
             name="staggered-fade"
             tag="ul"
@@ -17,8 +18,8 @@
             v-on:leave="leave"
         >
             <Pokemon v-for="pokemon in pokemons"
-                v-bind:key="pokemon.pokemon"
-                v-bind:pokemon="pokemon"
+                :key="pokemon.pokemon"
+                :pokemon="pokemon"
                 :onSelect="handleSelect"/>
         
         </transition-group>
@@ -93,7 +94,7 @@ export default {
         animation: bounce-in .5s;
     }
     .bounce-leave-active {
-    animation: bounce-in .5s reverse;
+        animation: bounce-in .5s reverse;
     }
     @keyframes bounce-in {
     0% {

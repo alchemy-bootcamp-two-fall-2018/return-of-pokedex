@@ -1,11 +1,11 @@
 <template>
-  <div id="app">
-    <Header
-        v-bind:filter="filter"
-        v-bind:sort="sort"
-        v-bind:types="pokemonTypes"/>
-    <Pokemons v-bind:pokemons="sortedPokemons"/>    <!--used to be filteredPokemons-->
-  </div>
+    <div id="app">
+        <Header
+            v-bind:filter="filter"
+            v-bind:sort="sort"
+            v-bind:types="pokemonTypes"/>
+        <Pokemons v-bind:pokemons="sortedPokemons"/>    <!--used to be filteredPokemons-->
+    </div>
 </template>
 
 <script>

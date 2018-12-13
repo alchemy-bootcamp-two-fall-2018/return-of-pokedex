@@ -2,6 +2,7 @@
   <div v-if="pokemon">
     <h2>Your Pokemon</h2>
     {{pokemon.pokemon}}
+    <!-- <img v-bind:src="pokemon.url_image"> -->
 
 
   </div>
@@ -18,5 +19,7 @@ export default {
 </script>
 
 <style>
-
+img {
+  
+}
 </style>
