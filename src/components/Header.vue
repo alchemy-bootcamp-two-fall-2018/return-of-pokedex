@@ -3,7 +3,7 @@
         <h1>POKEDEX</h1>
         <img scr="http://pngimg.com/uploads/pokemon_logo/pokemon_logo_PNG14.png">
         <!--<img src="http://www.pokestadium.com/sprites/black-white/animated/shiny/pichu.gif">-->
-        <div class="form">
+         <div class="form">
           <label>
               NAME:
               <input class="name" type="text"
@@ -51,12 +51,12 @@
         </select>
       </label>
     </div>
+       
   </header>
 </template>
 
 <script>
 export default {
-
   props: {
     filter: Object,
     types: Array,
@@ -66,53 +66,13 @@ export default {
 };
 </script>
 
-<style>
-  header {
-    background: black;
-    color: white;
+<style scoped>
+header h1 {
+    color: rgb(235, 238, 29,);  
   } 
-  label{
-    display:flex;
-    justify-content:flex-end;
-
-    }
   
-  .form{
-    border: 3px solid red;
-    width:325px;
+  header{
+    background-color: blue;
+    color: #a1a0a1;
   }
-  input {
-   padding: 5px;
-   background-color: #e8eeef;
-   color: black;
-   box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-   font-size: 10px;
-   text-align: right;
-   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-   margin-top: 10px;
-  }
-  input:focus {
-  background-color: #f7ffe0;
-  border-radius: 5px;
-  outline:none;
-}
-.number {
-  width:35px;
-  text-align: right;
-
-}
-.name{
-  width:275px;
-  height:24px;
-
-}
-.select{width:75px;
-
-}
-.sort{
-
-
-}
 </style>
