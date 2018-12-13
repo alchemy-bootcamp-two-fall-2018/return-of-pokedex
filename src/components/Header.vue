@@ -1,6 +1,6 @@
 <template>
     <header>
-        <h1>Pokedex</h1>
+        <h1 >Pokedex</h1>
        <label>
            Name:
            <input v-model="filter.pokemon" type="text">
@@ -21,21 +21,6 @@
                </option>
            </select>
        </label>
-       <!-- <label>
-           Type 1:
-           <input v-model="filter.type1" type="text">
-       </label> -->
-        <!-- <label>
-            Type 1:
-            <input type="text"
-                v-model.lazy="filter.type1">
-        </label>
-
-        <label>
-            Type 2:
-            <input type="text"
-                v-model.lazy="filter.type2">
-        </label> -->
 
         <label class = sortier>
             Sort By:
@@ -69,12 +54,13 @@ export default {
 
 <style>
 header {
-    background: greenyellow;
-    color: black;
-    padding: 10px;
+    background-color: #1b1d26;
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: #f1f2d8;
+    height: 10em;
 }
-/* .sortier {
-    width: 20px;
+/* display: flex and justify-content, align-items added later
 } */
 </style>
