@@ -9,13 +9,20 @@
     >
         <Pokemon v-for="pokemon in pokemons"
             v-bind:key="pokemon.pokemon"
-            v-bind:pokemon="pokemon"/>
+            v-bind:pokemon="pokemon"
+            :selected="selected"
+            :onSelect="handleSelect"/>
     </transition-group>
 </template>
 
 <script>
 import Pokemon from './PokemonDetail.vue';
 export default {
+    data() {
+        return {
+            selected: null
+        };
+    },
     props: {
         pokemons: Array
     },
@@ -23,6 +30,9 @@ export default {
         Pokemon
     },
     methods: {
+        handleSelect(pokemon) {
+            this.selected = pokemon;
+        },
         beforeEnter: function(el) {
             el.style.opacity = 0;
             el.style.height = 0;
@@ -47,7 +57,7 @@ export default {
                     { opacity: 0, height: 0 },
                     { complete: done }
                 );
-            }, delay);
+            }, delay, 3000);
         }
     }
 };
@@ -62,7 +72,7 @@ ul {
     padding: 20px;
     color: whitesmoke;
     border: solid yellow;
-    max-width: 50%;
+    /* max-width: 50%; */
 }
 li {
     margin: 10px;

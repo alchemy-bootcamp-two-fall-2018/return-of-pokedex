@@ -1,20 +1,30 @@
 <template>
     <li>
-        <div class="info">
-            <img v-bind:src="pokemon.url_image"/>
+        <div>
+            <img :src="pokemon.url_image"/>
             <h3>{{pokemon.pokemon}}</h3>
-            <p>Type 1: {{pokemon.type_1}}</p>
-            <p>Type 2: {{pokemon.type_2}}</p>
-            <p>Attack: {{pokemon.attack}}</p>
-            <p>Defense:{{pokemon.defense}}</p>
+            
+        <button @click="showModal = true">Read More</button>
         </div>
+        <Modal v-if="showModal" :onClose="() => showModal = false" :pokemon="pokemon">
+        </Modal>
     </li>
 </template>
 
 <script>
+import Modal from './Modal.vue';
 export default {
+    data() {
+        return {
+            showModal: false
+        };
+    },
     props: {
-        pokemon: Object
+        pokemon: Object,
+        onSelect: Function
+    },
+    components: {
+        Modal
     }
 };
 </script>
@@ -31,14 +41,7 @@ img {
   left: 0;
   width: 150px;
   height: 100%;
-  /* z-index: -1; */
   object-fit: cover;
 }
-.info {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  b
-  text-align: center;
-}
+
 </style>
