@@ -61,7 +61,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped lang="postcss">
 .header {
     padding: 20px;
     background: #006388;
@@ -71,7 +71,9 @@ export default {
 }
 
 .title {
+    font-size: 2.5em;
     color: #D1FF70;
+    text-shadow: 4px 4px black;
 }
 
 

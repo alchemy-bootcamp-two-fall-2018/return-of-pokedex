@@ -33,10 +33,8 @@ export default {
 };
 </script>
 
-<style>
-    img {
-        width: 100px;
-    }
+<style scoped lang="postcss">
+    
 
     li {
         text-align: center;
@@ -44,6 +42,15 @@ export default {
         box-shadow: 5px 10px 10px grey;
         padding: 30px;
         background: #85004E;
+        &:hover {
+          img {
+            transform: scale(1.3);
+            }
+        }
+    }
+
+    img {
+        width: 100px;
     }
 
     h4 {
@@ -59,6 +66,13 @@ export default {
         color: white;
     }
 
+    #card {
+        color: white;
+
+    }
+
+
 </style>
+
 
 

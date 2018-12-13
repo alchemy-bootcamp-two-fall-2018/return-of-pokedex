@@ -3,13 +3,12 @@
   <div class="modal" @click="onClose" @keyup.esc="onClose">
     <div class="content" @click.stop="">
       <button class="close" @click="onClose">X</button>
-             <h2 class=modal-title>{{pokemon.pokemon}}</h2>
-            <img class="modal-img" v-bind:src="pokemon.url_image">
-            <h4 class="black">Type 1: {{pokemon.type_1}}</h4>
-            <h4 class="black">Type 2: {{pokemon.type_2}}</h4>
-            <h4 class="black">Attack: {{pokemon.attack}}</h4>
-            <h4 class="black">Defense: {{pokemon.defense}}</h4>
-
+      <h2 class=modal-title>{{pokemon.pokemon}}</h2>
+      <img class="modal-img" v-bind:src="pokemon.url_image">
+      <h4 class="black">Type 1: {{pokemon.type_1}}</h4>
+      <h4 class="black">Type 2: {{pokemon.type_2}}</h4>
+      <h4 class="black">Attack: {{pokemon.attack}}</h4>
+      <h4 class="black">Defense: {{pokemon.defense}}</h4>
     </div>
   </div>
 </transition>   
@@ -38,7 +37,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped lang="postcss">
 
 .black {
     color: black;
@@ -48,13 +47,12 @@ export default {
     width: 70%;
 }
 
-.modal-title {
+h2 {
     font-size: 3.5em;
     color: #D1FF70;
     text-shadow: 2px 2px black;
     margin: 0;
     padding: 0;
-    
 }
 
 .modal {
@@ -70,14 +68,15 @@ export default {
 
 .content {
   position: relative;
-  background: white;
+  background: #FFA4D9;
   padding: 40px;
+  border-radius: 25px;
 }
 
 .close {
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 25px;
+  right: 25px;
 }
 
 .fade-enter-active, .fade-leave-active {
