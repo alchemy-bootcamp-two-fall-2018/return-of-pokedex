@@ -63,6 +63,7 @@ export default {
   top: 5px;
   right: 5px;
   border: 1px solid black;
+  border-radius: 10pt;
 }
 .modal-image {
   width: 200px;

@@ -85,7 +85,8 @@ header {
     }
 }
 .form-button {
-    padding: 10px 10px 10px 10px; 
+    padding: 10px 10px 10px 10px;
+    border-radius: 10pt; 
   
 }
 </style>
