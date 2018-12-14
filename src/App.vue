@@ -2,10 +2,11 @@
   <div id="app">
     <p> Pokedex </p>
     <Header
-        v-bind:sort="sort"
-        v-bind:filter="filter"
-        v-bind:types="pokemonTypes"/>
-    <PokemonsList v-bind:pokemons="sortedPokemon"/>
+        :sort="sort"
+        :filter="filter"
+        :types="pokemonTypes"/>
+   
+    <PokemonsList :pokemons="sortedPokemon"/>
   </div>
 </template>
 
