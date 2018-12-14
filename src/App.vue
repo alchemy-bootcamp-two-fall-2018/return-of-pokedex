@@ -69,5 +69,12 @@ export default {
 </script>
 
 <style>
+body {
+  margin: 0;
+}
+#app {
+  display: flex;
+  flex-flow: column;
+}
 
 </style>
