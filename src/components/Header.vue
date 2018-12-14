@@ -26,19 +26,19 @@
       <input type="number" v-model.number="filter.defense" step="10" >
     </label>  
     <label>
-            Sort by:
-            <select v-model="sort.field">
-                <option value="all"></option>
-                <option value="pokemon">Name</option>
-                <option value="type">Type 1</option>
-                <option value="attack">Attack</option>
-                <option value="defense">Defense</option>
-            </select>
-            <select v-model="sort.direction">
-                <option value="1">Ascending</option>
-                <option value="-1">Descending</option>
-            </select>
-        </label>
+      Sort by:
+        <select v-model="sort.field">
+          <option value="all"></option>
+          <option value="pokemon">Name</option>
+          <option value="type">Type 1</option>
+          <option value="attack">Attack</option>
+          <option value="defense">Defense</option>
+        </select>
+        <select v-model="sort.direction">
+          <option value="1">Ascending</option>
+          <option value="-1">Descending</option>
+        </select>
+    </label>
   </header>    
 </template>
 
@@ -54,11 +54,11 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="postcss">
 header {
   background: steelblue;
   color: white;
-  padding: 10px
+  padding: 10px;
+  font-weight: bolder;
 }
-
 </style>

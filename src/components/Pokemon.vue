@@ -1,24 +1,25 @@
 <template>
-  <li>
-      <img v-bind:src="pokemon.url_image"/>
-      <div class="info">
-          <h3>{{ pokemon.pokemon}}</h3>
-          <p>type-1: {{ pokemon.type_1 }}</p>
-          <p>attack: {{ pokemon.attack }}</p>
-          <p>defense: {{ pokemon.defense }}</p>
-      </div>
+  <li v-on:click="onSelect(pokemon)">
+    <img v-bind:src="pokemon.url_image"/>
+    <div class="info">
+      <h3>{{ pokemon.pokemon}}</h3>
+      <p>type-1: {{ pokemon.type_1 }}</p>
+      <p>attack: {{ pokemon.attack }}</p>
+      <p>defense: {{ pokemon.defense }}</p>
+    </div>
   </li>
 </template> 
 
 <script>
 export default {
     props: {
-        pokemon:Object
+        pokemon:Object,
+        onSelect: Function
     }
 };
 </script>
 
-<style scoped>
+<style scoped lang='postcss'>
 li {
   position: relative;
   height: 300px;
