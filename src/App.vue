@@ -1,18 +1,19 @@
 <template>
   <div id="app">
     <Header msg="Return of PokeDex"
-            v-bind:sort="sort" 
-            v-bind:filter="filter" 
-            v-bind:types="pokemonTypes"/>
+            :sort="sort" 
+            :filter="filter" 
+            :types="pokemonTypes"/>
             
-    <Pokemons v-bind:pokemons="sortedPokemons"/>
+    <Pokemons :pokemons="sortedPokemons"/>
+    
   </div>
 </template>
 
 <script>
-import Header from './components/Header.vue';
+import Header from './components/Header';
 import Pokedex from '../pokedex.js';
-import Pokemons from './components/Pokemons.vue';
+import Pokemons from './components/Pokemons';
 
 export default {
     name: 'app',
@@ -34,6 +35,7 @@ export default {
                 field: 'pokemon',
                 direction: 1
             },
+            show: false
         };
     },
     computed: {
@@ -73,21 +75,8 @@ export default {
 };
 </script>
 
-<style>
-.pokemonList {
-    margin-top: 40px;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-row-gap: 20px;
-    grid-column-gap: 10px;
-}
-ul {
-    padding: 0px;
-}
-img {
-    width: 200px;
-    height: 200px;
-}
+
+<style lang="postcss" scoped>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

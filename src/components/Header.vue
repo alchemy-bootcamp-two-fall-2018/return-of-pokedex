@@ -1,5 +1,4 @@
 <template>
-
   <header>
     <h1>{{ msg }}</h1>
       <label>
@@ -10,7 +9,9 @@
         Type 1:
         <select v-model="filter.type_1">
           <option value="">Any</option>
-          <option v-for="type in types" v-bind:key="type" v-bind:value="type">
+          <option v-for="type in types" 
+                  :key="type" 
+                  :value="type">
             {{type}}
           </option>
         </select>
@@ -19,7 +20,9 @@
         Type 2:
         <select v-model="filter.type_2">
           <option value="">Any</option>
-          <option v-for="typeTwo in types" v-bind:key="typeTwo" v-bind:value="typeTwo">
+          <option v-for="typeTwo in types" 
+                  :key="typeTwo" 
+                  :value="typeTwo">
             {{typeTwo}}
           </option>
         </select>
@@ -41,8 +44,8 @@
         <option value="type_2">Type 2</option>
         <option value="hp">Hit Points</option>
         <option value="defense">Defense</option>
-
       </select>
+
       <select v-model="sort.direction">
         <option value="1">Asc</option>
         <option value="-1">Desc</option>
@@ -50,7 +53,6 @@
     </label>
   </header>
 </template>
-
 <script>
 export default {
     props: {
@@ -63,24 +65,31 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-  h3 {
-    margin-top: 40px;
+<style lang="postcss" scoped>
+h3 {
+  margin-top: 40px;
+}
+
+h1 {
+  padding-bottom: 40px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+@media (max-width: 375px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
-
-  h1 {
-    padding-bottom: 40px;
-  }
-
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-
-  li {
-    display: inline-block;
-    margin: 0 10px;
-  }
-
-
+}
 </style>
