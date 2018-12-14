@@ -1,5 +1,8 @@
 <template>
     <header>
+        <div class="form" v-if="show">
+        <transition name="fade">
+        </transition>
         <label>
             Name:
             <input type="text" v-model="filter.name">
@@ -35,7 +38,11 @@
                 <option value="weight"> Weight </option>
                 <option value="attack"> Attack </option>
             </select>
-        </label>
+        </label> 
+        </div>
+        <div class="form-button" v-else>
+            <button @click="show = true"> Sort through the Pokedex </button>   
+        </div>
     </header>
 </template>
 
@@ -46,11 +53,40 @@ export default {
         types: Array,
         abilities: Array, 
         sort: Object
+    },
+    data() {
+        return {
+            show: false
+        };
     }
 }; 
 </script>
-<style>
+
+<style lang="postcss">
+
 header {
     text-align: center;
+    background-color: pink;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    top: 0; 
+
+    span {
+        display: inline-block;
+        width: 90px;
+    }
+    textarea, input, select {
+        width: 200px;
+        border: 1pt black solid;
+    }
+    textarea {
+        height: 75px;
+    }
+}
+.form-button {
+    padding: 10px 10px 10px 10px;
+    border-radius: 10pt; 
+  
 }
 </style>

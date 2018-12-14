@@ -5,7 +5,6 @@
         v-bind:filter="filter"
         v-bind:types="pokemonTypes"
         v-bind:abilities="pokemonAbility"/>
-        
     <Pokemons v-bind:pokemons="sortedPokemons"/>
   </div>
 </template>
@@ -13,7 +12,8 @@
 <script>
 import pokemons from '../pokedex.js'; 
 import Pokemons from './components/Pokemons.vue'; 
-import Header from './components/Header.vue'; 
+import Header from './components/Header.vue';
+
 
 export default {
     data() {
@@ -76,3 +76,17 @@ export default {
     }
 };
 </script>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Freckle+Face|Fredoka+One');
+* {
+/* font-family: 'Freckle Face', cursive; */
+font-size: 20pt;
+font-family: 'Fredoka One', cursive;
+}
+body {
+    background-color: rgb(228, 131, 93);
+    background-image: url('https://cdn.vox-cdn.com/thumbor/Yedrks3JgyAsCKhCYzuYHSrqVs0=/313x0:1746x955/1200x800/filters:focal(313x0:1746x955)/cdn.vox-cdn.com/uploads/chorus_image/image/49104733/pokemon-list.0.0.png');    
+}
+</style>
