@@ -5,7 +5,11 @@
       v-bind:types="pokemonTypes"
       v-bind:filter="filter"
     />
-    <Pokedex v-bind:pokemons="sortedPokemons" />
+    <Pokedex 
+        v-bind:pokemons="sortedPokemons" 
+        v-bind:selected="selected"
+        v-bind:onSelect="handleSelect"
+    />
   </div>
 </template>
 
@@ -27,8 +31,11 @@ export default {
 
             sort: {
                 field: 'name',
+                direction: 1
                 
-            }
+            },
+            selected: null,
+            show: false
         };
     },
 
@@ -58,18 +65,26 @@ export default {
 
         sortedPokemons() {
             const field = this.sort.field;
+            const direction = this.sort.direction;
 
             return this.filteredPokemons.slice().sort((a, b) => {
                 if(a[field] > b[field]) {
-                    return 1;
+                    return 1 * direction;
                 }
 
                 if(a[field] < b[field]) {
-                    return -1;
+                    return -1 * direction;
                 }
 
                 return 0;
             });    
+        }
+    },
+    methods: {
+        handleSelect(pokemon) {
+            this.selected = pokemon;
+            this.show = true;
+            console.log('helllo pokemon', pokemon);
         }
     }
 };
