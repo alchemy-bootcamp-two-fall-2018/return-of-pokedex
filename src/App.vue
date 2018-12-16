@@ -1,29 +1,34 @@
 <template>
   <div id="app">
-    <Header
-      v-bind:sort="sort"
+    <Header 
+      v-bind:types="pokemonTypes"
       v-bind:filter="filter"
-      v-bind:types="pokemonTypes"/>
-    <Pokedex v-bind:pokemons="sortedPokemons"
-      :selected="selected"
-      :onSelect="handleSelect"/>
+      v-bind:sort="sort"
+    />
+    <Pokedex 
+      v-bind:pokemons="sortedPokemons"
+      v-bind:selected="selected"
+      v-bind:onSelect="handleSelect"
+    />
   </div>
 </template>
 
 <script>
-import pokemonsApi from './pokemonsApi';
+import pokemonApi from './pokemonApi.js';
 import Pokedex from './components/Pokedex.vue';
 import Header from './components/Header.vue';
 export default {
   data() {
     return {
-      pokemons: pokemonsApi.getPokemons(),
+      pokemons: pokemonApi.getPokemons(),
       filter: {
         attack: 0,
-        type: '',
+        defense: 0,
+        type: ''
       },
       sort: {
         field: 'name',
+        direction: 1
       },
       selected: null,
       show: false
@@ -49,19 +54,20 @@ export default {
     filteredPokemons() {
       return this.pokemons.filter(pokemon => {
         const hasAttack = !this.filter.attack || pokemon.attack >= this.filter.attack;
-        const hasType = !this.filter.type || pokemon.type_1 === 
-                this.filter.type || pokemon.type_2 === this.filter.type;
-        return hasAttack && hasType;
+        const hasDefense = !this.filter.defense || pokemon.defense >= this.filter.defense;
+        const hasType = !this.filter.type || pokemon.type_1 === this.filter.type || pokemon.type_2 === this.filter.type;
+        return hasAttack && hasDefense && hasType;
       });
     },
     sortedPokemons() {
       const field = this.sort.field;
+      const direction = this.sort.direction;
       return this.filteredPokemons.slice().sort((a, b) => {
         if(a[field] > b[field]) {
-          return 1;
+          return 1 * direction;
         }
         if(a[field] < b[field]) {
-          return -1; 
+          return -1 * direction;
         }
         return 0;
       });
@@ -77,13 +83,12 @@ export default {
 };
 </script>
 
-<style lang="postcss" scoped>
+<style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: red;
-  margin-top: 60px;
+  color: #2c3e50;
 }
 </style>

@@ -1,22 +1,21 @@
 <template>
-    <li>
-        <h3>{{ pokemon.pokemon }}</h3>
-        <img v-bind:src="pokemon.url_image" />
-        <button @click="show = true">View Details</button>
-        <transition name="fade">
-            <Modal v-if="show" v-bind:onClose="() => show = false">
-                <div v-if="pokemon">
-                    <img class="pix" v-bind:src="pokemon.url_image" />
-                <div class="info" v-bind:style="{ color: pokemon.color_1 }">
-                <h3>{{ pokemon.pokemon }}</h3>
-                    <p>Type 1: {{pokemon.type_1}}</p>
-                    <p>Type 2: {{pokemon.type_2}}</p> 
-                    <p>Attack: {{pokemon.attack}}</p>
-                </div>
-                </div>
-            </Modal>
-        </transition>
-    </li>
+	<li>
+		<h3>{{ pokemon.pokemon }}</h3>
+		<img v-bind:src="pokemon.url_image" />
+		<button @click="show = true">View Details</button>
+		<transition name="fade">
+			<Modal v-if="show" v-bind:onClose="() => show = false">
+				<div v-if="pokemon">
+					<img v-bind:src="pokemon.url_image" />
+					<h3>{{ pokemon.pokemon }}</h3>
+					<p>Type 1: {{pokemon.type_1}}</p>
+					<p>Type 2: {{pokemon.type_2}}</p> 
+					<p>Attack: {{pokemon.attack}}</p>
+					<p>Defense: {{pokemon.defense}}</p>
+				</div>
+			</Modal>
+		</transition>
+	</li>
 </template>
 
 <script>
@@ -36,32 +35,33 @@ export default {
 };
 </script>
 
-<style scoped lang="postcss">
+<style scoped>
 li {
-    position: relative;
-    height: 300px;
-    border: 2px solid rgb(243, 18, 18);
-    display:flex;
-    flex-direction: column;
-    }
-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    object-fit: cover;
-    }
-.pics {
-    margin: 10px;
-    padding: 10px;
+	position: relative;
+	height: 350px;
+	width: 350px;
+	border: 5px solid;
+	background: black;
+	margin: 0px 10px;
 }
+img {
+	width: 75%;
+	height: 75%;
+	z-index: 1;
+	object-fit: cover;
+	margin-top: -20px;
+}
+h3 {
+	color: white;
+	font-size: 1.3em;
+}
+
 .fade-enter-active, .fade-leave-active {
-    opacity: 1;
-    transition: opacity .5s ease-in-out;
+opacity: 1;
+transition: opacity .5s ease-in-out;
 }
 .fade-enter, .fade-leave-active {
-  opacity: 0
+opacity: 0
 }
+  
 </style>
