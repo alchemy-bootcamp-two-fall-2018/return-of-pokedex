@@ -1,6 +1,12 @@
 
 <template>
-  <li>
+  <li
+  v-bind:key="pokemon.pokemon"
+  >
+    <button @click="show = true">Details</button>
+    <Modal v-if="show" :onClose="() => show = false">
+    <PokemonDetail :pokemon = "pokemon"/>
+    </Modal>
     <img v-bind:src="pokemon.url_image"/>
     <div class="info">
       <h3>{{ pokemon.pokemon }}</h3>
@@ -12,17 +18,35 @@
 </template>
 
 <script>
+import PokemonDetail from './PokemonDetail';
+import Modal from './Modal';
+
 export default {
   props: {
     pokemon: Object
+  },
+  data() {
+    return {
+      show: false
+    };
+  },
+  components: {
+    PokemonDetail,
+    Modal
   }
 };
 </script>
 
-<style scoped>
+<style scoped lang="postcss">
+
 li {
   position: relative;
   height: 300px;
+  &:hover {
+  img {
+    transform: scale(1.3);
+  }
+}
 }
 img {
   position: absolute;

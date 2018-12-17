@@ -1,4 +1,5 @@
 <template>
+
   <header>
 
     <label for="name"> Name:
@@ -50,10 +51,12 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="postcss">
+
 header {
   background: black;
   color: white;
   padding: 5px;
+  
 }
 </style>
