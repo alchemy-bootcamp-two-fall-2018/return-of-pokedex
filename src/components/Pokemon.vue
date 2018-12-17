@@ -56,12 +56,6 @@ export default {
       height: 50%;
       z-index: 1;
       margin-top: -20px;
-      transition: 300ms;
-    }
-    &:hover {
-      img {
-        transform: scale(1.2);
-      }
     }
     button {
       margin-bottom: 5px;
