@@ -21,6 +21,7 @@ export default {
       filter: {
         attack: 0,
         type:'',
+        name: ''
       },
       sort: {
         field: 'name',
@@ -49,7 +50,8 @@ export default {
       return this.pokemons.filter(pokemon => {
         const hasType = !this.filter.type || pokemon.type_1 === this.filter.type || pokemon.type_2 === this.filter.type;
         const hasAttack = !this.filter.attack || pokemon.attack >= this.filter.attack;
-        return hasType && hasAttack;
+        const hasName = !this.filter.name || pokemon.pokemon.includes(this.filter.name);
+        return hasType && hasAttack && hasName;
       });
     },
     sortedPokemon() {
@@ -74,10 +76,14 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Baloo+Da');
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  background: #FFA4D9;
+  font-family: 'Baloo Da', cursive;
 }
 </style>
