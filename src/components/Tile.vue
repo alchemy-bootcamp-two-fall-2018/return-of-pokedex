@@ -1,12 +1,13 @@
 <template>
     <section>
         <li v-if="deets !== poke.id" @click="onChoose(poke.id)">
-            <img v-bind:src="poke.url_image">
+            <img class="selection" v-bind:src="poke.url_image">
             <h4>Name: {{poke.pokemon}}</h4>
         </li>
 
         <transition name="slide-fade">
             <li v-if="deets === poke.id" class="info">
+                <img class="deet-image" :src="poke.url_image">
                 <p>Name: {{poke.pokemon}}</p>
                 <p>Type: {{poke.type_1}}</p>
                 <p>Egg Group: {{poke.egg_group_1}}</p>
@@ -35,7 +36,7 @@ li {
   height: $card-size;
   overflow: hidden;
   &:hover {
-    img {
+    .selection {
       transform: scale(1.3);
       filter: grayscale(0);
     }
@@ -44,7 +45,7 @@ li {
     }
   }
 }
-img {
+.selection {
   width: 100%;
   height: 100%;
   z-index: -1;
@@ -52,11 +53,16 @@ img {
   transition: 500ms;
   filter: grayscale(1);
 }
+.deet-image {
+  width: 100px;
+}
 .info {
   transition: 500ms;
   position: fixed;
+  top: 2vh;
+  right: 2vw;
   bottom: -100px;
-  width: 100%;
+  width: 40vw;
   background: rgba(255, 255, 255, 0.8);
   text-align: center;
   padding: 5px;
