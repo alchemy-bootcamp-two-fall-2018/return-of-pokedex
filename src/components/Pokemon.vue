@@ -1,52 +1,75 @@
 <template>
-    <li  v-bind:style="{ 'border-color': pokemon.color_1 }">
-        <img v-bind:src="pokemon.url_image" />
-        <div class="info">
+    <li>
+      <h3>{{ pokemon.pokemon }}</h3>
+      <img v-bind:src="pokemon.url_image" />
+      <button @click="show = true">View Details</button>
+      <transition name="fade">
+        <Modal v-if="show" v-bind:onClose="() => show = false">
+          <div v-if="pokemon">
+            <img class="pics" v-bind:src="pokemon.url_image" />
             <h3>{{ pokemon.pokemon }}</h3>
             <p>Type 1: {{pokemon.type_1}}</p>
             <p>Type 2: {{pokemon.type_2}}</p> 
             <p>Attack: {{pokemon.attack}}</p>
             <p>Defense: {{pokemon.defense}}</p>
-        </div>
+          </div>
+        </Modal>
+      </transition>
     </li>
 </template>
 
 <script>
+import Modal from './Modal.vue';
 export default {
-    props: {
-        pokemon: Object
-    }
+  data() {
+    return {
+      show: false
+    };
+  },
+  props: {
+    pokemon: Object
+  },
+  components: {
+    Modal
+  }
 };
 </script>
 
-<style>
-    li {
-        position: relative;
-        height: 350px;
-        border: 5px solid;
-        background: black;
+<style scoped lang="postcss">
+  li {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 2px solid navy;
+    box-shadow: 4px 4px 4px black;
+    background: black;
+    margin: 0px 10px;
+    h3 {
+      color: white;
+      font-size: 1.3em;
+      margin-top: 3px;
     }
     img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        object-fit: cover;
+      width: 50%;
+      height: 50%;
+      z-index: 1;
+      margin-top: -20px;
     }
-    .info {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: 130px;
-        background: rgba(255, 255, 255, 0.8);
-        line-height: 0.4em;
-        font-size: 1em;
-        z-index: 10;
-
+    button {
+      margin-bottom: 5px;
     }
-
-    
-
+  }
+ .fade-enter-active, .fade-leave-active {
+    opacity: 1;
+    transition: opacity .5s ease-in-out;
+  }
+  .fade-enter, .fade-leave-active {
+    opacity: 0
+  }
+  .pics {
+    margin-top: 10px;
+    margin-bottom: -40px;
+  }
 </style>
