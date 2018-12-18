@@ -5,8 +5,6 @@
             <option value="">None</option>
             <option value="pokemon">Name</option>
             <option value="weight">Weight</option>
-            <!-- <option value="type_1">Type</option>
-            <option value="egg_group_1">Egg Group</option> -->
         </select>
     </section>
 </template>

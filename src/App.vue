@@ -2,8 +2,23 @@
   <div id="app">
       <PokeFilter v-bind:onSearch="handleTextSearch"/>
       <NumFilter v-bind:onNum="handleNumSearch"/>
-      <PokeSort v-bind:onSort="handleSort" />
-      <Tile v-bind:pokemons="pokemons"/>
+      <PokeSort v-bind:onSort="handleSort"/>
+
+      <transition-group
+        name="list"
+        tag="ul"
+        :css="false"
+        @before-enter="beforeEnter"
+        @enter="enter"
+        @leave="leave">
+
+        <Tile
+            v-for="pok in pokemons"
+            :key="pok.id"
+            :poke="pok"
+            :onChoose="handleChoose"
+            :deets="deets"/>
+      </transition-group>
   </div>
 </template>
 
@@ -15,11 +30,13 @@ import PokeSort from './components/Sort.vue';
 import Tile from './components/Tile.vue';
 
 // allow for double filtering
+// fix number filter on backspace
 
 export default {
     data() {
         return {
             pokemons,
+            deets: -1
         };
     },
     components: {
@@ -58,19 +75,56 @@ export default {
             } else {
                 this.pokemons = pokemons;
             }
+        },
+        handleChoose(id) {
+            this.deets = id;
+        },
+        beforeEnter: function(el) {
+            el.style.opacity = 0;
+            el.style.height = 0;
+        },
+        enter: function(el, done) {
+            var delay = el.dataset.index * 150;
+            setTimeout(function() {
+                /* eslint-disable-next-line */
+                Velocity(
+                    el,
+                    { opacity: 1, height: '1.6em' },
+                    { complete: done }
+                );
+            }, delay);
+        },
+        leave: function(el, done) {
+            var delay = el.dataset.index * 150;
+            setTimeout(function() {
+                /* eslint-disable-next-line */
+                Velocity(
+                    el,
+                    { opacity: 0, height: 100 },
+                    { complete: done }
+                );
+            }, delay);
         }
     }
 };
 
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped lang="postcss">
+@import './styles.css';
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($card-size, 1fr));
+  list-style-type: none;
+  margin: 1%;
+  padding: 0;
+  /* height: calc(100vh - 150px); */
+  width: 50vw;
+  overflow-y: auto;
+}
+
+li {
+  display: flex;
 }
 </style>
