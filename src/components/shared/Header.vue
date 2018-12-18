@@ -18,8 +18,8 @@
             <select v-model="filter.type">
                 <option value="">All</option>
                 <option v-for="type in types"
-                    v-bind:key="type"
-                    v-bind:value="type">
+                    :key="type"
+                    :value="type">
                 {{type}}
                 </option>
             </select>
@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import pokemonApi from '../pokemonApi.js';
+import pokemonApi from '../../pokemonApi.js';
 export default {
   data() {
     return {
@@ -74,7 +74,6 @@ p, label {
 label {
     font-weight: bold;
     text-transform: uppercase;
-    /* display: block; */
 }
 
 @media(max-width: 1140px){

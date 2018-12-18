@@ -1,14 +1,14 @@
 <template>
   <div id="app">
-    <Header v-bind:filter="filter"
-      v-bind:sort="sort"/>
-    <Pokemons v-bind:pokemons="sortedPokemon"/>
+    <Header :filter="filter"
+      :sort="sort"/>
+    <Pokemons :pokemons="sortedPokemon"/>
   </div>
 </template>
 
 <script>
-import Header from './components/Header.vue';
-import Pokemons from './components/Pokemons.vue';
+import Header from './components/shared/Header.vue';
+import Pokemons from './components/pokemons/Pokemons.vue';
 import pokemonApi from './pokemonApi.js';
 
 export default {
